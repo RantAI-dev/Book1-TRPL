@@ -5,6 +5,6 @@ description: "Foreign Function Interface"
 icon: "article"
 date: "2024-08-05T21:28:22+07:00"
 lastmod: "2024-08-05T21:28:22+07:00"
-draft: true
+draft: false
 toc: true
 ---

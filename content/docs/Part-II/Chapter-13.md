@@ -5,6 +5,6 @@ description: "Select Operations"
 icon: "article"
 date: "2024-08-05T21:21:12+07:00"
 lastmod: "2024-08-05T21:21:12+07:00"
-draft: true
+draft: false
 toc: true
 ---
