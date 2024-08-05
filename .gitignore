@@ -1,0 +1,65 @@
+# Hugo build output
+/public/
+/resources/_gen/
+
+# Temporary files and directories
+*.temp
+*.swp
+*.swo
+*.DS_Store
+*~
+
+# Local development files
+/.hugo_build.lock
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Node.js dependencies
+node_modules/
+
+# Hugo specific output
+/public/
+/resources/
+
+# Configuration files for IDEs
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+*.bak
+
+# Compiled files
+*.o
+*.out
+*.map
+
+# SASS artifacts
+.sass-cache/
+
+# Files for deployment
+*.deploy
+
+# Hugo server configuration file
+/config.toml
+/config.yaml
+/config.json
+
+# Env files for secrets
+.env
+.env.local
+.env.*.local
+
+# NPM files
+package-lock.json
+yarn.lock
+
+# Temporary Hugo output
+.hugo_build.lock
