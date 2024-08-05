@@ -51,6 +51,7 @@ node_modules/
 /config.toml
 /config.yaml
 /config.json
+assets/jsconfig.json
 
 # Env files for secrets
 .env
