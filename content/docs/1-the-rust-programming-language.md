@@ -38,7 +38,7 @@ Your comprehensive guide to mastering Rust. This book takes you on a journey thr
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/rantai/">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="/images/Logo.png" class="card-img-top" alt="Rantai Logo">
+                <img src="../../images/Logo.png" class="card-img-top" alt="Rantai Logo">
             </div>
         </a>
     </div>
@@ -60,7 +60,7 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/shirologic/">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="/images/P8MKxO7NRG2n396LeSEs-1EMgqgjvaVvYZ7wbZ7Zm-v1.png" class="card-img-top" alt="Evan Pradipta Hardinatha">
+                <img src="../../images/P8MKxO7NRG2n396LeSEs-1EMgqgjvaVvYZ7wbZ7Zm-v1.png" class="card-img-top" alt="Evan Pradipta Hardinatha">
                 <div class="card-body p-0 content">
                     <p class="fs-5 fw-semibold card-title mb-1">Evan Pradipta Hardinatha</p>
                 </div>
@@ -70,7 +70,7 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/jaisy-arasy/">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="/images/P8MKxO7NRG2n396LeSEs-cHU7kr5izPad2OAh1eQO-v1.png" class="card-img-top" alt="Jaisy Malikulmulki Arasy">
+                <img src="../../images/P8MKxO7NRG2n396LeSEs-cHU7kr5izPad2OAh1eQO-v1.png" class="card-img-top" alt="Jaisy Malikulmulki Arasy">
                 <div class="card-body p-0 content">
                     <p class="fs-5 fw-semibold card-title mb-1">Jaisy Malikulmulki Arasy</p>
                 </div>
@@ -80,7 +80,7 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/chevhan-walidain/">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="/images/P8MKxO7NRG2n396LeSEs-UTFiCKrYqaocqib3YNnZ-v1.png" class="card-img-top" alt="Chevan Walidain">
+                <img src="../../images/P8MKxO7NRG2n396LeSEs-UTFiCKrYqaocqib3YNnZ-v1.png" class="card-img-top" alt="Chevan Walidain">
                 <div class="card-body p-0 content">
                     <p class="fs-5 fw-semibold card-title mb-1">Chevan Walidain</p>
                 </div>
@@ -90,7 +90,7 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/daffasyqarrr/">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="/images/P8MKxO7NRG2n396LeSEs-5PupP02YXKw6a9pcZXDM-v1.png" class="card-img-top" alt="Daffa Asyqar Ahmad Khalisheka">
+                <img src="../../images/P8MKxO7NRG2n396LeSEs-5PupP02YXKw6a9pcZXDM-v1.png" class="card-img-top" alt="Daffa Asyqar Ahmad Khalisheka">
                 <div class="card-body p-0 content">
                     <p class="fs-5 fw-semibold card-title mb-1">Daffa Asyqar Ahmad Khalisheka</p>
                 </div>
@@ -100,7 +100,7 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/shintafiaa/">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="/images/P8MKxO7NRG2n396LeSEs-9Z3uZnqX9Vw1sKZJxXtR-v1.png" class="card-img-top" alt="Shinta Roudlotul Hanafia">
+                <img src="../../images/P8MKxO7NRG2n396LeSEs-9Z3uZnqX9Vw1sKZJxXtR-v1.png" class="card-img-top" alt="Shinta Roudlotul Hanafia">
                 <div class="card-body p-0 content">
                     <p class="fs-5 fw-semibold card-title mb-1">Shinta Roudlotul Hanafia</p>
                 </div>
@@ -110,7 +110,7 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/idham-multazam/">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="/images/P8MKxO7NRG2n396LeSEs-Ra9qnq6ahPYHkvvzi71z-v1.png" class="card-img-top" alt="Idham Hanif Multazam">
+                <img src="../../images/P8MKxO7NRG2n396LeSEs-Ra9qnq6ahPYHkvvzi71z-v1.png" class="card-img-top" alt="Idham Hanif Multazam">
                 <div class="card-body p-0 content">
                     <p class="fs-5 fw-semibold card-title mb-1">Idham Hanif Multazam</p>
                 </div>
@@ -120,7 +120,7 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/farrel-rassya-1b6991257/">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="/images/P8MKxO7NRG2n396LeSEs-Ra9qnq6ahPYHkvvzi71z-v1.png" class="card-img-top" alt="Farrel Rasya">
+                <img src="../../images/P8MKxO7NRG2n396LeSEs-Ra9qnq6ahPYHkvvzi71z-v1.png" class="card-img-top" alt="Farrel Rasya">
                 <div class="card-body p-0 content">
                     <p class="fs-5 fw-semibold card-title mb-1">Farrel Rasya</p>
                 </div>
@@ -130,7 +130,7 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="http://www.linkedin.com">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="/images/P8MKxO7NRG2n396LeSEs-0n0SFhW3vVnO5VXX9cIX-v1.png" class="card-img-top" alt="Razka Athallah Adnan">
+                <img src="../../images/P8MKxO7NRG2n396LeSEs-0n0SFhW3vVnO5VXX9cIX-v1.png" class="card-img-top" alt="Razka Athallah Adnan">
                 <div class="card-body p-0 content">
                     <p class="fs-5 fw-semibold card-title mb-1">Razka Athallah Adnan</p>
                 </div>
@@ -140,7 +140,7 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="http://linkedin.com">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="/images/P8MKxO7NRG2n396LeSEs-vto2jpzeQkntjXGi2Wbu-v1.png" class="card-img-top" alt="Raffy Aulia Adnan">
+                <img src="../../images/P8MKxO7NRG2n396LeSEs-vto2jpzeQkntjXGi2Wbu-v1.png" class="card-img-top" alt="Raffy Aulia Adnan">
                 <div class="card-body p-0 content">
                     <p class="fs-5 fw-semibold card-title mb-1">Raffy Aulia Adnan</p>
                 </div>
