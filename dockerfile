@@ -1,8 +1,8 @@
 # Start from Alpine Linux
 FROM alpine:latest as builder
 
-# Install Hugo
-RUN apk add --no-cache hugo
+# Install Hugo and Go
+RUN apk add --no-cache hugo go
 
 # Set the working directory
 WORKDIR /app
