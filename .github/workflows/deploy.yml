@@ -33,4 +33,4 @@ jobs:
             docker pull shirologic/trpl-test-site:latest
             docker stop trpl-test-site || true
             docker rm trpl-test-site || true
-            docker run -d --name trpl-test-site -p 80:80 shirologic/trpl-test-site:latest
+            docker run -d --name trpl-test-site -p 9800:80 shirologic/trpl-test-site:latest
