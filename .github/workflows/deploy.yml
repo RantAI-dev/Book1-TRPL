@@ -1,0 +1,33 @@
+name: Deploy Hugo Site
+
+on:
+  push:
+    branches:
+      - main  # Set to your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: yourdockerusername/hugo-site:latest  # Change to your DockerHub username and repo
+
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            docker pull yourdockerusername/hugo-site:latest  # Change to match the tag used above
+            docker stop hugo-site || true
+            docker rm hugo-site || true
+            docker run -d --name hugo-site -p 80:80 yourdockerusername/hugo-site:latest
