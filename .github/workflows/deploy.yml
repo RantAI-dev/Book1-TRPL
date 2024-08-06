@@ -18,7 +18,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: yourdockerusername/hugo-site:latest  # Change to your DockerHub username and repo
+          tags: shirologic/trpl-test-site:latest  # Change to your DockerHub username and repo
 
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
@@ -27,7 +27,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            docker pull yourdockerusername/hugo-site:latest  # Change to match the tag used above
-            docker stop hugo-site || true
-            docker rm hugo-site || true
-            docker run -d --name hugo-site -p 80:80 yourdockerusername/hugo-site:latest
+            docker pull shirologic/trpl-test-site:latest
+            docker stop trpl-test-site || true
+            docker rm trpl-test-site || true
+            docker run -d --name trpl-test-site -p 80:80 shirologic/trpl-test-site:latest
