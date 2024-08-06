@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Build the static files
-RUN hugo
+RUN server
 
 # Use Nginx to serve the site
 FROM nginx:alpine
