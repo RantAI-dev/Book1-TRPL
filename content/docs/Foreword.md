@@ -2,7 +2,7 @@
 weight: 400
 title: "Foreword"
 description: "The New Paradigm of Learning in the GenAI Era"
-icon: "article"
+icon: "send"
 date: "2024-08-05T21:08:45+07:00"
 lastmod: "2024-08-05T21:08:45+07:00"
 draft: false
@@ -60,6 +60,7 @@ This book stands as a testament to this vision, serving as both an educational r
 Jakarta, August 17th, 2024
 
 &nbsp;
+
 &nbsp;
 
 <strong>Dr. Risman Adnan Mattotorang, S.Si, M.Si.</strong>
