@@ -15,13 +15,7 @@ toc: true
 
 </center>
 
-{{% alert icon="💡" context="info" %}}
-<strong>
-
-"Bad programmers worry about the code. Good programmers worry about data structures and their relationships." - Linus Torvalds
-
-</strong>
-{{% /alert %}}
+{{% alert icon="💡" context="info" %}}<strong>"<em>Bad programmers worry about the code. Good programmers worry about data structures and their relationships</em>" — Linus Torvalds</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}
 <p style="text-align: justify;">

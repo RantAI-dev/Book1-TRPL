@@ -15,13 +15,8 @@ toc: true
 
 </center>
 
-{{% alert icon="💡" context="info" %}}
-<strong>
 
-“The limits of my language mean the limits of my world” - Ludwig Wittgenstein.
-
-</strong>
-{{% /alert %}}
+{{% alert icon="💡" context="info" %}}<strong>"<em>The limits of my language mean the limits of my world</em>" — Ludwig Wittgenstein.</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}
 
