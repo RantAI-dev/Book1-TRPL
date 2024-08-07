@@ -41,31 +41,31 @@ Part II of "The Rust Programming Language" (TRPL) delves into fundamental concep
             <table class="table table-hover">
                 <tbody>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-ii/chapter-8/" class="text-decoration-none">8. Types, Declaration and Mutability</a></td>
+                        <td><a href="/docs/part-ii/chapter-8/" class="text-decoration-none">8. Types, Declaration and Mutability</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-ii/chapter-9/" class="text-decoration-none">9. Ownership and Move</a></td>
+                        <td><a href="/docs/part-ii/chapter-9/" class="text-decoration-none">9. Ownership and Move</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-ii/chapter-10/" class="text-decoration-none">10. Pointers, Arrays and References</a></td>
+                        <td><a href="/docs/part-ii/chapter-10/" class="text-decoration-none">10. Pointers, Arrays and References</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-ii/chapter-11/" class="text-decoration-none">11. Structures, Unions and Enumerations</a></td>
+                        <td><a href="/docs/part-ii/chapter-11/" class="text-decoration-none">11. Structures, Unions and Enumerations</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-ii/chapter-12/" class="text-decoration-none">12. Statements and Expressions</a></td>
+                        <td><a href="/docs/part-ii/chapter-12/" class="text-decoration-none">12. Statements and Expressions</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-ii/chapter-13/" class="text-decoration-none">13. Select Operations</a></td>
+                        <td><a href="/docs/part-ii/chapter-13/" class="text-decoration-none">13. Select Operations</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-ii/chapter-14/" class="text-decoration-none">14. Functions</a></td>
+                        <td><a href="/docs/part-ii/chapter-14/" class="text-decoration-none">14. Functions</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-ii/chapter-15/" class="text-decoration-none">15. Exception Handling</a></td>
+                        <td><a href="/docs/part-ii/chapter-15/" class="text-decoration-none">15. Exception Handling</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-ii/chapter-16/" class="text-decoration-none">16. Source Files, Modules and Program</a></td>
+                        <td><a href="/docs/part-ii/chapter-16/" class="text-decoration-none">16. Source Files, Modules and Program</a></td>
                     </tr>
                 </tbody>
             </table>

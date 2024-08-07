@@ -98,16 +98,6 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
         </a>
     </div>
     <div class="col-md-4 col-12 py-2">
-        <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/shintafiaa/">
-            <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="../../images/P8MKxO7NRG2n396LeSEs-9Z3uZnqX9Vw1sKZJxXtR-v1.png" class="card-img-top" alt="Shinta Roudlotul Hanafia">
-                <div class="card-body p-0 content">
-                    <p class="fs-5 fw-semibold card-title mb-1">Shinta Roudlotul Hanafia</p>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/idham-multazam/">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
                 <img src="../../images/P8MKxO7NRG2n396LeSEs-Ra9qnq6ahPYHkvvzi71z-v1.png" class="card-img-top" alt="Idham Hanif Multazam">

@@ -35,28 +35,28 @@ Part III of "The Rust Programming Language" (TRPL) delves into advanced topics c
             <table class="table table-hover">
                 <tbody>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-iii/chapter-17/" class="text-decoration-none">17. Structs</a></td>
+                        <td><a href="/docs/part-iii/chapter-17/" class="text-decoration-none">17. Structs</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-iii/chapter-18/" class="text-decoration-none">18. Traits</a></td>
+                        <td><a href="/docs/part-iii/chapter-18/" class="text-decoration-none">18. Traits</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-iii/chapter-19/" class="text-decoration-none">19. Encapsulation</a></td>
+                        <td><a href="/docs/part-iii/chapter-19/" class="text-decoration-none">19. Encapsulation</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-iii/chapter-20/" class="text-decoration-none">20. Composition vs Inheritance</a></td>
+                        <td><a href="/docs/part-iii/chapter-20/" class="text-decoration-none">20. Composition vs Inheritance</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-iii/chapter-21/" class="text-decoration-none">21. Generics</a></td>
+                        <td><a href="/docs/part-iii/chapter-21/" class="text-decoration-none">21. Generics</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-iii/chapter-22/" class="text-decoration-none">22. Macros</a></td>
+                        <td><a href="/docs/part-iii/chapter-22/" class="text-decoration-none">22. Macros</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-iii/chapter-23/" class="text-decoration-none">23. Pattern Matching</a></td>
+                        <td><a href="/docs/part-iii/chapter-23/" class="text-decoration-none">23. Pattern Matching</a></td>
                     </tr>
                     <tr>
-                        <td><a href="http://localhost:1313/docs/part-iii/chapter-24/" class="text-decoration-none">24. Vector and Matrix</a></td>
+                        <td><a href="/docs/part-iii/chapter-24/" class="text-decoration-none">24. Vector and Matrix</a></td>
                     </tr>
                 </tbody>
             </table>
