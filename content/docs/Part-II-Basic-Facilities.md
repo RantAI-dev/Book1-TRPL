@@ -31,7 +31,7 @@ Part II of "The Rust Programming Language" (TRPL) delves into fundamental concep
 
 <center>
 
-**🧠 Part 2 Chapters**
+**🧠Chapters**
 
 </center>
 
