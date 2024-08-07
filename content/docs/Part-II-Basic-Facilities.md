@@ -2,7 +2,7 @@
 weight: 1400
 title: "Part II - Basic Facilities"
 description: "Features and Capabilities"
-icon: "article"
+icon: "Foundation"
 date: "2024-08-05T21:17:41+07:00"
 lastmod: "2024-08-05T21:17:41+07:00"
 draft: false
@@ -29,14 +29,46 @@ Part II of "The Rust Programming Language" (TRPL) delves into fundamental concep
 </p>
 {{% /alert %}}
 
-**Chapters:**
+<center>
 
-8. Types, Declaration and Mutability
-9. Ownership and Move
-10. Pointers, Arrays and References
-11. Structures, Unions and Enumerations
-12. Statements and Expressions
-13. Select Operations
-14. Functions
-15. Exception Handling
-16. Source Files, Modules and Program
+**🧠 Part 2 Chapters**
+
+</center>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-ii/chapter-8/" class="text-decoration-none">8. Types, Declaration and Mutability</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-ii/chapter-9/" class="text-decoration-none">9. Ownership and Move</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-ii/chapter-10/" class="text-decoration-none">10. Pointers, Arrays and References</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-ii/chapter-11/" class="text-decoration-none">11. Structures, Unions and Enumerations</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-ii/chapter-12/" class="text-decoration-none">12. Statements and Expressions</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-ii/chapter-13/" class="text-decoration-none">13. Select Operations</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-ii/chapter-14/" class="text-decoration-none">14. Functions</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-ii/chapter-15/" class="text-decoration-none">15. Exception Handling</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-ii/chapter-16/" class="text-decoration-none">16. Source Files, Modules and Program</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

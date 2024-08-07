@@ -2,7 +2,7 @@
 weight: 500
 title: "Part I - Introduction to Rust"
 description: "Notes and Tours"
-icon: "book"
+icon: "flight_takeoff"
 date: "2024-08-05T21:10:12+07:00"
 lastmod: "2024-08-05T21:10:12+07:00"
 draft: false
@@ -11,7 +11,7 @@ toc: true
 
 <center>
 
-## 📘 Part 1: Introduction
+# 📘 Part 1: Introduction to Rust
 
 </center>
 
@@ -31,13 +31,40 @@ Part I of "The Rust Programming Language" (TRPL) serves as an introductory guide
 
 {{% /alert %}}
 
+<center>
 
-**Chapters**
+**🧠 Chapters**
 
-1. Notes to the Reader
-2. A Tour of Rust: The Basics
-3. A Tour of Rust: Abstraction Mechanisms
-4. A Tour of Rust: Containers and Algorithms
-5. A Tour of Rust: Memory Safety and Concurrency
-6. A Tour of Rust: Asynchronous and Parallel Programming
-7. Rust Toolchain: Rustup, Rustc, Cargo and Crates
+</center>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-i/chapter-1/" class="text-decoration-none">1. Notes to the Reader</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-i/chapter-2/" class="text-decoration-none">2. A Tour of Rust: The Basics</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-i/chapter-3/" class="text-decoration-none">3. A Tour of Rust: Abstraction Mechanisms</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-i/chapter-4/" class="text-decoration-none">4. A Tour of Rust: Containers and Algorithms</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-i/chapter-5/" class="text-decoration-none">5. A Tour of Rust: Memory Safety and Concurrency</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-i/chapter-6/" class="text-decoration-none">6. A Tour of Rust: Asynchronous and Parallel Programming</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://localhost:1313/docs/part-i/chapter-7/" class="text-decoration-none">7. Rust Toolchain: Rustup, Rustc, Cargo and Crates</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
