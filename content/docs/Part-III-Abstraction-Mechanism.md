@@ -23,7 +23,11 @@ Part III of "The Rust Programming Language" (TRPL) delves into advanced topics c
 {{% /alert %}}
 
 
-**🧠 Chapters:**
+<center>
+
+**🧠Chapters**
+
+</center>
 
 <div class="container mt-4">
     <div class="row">
@@ -59,10 +63,3 @@ Part III of "The Rust Programming Language" (TRPL) delves into advanced topics c
         </div>
     </div>
 </div>
-
-
-
-
-
-
-

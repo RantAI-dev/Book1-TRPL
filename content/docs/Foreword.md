@@ -15,15 +15,7 @@ toc: true
 
 </center>
 
-{{% alert icon="💡" context="info" %}}
-
-<strong>
-
- “The best way to predict the future is to invent it.” - Alan Kay.
-
-</strong>
-
-{{% /alert %}}
+{{% alert icon="💡" context="info" %}}<strong>"<em>The best way to predict the future is to invent it.</em>" — Alan Kay.</strong>{{% /alert %}}
 
 {{% alert icon="📖" context="success" %}}
 
