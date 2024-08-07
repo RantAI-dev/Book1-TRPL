@@ -17,9 +17,7 @@ toc: true
 {{% alert icon="💡" context="info" %}}<strong>"<em>The most dangerous kind of code is the code you think you understand but don't.</em>" — Andrew Hunt</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}
-<p style="text-align: justify;">
-This chapter explores the powerful macro system in Rust, focusing on both declarative and procedural macros. It begins with an introduction to the concept and utility of macros, highlighting their role in reducing boilerplate code and enabling metaprogramming. The chapter then delves into declarative macros, explaining their syntax and common patterns. Procedural macros are discussed next, including the different types such as function-like, derive, and attribute macros, along with detailed examples and best practices. The chapter also covers advanced topics like macro hygiene, scoping, and interaction with the compiler, as well as practical advice on debugging and testing macros. Finally, it concludes with a discussion on the strategic use of macros and their potential evolution in the Rust ecosystem.
-</p>
+
 {{% /alert %}}
 
 

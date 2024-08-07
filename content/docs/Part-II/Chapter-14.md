@@ -10,7 +10,7 @@ toc: true
 ---
 <center>
 
-## 📘 Chapter 14: Functions
+# 📘 Chapter 14: Functions
 
 </center>
 
@@ -23,7 +23,7 @@ Chapter 14 of TRPL - "Functions" delves into the critical role of function decla
 {{% /alert %}}
 
 
-# 14.1. Why Functions?
+## 14.1. Why Functions?
 <p style="text-align: justify;">
 In Rust, functions are key to creating clear, maintainable, and efficient code. They help in breaking down complex problems into smaller, manageable pieces, enhancing both readability and maintainability.
 </p>
@@ -56,7 +56,7 @@ In addition to improving clarity, using functions helps avoid error-prone constr
 In summary, functions are essential for structuring code in Rust. By breaking down tasks into smaller functions, we create a clear, maintainable codebase. This approach not only makes our code easier to understand and debug but also helps in managing complexity and improving overall performance.
 </p>
 
-# 14.2. Function Declarations
+## 14.2. Function Declarations
 <p style="text-align: justify;">
 Performing tasks primarily involves calling functions. A function must be declared before it can be invoked, and its declaration outlines the function's name, the return type (if any), and the types and number of arguments it accepts. Here are some examples:
 </p>
@@ -90,7 +90,7 @@ fn String::index(&self, idx: usize) -> &char; // type: fn(&String, usize) -> &ch
 This setup ensures functions are well-defined and utilized properly, fostering the creation of robust and efficient code.
 </p>
 
-# 14.3. Parts of a Function Declaration
+## 14.3. Parts of a Function Declaration
 <p style="text-align: justify;">
 A function declaration not only specifies the name, arguments, and return type but can also include various specifiers and modifiers. Here are the components:
 </p>
@@ -120,7 +120,7 @@ Furthermore, functions can also be marked with attributes that specify their beh
 These elements collectively provide a comprehensive way to declare functions, ensuring their purpose, usage, and behavior are clearly communicated and understood.
 </p>
 
-# 14.4. Function Definitions
+## 14.4. Function Definitions
 <p style="text-align: justify;">
 Every callable function in a program must have a corresponding definition. A function definition includes the actual code that performs the function's task, while a declaration specifies the function's interface without its implementation.
 </p>
@@ -198,7 +198,7 @@ Several constructs follow similar rules to functions, including:
 - <p style="text-align: justify;">Destructors: Used for cleanup when an object goes out of scope, they cannot be overloaded.</p>
 - <p style="text-align: justify;">Function objects (closures): These implement the <code>Fn</code> trait but are not functions themselves.</p>
 - <p style="text-align: justify;">Lambda expressions: These provide a concise way to create closures and can capture variables from their surrounding scope.</p>
-# 14.5. Returning Values
+## 14.5. Returning Values
 <p style="text-align: justify;">
 In function declarations, it's crucial to specify the return type, with the exception of constructors and type conversion functions. Traditionally, the return type appears before the function name, but modern syntax allows placing the return type after the argument list. For example, the following declarations are equivalent:
 </p>
@@ -287,7 +287,7 @@ This form of return is useful in template functions where the return type is a t
 Functions that do not return normally can be marked with <code>[[noreturn]]</code>.
 </p>
 
-# 14.6. inline Functions
+## 14.6. inline Functions
 <p style="text-align: justify;">
 Defining a function as inline suggests to the compiler that it should attempt to generate inline code at each call site rather than using the standard function call mechanism. For example:
 </p>
@@ -309,7 +309,7 @@ To make inlining possible, the function definition must be available in the same
 If an inline function is defined in multiple translation units (for example, by including it in a header file used in different source files), the definition must be identical in each translation unit to ensure consistent behavior.
 </p>
 
-# 14.7. constexpr Functions
+## 14.7. constexpr Functions
 <p style="text-align: justify;">
 Generally, functions are not evaluated at compile time and thus cannot be used in constant expressions. By marking a function as <code>constexpr</code>, you indicate that it can be evaluated at compile time when given constant arguments. For instance:
 </p>
@@ -368,7 +368,7 @@ A <code>constexpr</code> function supports recursion and conditional expressions
 Using literal types, <code>constexpr</code> functions can work with user-defined types. Similar to inline functions, <code>constexpr</code> functions follow the one-definition rule (ODR), requiring identical definitions in different translation units. Think of <code>constexpr</code> functions as a more restricted form of inline functions.
 </p>
 
-# 14.8. Conditional Evaluation
+## 14.8. Conditional Evaluation
 <p style="text-align: justify;">
 In a <code>constexpr</code> function, branches of conditional expressions that are not executed are not evaluated. This allows a branch that isn't taken to still require run-time evaluation. For example:
 </p>
@@ -393,7 +393,7 @@ const VAL: i32 = check(f(x, y, z));
 Here, <code>LOW</code> and <code>HIGH</code> can be considered configuration parameters that are known at compile time, but not at design time. The function <code>f(x, y, z)</code> computes a value based on implementation specifics. This example illustrates how conditional evaluation in <code>constexpr</code> functions can handle compile-time constants while permitting run-time calculations when needed.
 </p>
 
-# 14.9. \[\[noreturn\]\] Functions
+## 14.9. \[\[noreturn\]\] Functions
 <p style="text-align: justify;">
 The construct <code>#[...]</code> is referred to as an attribute and can be used in various parts of Rust's syntax. Attributes generally specify some implementation-specific property about the syntax element that follows them. One such attribute is <code>#[noreturn]</code>.
 </p>
@@ -412,7 +412,7 @@ fn exit(code: i32) -> ! {
 Knowing that a function does not return helps in understanding the code and can assist in optimizing it. However, if a function marked with <code>#[noreturn]</code> does return, the behavior is undefined.
 </p>
 
-# 14.10. Local Variables
+## 14.10. Local Variables
 <p style="text-align: justify;">
 In a function, names defined are generally referred to as local names. When a local variable or constant is initialized, it occurs when the execution thread reaches its definition. If not declared as <code>static</code>, each call to the function creates its own instance of the variable. On the other hand, if a local variable is declared <code>static</code>, a single statically allocated object is used for that variable across all function calls, initializing only the first time the execution thread encounters it.
 </p>
@@ -456,7 +456,7 @@ The use of a static local variable enables a function to retain information betw
 Static local variables help avoid dependencies among nonlocal variables. If you need a local function, consider using a closure or a function object instead. In Rust, the scope of a label spans the entire function, regardless of the nested scope where it might be located.
 </p>
 
-# 14.11. Argument Passing
+## 14.11. Argument Passing
 <p style="text-align: justify;">
 When a function is called using the call operator <code>()</code>, memory is allocated for its parameters, and each parameter is initialized with its corresponding argument. This process follows the same rules as copy initialization, meaning the types of the arguments are checked against the types of the parameters, and necessary conversions are performed. If a parameter is not a reference, a copy of the argument is passed to the function.
 </p>
@@ -493,7 +493,7 @@ Rust has particular rules for passing arrays and allows for unchecked arguments 
 This approach ensures that arguments are passed efficiently and safely, adhering to Rust’s principles of ownership and borrowing.
 </p>
 
-# 14.12. Reference Arguments
+## 14.12. Reference Arguments
 <p style="text-align: justify;">
 Understanding how to pass arguments to functions is essential, particularly the distinction between passing by value and passing by reference. When a function takes an argument by value, it creates a copy of the original data, which means changes within the function do not affect the original variable. Conversely, passing by reference allows the function to modify the original variable.
 </p>
@@ -588,7 +588,7 @@ When deciding how to pass arguments, consider these guidelines:
 Following these guidelines ensures efficient and clear argument passing, maintaining the principles of ownership and borrowing.
 </p>
 
-# 14.13. Array Arguments
+## 14.13. Array Arguments
 <p style="text-align: justify;">
 When an array is used as a function argument, a pointer to its first element is passed. For example:
 </p>
@@ -673,7 +673,7 @@ let days: [&str; 7] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 Generally, using vectors and similar types is a better alternative to low-level arrays and pointers, providing safer and more readable code.
 </p>
 
-# 14.14. List Arguments
+## 14.14. List Arguments
 <p style="text-align: justify;">
 A list enclosed in {} can be used as an argument for:
 </p>
@@ -730,7 +730,7 @@ The reason an <code>initializer_list</code> parameter is given priority is to av
 If a function with an <code>initializer_list</code> parameter is in scope, but the list argument doesn't match, another function can be chosen. The call <code>f({1, "MKS"})</code> is an example of this. Note that these rules specifically apply to <code>std::initializer_list<T></code> arguments. There are no special rules for <code>std::initializer_list<T>&</code> or for other types named <code>initializer_list</code> in different scopes.
 </p>
 
-# 14.15. Unspecified Number of Arguments
+## 14.15. Unspecified Number of Arguments
 <p style="text-align: justify;">
 There are situations where specifying the number and type of all function arguments isn't feasible. In such cases, you have three main options:
 </p>
@@ -803,7 +803,7 @@ error(1, {"Error:", "Invalid input", "Please try again"});
 Integrating these concepts in a modern programming context helps maintain type safety and readability while managing varying numbers of arguments effectively. This aligns with best practices in software development, ensuring that your programs are robust and maintainable.
 </p>
 
-# 14.16. Default Arguments
+## 14.16. Default Arguments
 <p style="text-align: justify;">
 In many cases, functions require multiple parameters to handle complex scenarios effectively, especially constructors that offer various ways to create objects. Consider a <code>Complex</code> class:
 </p>
@@ -918,7 +918,7 @@ Hiding a declaration with a nested scope can lead to errors and should be handle
 By utilizing default arguments appropriately, you can simplify function declarations, reduce redundancy, and make your code more maintainable and understandable.
 </p>
 
-# 14.17. Overloaded Functions
+## 14.17. Overloaded Functions
 <p style="text-align: justify;">
 While it's often recommended to give distinct names to different functions, there are situations where it makes sense to use the same name for functions that perform similar tasks on different types. This practice is known as overloading. For example, the addition operator (+) is used for both integers and floating-point numbers. This concept can be extended to user-defined functions, allowing the same name to be reused for different parameter types. For example:
 </p>
@@ -940,7 +940,7 @@ In the compiler's view, overloaded functions share only their name; they may per
 This approach is essential when the function name holds significant meaning, such as with operators like <code>+</code>, <code>*</code>, and <code><<</code>, or with constructors in generic programming. Rust's traits and generics provide a structured way to implement overloaded functions, enabling the use of the same function name with different types safely and efficiently.
 </p>
 
-# 14.18. Automatic Overload Resolution
+## 14.18. Automatic Overload Resolution
 <p style="text-align: justify;">
 When a function called <code>fct</code> is invoked, the compiler needs to determine which specific version of <code>fct</code> to execute by comparing the types of the actual arguments with the types of the parameters for all functions named <code>fct</code> in scope. The goal is to match the arguments to the parameters of the best-fitting function and produce a compile-time error if no suitable function is found. For example:
 </p>
@@ -1048,7 +1048,7 @@ fn g(i: i32, c: char, p: &str, d: f64) {
 Without overloading, the programmer has to remember multiple function names and use them correctly, which can be cumbersome and prone to errors. Overloading allows the same function name to be used for different types, increasing the chances that unsuitable arguments will be caught by the compiler and reducing the likelihood of type-related errors.
 </p>
 
-# 14.19. Overloading and Return Type
+## 14.19. Overloading and Return Type
 <p style="text-align: justify;">
 Return types are not factored into function overload resolution. This design choice ensures that determining which function to call remains straightforward and context-independent. For example:
 </p>
@@ -1073,7 +1073,7 @@ fn f(da: f64, fla: f32) {
 If the return type were considered during overload resolution, it would no longer be possible to look at a function call in isolation to determine which function is being invoked. This would complicate the resolution process, requiring the context of each call to identify the correct function. By excluding return types from overload resolution, the language ensures that each function call can be resolved based solely on its arguments, maintaining clarity and simplicity.
 </p>
 
-# 14.20. Overloading and Scope
+## 14.20. Overloading and Scope
 <p style="text-align: justify;">
 Overloading occurs within the same scope, meaning functions declared in different, non-namespace scopes do not participate in overloading together. For example:
 </p>
@@ -1119,7 +1119,7 @@ fn g(d: &Derived) {
 When overloading across class or namespace scopes is necessary, <code>use</code> declarations or directives can be employed. Additionally, argument-dependent lookup can facilitate overloading across namespaces. This ensures that overloading remains controlled and predictable, improving code readability and maintainability.
 </p>
 
-# 14.21. Resolution for Multiple Arguments
+## 14.21. Resolution for Multiple Arguments
 <p style="text-align: justify;">
 Overload resolution rules are utilized to select the most appropriate function when multiple arguments are involved, aiming for efficiency and precision across different data types. Here's an example:
 </p>
@@ -1166,7 +1166,7 @@ fn g() {
 In this case, the call is ambiguous because <code>2.0</code> is the best match for the first argument of <code>pow(f64, f64)</code> and <code>2</code> is the best match for the second argument of <code>pow(i32, i32)</code>.
 </p>
 
-# 14.22. Manual Overload Resolution
+## 14.22. Manual Overload Resolution
 <p style="text-align: justify;">
 When functions are overloaded either too little or too much, it can lead to ambiguities. For example:
 </p>
@@ -1221,7 +1221,7 @@ However, this approach is often just a temporary fix and doesn't solve the core 
 While beginners might find ambiguity errors frustrating, experienced programmers see these errors as helpful indicators of potential design flaws.
 </p>
 
-# 14.23. Pre- and Postconditions
+## 14.23. Pre- and Postconditions
 <p style="text-align: justify;">
 Functions come with expectations regarding their arguments. Some of these expectations are defined by the argument types, while others depend on the actual values and relationships between them. Although the compiler and linker can ensure type correctness, managing invalid argument values falls to the programmer. Preconditions are the logical criteria that should be true when a function is called, while postconditions are criteria that should be true when a function returns.
 </p>
@@ -1271,7 +1271,7 @@ Function developers have several options:
 If a postcondition fails, it indicates either an unchecked precondition or a programming error.
 </p>
 
-# 14.24. Pointer to Function
+## 14.24. Pointer to Function
 <p style="text-align: justify;">
 Just as data objects have memory addresses, the code for a function is stored in memory and can be referenced through an address. We can use pointers to functions similarly to how we use pointers to objects, but function pointers are limited to calling the function and taking its address.
 </p>
@@ -1378,7 +1378,7 @@ In this example, the vector of <code>User</code> structs is sorted first by name
 Pointers to functions provide a flexible way to parameterize algorithms and manage different operations in a type-safe manner. However, it's crucial to ensure type compatibility to avoid errors and undefined behavior.
 </p>
 
-# 14.25. Macros
+## 14.25. Macros
 <p style="text-align: justify;">
 Macros play a crucial role in C but are less prevalent in more modern languages like Rust. The key guideline for using macros is to avoid them unless absolutely necessary. Most macros indicate a limitation in the programming language, the program, or the programmer. Since macros manipulate code before the compiler processes it, they can complicate tools like debuggers, cross-referencing, and profilers. When macros are essential, it's important to read the reference manual for your implementation of the Rust preprocessor and avoid overly clever solutions. Conventionally, macros are named with capital letters to signal their presence.
 </p>
@@ -1575,7 +1575,7 @@ err_print!("The answer is {}", 42); // prints "error: The answer is 42"
 In summary, while macros can be powerful, their use in Rust should be minimal and well-considered, favoring more robust and clear alternatives whenever possible.
 </p>
 
-# 14.26. Conditional Compilation
+## 14.26. Conditional Compilation
 <p style="text-align: justify;">
 One essential use of macros is for conditional compilation. The <code>#ifdef IDENTIFIER</code> directive includes code only if <code>IDENTIFIER</code> is defined. If not, it causes the preprocessor to ignore subsequent input until an <code>#endif</code> directive is encountered. For example:
 </p>
@@ -1628,7 +1628,7 @@ Unfortunately, many essential headers include numerous risky and unnecessary mac
 A more robust approach to conditional compilation involves using attributes like <code>#[cfg]</code> and <code>#[cfg_attr]</code>, which integrate into the language more seamlessly and avoid the pitfalls of macros. This method ensures cleaner and safer code management.
 </p>
 
-# 14.27. Predefined Macros
+## 14.27. Predefined Macros
 <p style="text-align: justify;">
 Predefined macros in Rust provide similar functionality to assist with debugging and conditional compilation:
 </p>
@@ -1675,7 +1675,7 @@ if cfg!(target_os = "windows") {
 These predefined macros and conditional compilation features enhance flexibility and robustness, making it easier to manage code based on the compilation environment.
 </p>
 
-# 14.28. Pragmas
+## 14.28. Pragmas
 <p style="text-align: justify;">
 Platform-specific and non-standard features can be managed using attributes, which are similar to pragmas in other languages. Attributes provide a standardized way to apply configuration options, hints, or compiler directives to the code. For instance:
 </p>
@@ -1690,7 +1690,7 @@ Attributes can be applied at various levels, such as modules, functions, and ite
 - <p style="text-align: justify;"><code>#[allow(dead_code)]</code>: Suppresses warnings for unused code.</p>
 - <p style="text-align: justify;"><code>#[inline(always)]</code>: Suggests that the compiler should always inline a function.</p>
 - <p style="text-align: justify;"><code>#[deprecated]</code>: Marks a function or module as deprecated.</p>
-# 14.29. Advices
+## 14.29. Advices
 <p style="text-align: justify;">
 In Rust, organizing your code into well-defined, clearly named functions is crucial for enhancing readability and maintainability. Functions serve as a means to break down complex tasks into smaller, more manageable pieces, each focusing on a single, coherent task. This modular approach not only makes the code easier to understand but also simplifies its maintenance.
 </p>
@@ -1727,7 +1727,7 @@ For functions involving complex types or multiple arguments, use slices or vecto
 By adhering to these practices, Rust programmers can create well-structured and efficient code. Leveraging Rust’s features for ownership, borrowing, and compile-time evaluation ensures that code remains safe, maintainable, and performant.
 </p>
 
-# 14.30. Further Learning with GenAI
+## 14.30. Further Learning with GenAI
 <p style="text-align: justify;">
 Assign yourself the following tasks: Input these prompts to ChatGPT and Gemini, and glean insights from their responses to enhance your understanding.
 </p>

@@ -10,7 +10,7 @@ toc: true
 ---
 <center>
 
-## 📘 Chapter 20: Composition vs Inheritance
+# 📘 Chapter 20: Composition vs Inheritance
 
 </center>
 
@@ -23,7 +23,7 @@ This TRPL chapter delves into the concepts of composition and inheritance, with 
 {{% /alert %}}
 
 
-# 20.1. Overview of Composition and Inheritance
+## 20.1. Overview of Composition and Inheritance
 <p style="text-align: justify;">
 Composition and inheritance are core concepts in software design, used to manage and extend the functionality of types. Composition involves building complex types by combining simpler, reusable components. It uses a "has-a" relationship, where a type contains other types to achieve its desired functionality. Structs and traits are the primary constructs used for composition. Structs create complex data types with multiple fields, while traits define shared behavior that different types can implement. This modular approach enhances flexibility and code reuse, allowing new types to be composed of existing ones without modification.
 </p>
@@ -107,7 +107,7 @@ Inheritance, on the other hand, involves extending existing types to create new 
 Instead of strict inheritance hierarchies, traits in Rust provide a way to achieve polymorphism and code reuse. Traits define shared functionality that various types can implement, avoiding the rigidity of traditional inheritance models and promoting a more modular and maintainable approach to design.
 </p>
 
-# 20.2. Key Differences in Rust vs Other Languages
+## 20.2. Key Differences in Rust vs Other Languages
 <p style="text-align: justify;">
 When examining the use of composition and inheritance across different programming languages, Rust introduces unique features and paradigms that distinguish it from traditional object-oriented languages like C++ or Java. The primary differences lie in Rust’s approach to type composition, memory management, and safety guarantees.
 </p>
@@ -211,7 +211,7 @@ In this code snippet, Rust’s compiler prevents mutable and immutable borrows f
 Rust’s approach to composition and its emphasis on ownership and borrowing provide a robust framework for managing type relationships and memory safety. While traditional object-oriented languages rely on inheritance to create hierarchical relationships, Rust favors composition and traits, allowing for more flexible and safe code structures. This fundamental difference underscores Rust’s focus on performance and safety, setting it apart from languages with more traditional inheritance-based designs.
 </p>
 
-# 20.3. Inheritance in Object-Oriented Programming
+## 20.3. Inheritance in Object-Oriented Programming
 <p style="text-align: justify;">
 Inheritance in object-oriented programming (OOP) is a fundamental concept that allows one class to inherit properties and behaviors (methods) from another class. This relationship is typically described as an "is-a" relationship, where the subclass is a specialized version of the superclass. Inheritance promotes code reuse and establishes a hierarchical relationship between classes, enabling a subclass to utilize and extend the functionalities of a superclass.
 </p>
@@ -288,7 +288,7 @@ In this Rust example, the <code>Animal</code> trait defines the <code>eat</code>
 By favoring traits and composition over inheritance, Rust avoids the pitfalls of deep inheritance hierarchies and tightly coupled code. Traits provide a way to define shared behavior that can be implemented by multiple types, promoting code reuse and flexibility without the need for a rigid class hierarchy. Composition allows complex types to be built from simpler, reusable components, further enhancing modularity and maintainability.
 </p>
 
-## 20.3.1. Examples in C++ and Java
+### 20.3.1. Examples in C++ and Java
 <p style="text-align: justify;">
 In traditional object-oriented languages like C++ and Java, inheritance is a key mechanism that allows one class to inherit the properties and methods of another class. This facilitates code reuse and the creation of hierarchical class structures. In these languages, inheritance establishes an "is-a" relationship between the superclass (parent class) and the subclass (child class).
 </p>
@@ -393,7 +393,7 @@ In this example, the <code>Dog</code> class overrides the <code>makeSound</code>
 However, while inheritance promotes code reuse and polymorphism, it can also lead to issues such as tight coupling and difficulties in maintenance. Deep inheritance hierarchies can make the codebase complex and fragile, as changes in a superclass can have far-reaching effects on all subclasses. This is where composition, a design principle that Rust heavily relies on, offers a more flexible and modular alternative to inheritance.
 </p>
 
-## 20.3.2. Advantages and Disadvantages
+### 20.3.2. Advantages and Disadvantages
 <p style="text-align: justify;">
 Inheritance in traditional object-oriented programming languages like C++ and Java has both advantages and disadvantages. Understanding these can help in making informed decisions about using inheritance or alternative design patterns, such as composition, especially when working in Rust.
 </p>
@@ -502,7 +502,7 @@ In this example, <code>Dog</code> and <code>Cat</code> both implement the <code>
 By understanding the advantages and disadvantages of inheritance, developers can make better design choices, leveraging composition and traits in Rust to create more maintainable and flexible code.
 </p>
 
-# 20.4. Composition in Rust
+## 20.4. Composition in Rust
 <p style="text-align: justify;">
 Composition in Rust is a design principle where complex types are built from simpler ones by combining their functionality. Unlike inheritance in traditional object-oriented languages, where a class inherits properties and behaviors from a parent class, composition involves creating types that contain instances of other types and delegate functionality to them. This approach leads to more flexible and reusable code, as it avoids the rigidity and tight coupling associated with inheritance.
 </p>
@@ -612,7 +612,7 @@ Ring! Ring!
 This example illustrates how composition in Rust allows us to build complex types by combining simpler ones, promoting code reuse and flexibility. Instead of relying on inheritance, Rust's composition model uses traits and structs to achieve polymorphism and modularity, resulting in more maintainable and adaptable code.
 </p>
 
-## 20.4.1. How Composition Works in Rust
+### 20.4.1. How Composition Works in Rust
 <p style="text-align: justify;">
 Composition in Rust works by combining smaller, reusable components to build complex types. This approach relies on the use of structs to define data structures and traits to define behaviors. Unlike inheritance in traditional object-oriented programming, where a subclass inherits properties and methods from a superclass, composition in Rust promotes more flexible and decoupled designs. By aggregating multiple structs and implementing traits, Rust allows you to compose complex behaviors and functionalities in a modular and reusable way.
 </p>
@@ -751,7 +751,7 @@ Stopping video
 This example illustrates how composition in Rust allows you to build complex types by combining simpler ones. By using traits to define shared behaviors and structs to implement these traits, you can create modular and reusable components. The <code>MediaPlayer</code> struct demonstrates how you can aggregate different types and delegate functionality to the contained components. This approach promotes code reuse, reduces tight coupling, and enhances the flexibility and maintainability of your codebase. Rust's composition model, facilitated by traits and structs, offers a powerful and efficient way to design complex systems.
 </p>
 
-## 20.4.2. Examples of Composition in Rust
+### 20.4.2. Examples of Composition in Rust
 <p style="text-align: justify;">
 Composition in Rust involves building complex functionality by combining simpler, reusable components. This approach uses structs to define data structures and traits to define behaviors. Unlike traditional inheritance-based object-oriented programming, where classes derive from each other, composition in Rust promotes a more modular and flexible design by allowing objects to be assembled from smaller parts. This results in a system where components can be easily swapped or reused without significant code changes.
 </p>
@@ -869,7 +869,7 @@ Total Perimeter: 45.42
 This example illustrates how composition in Rust allows you to build complex functionality by combining simpler, reusable components. By using traits to define common behaviors and structs to implement these traits, you can create a system where different types can be treated uniformly. The <code>ShapeCollection</code> struct demonstrates how you can aggregate different shapes and work with them in a consistent way. This approach promotes code reuse, reduces tight coupling, and enhances the flexibility and maintainability of your codebase. Rust's composition model, facilitated by traits and structs, provides a powerful and efficient way to design complex systems.
 </p>
 
-## 20.4.3. Implementing Composition in Rust
+### 20.4.3. Implementing Composition in Rust
 <p style="text-align: justify;">
 Composition is a fundamental design principle in Rust that emphasizes building complex types from simpler, reusable components. Unlike inheritance, which creates a tight coupling between classes, composition focuses on assembling objects using other objects. In Rust, this approach is achieved through the use of structs and traits, providing a flexible and modular way to design software systems.
 </p>
@@ -968,7 +968,7 @@ Additionally, composition in Rust aligns with the language’s focus on safety a
 Implementing composition in Rust encourages a modular and reusable design pattern, allowing you to build complex systems in a manageable and efficient way. This approach leverages Rust’s strengths, including its type system and ownership model, to create robust and scalable software solutions.
 </p>
 
-# 20.5. Structs and Traits as Building Blocks
+## 20.5. Structs and Traits as Building Blocks
 <p style="text-align: justify;">
 In Rust, structs and traits serve as fundamental building blocks for creating and organizing data and behavior. They enable developers to construct complex types and define their behavior in a modular and reusable way, adhering to Rust's emphasis on safety and efficiency.
 </p>
@@ -1078,7 +1078,7 @@ In this example, the <code>Shape</code> trait defines a method <code>area</code>
 Structs and traits together form a powerful combination in Rust. Structs provide a way to group and manage data, while traits enable you to define and enforce shared behavior across different types. This approach fosters a modular and extensible design, making it easier to build and maintain complex systems. By leveraging structs and traits, Rust developers can create robust and flexible code that adheres to the principles of ownership, safety, and performance.
 </p>
 
-## 20.5.1. Delegation Pattern
+### 20.5.1. Delegation Pattern
 <p style="text-align: justify;">
 The delegation pattern is a design strategy that allows an object to delegate some of its responsibilities to another object, known as a delegate. This pattern is especially useful for promoting composition over inheritance and improving code modularity and reusability. In Rust, the delegation pattern can be effectively implemented using structs and traits, providing a flexible mechanism for managing behavior.
 </p>
@@ -1158,7 +1158,7 @@ Furthermore, Rust’s ownership model ensures that delegation does not introduce
 The delegation pattern in Rust offers a robust method for designing modular and maintainable systems. By leveraging structs and traits, you can implement delegation to achieve clear separation of concerns and promote code reuse, leading to a more organized and flexible software architecture.
 </p>
 
-## 20.5.2. Example: Building a Complex Type with Composition
+### 20.5.2. Example: Building a Complex Type with Composition
 <p style="text-align: justify;">
 In Rust, composition is a powerful design pattern that allows you to construct complex types by combining simpler ones. This approach leverages the strength of Rust’s type system and ownership model to create flexible and reusable structures. To illustrate this concept, consider an example where we build a complex type representing a <code>SmartHome</code> system. This system will consist of various components such as lights, thermostats, and security systems, each modeled as separate structs.
 </p>
@@ -1326,7 +1326,7 @@ In this example, the <code>SmartHome</code> struct combines the individual compo
 By using composition to build complex types, Rust developers can create flexible and scalable systems that leverage the strengths of Rust’s type system and ownership model. This approach fosters a clean, modular design, making it easier to manage and extend the functionality of complex systems.
 </p>
 
-# 20.6. Comparison of Composition and Inheritance
+## 20.6. Comparison of Composition and Inheritance
 <p style="text-align: justify;">
 In software design, composition and inheritance are two fundamental approaches for building complex types and managing relationships between them. Each approach has its strengths and weaknesses, and understanding these can help in choosing the most appropriate design pattern for a given problem. In Rust, which emphasizes composition over inheritance, these concepts are implemented differently compared to traditional object-oriented languages.
 </p>
@@ -1452,7 +1452,7 @@ Rust’s focus on composition and traits aligns with its emphasis on safety, per
 While inheritance and composition are both valuable techniques in software design, Rust’s emphasis on composition offers a more flexible and modular approach. By leveraging traits and structs, Rust developers can build complex systems that are easier to understand, extend, and maintain.
 </p>
 
-## 20.6.1. When to Use Composition
+### 20.6.1. When to Use Composition
 <p style="text-align: justify;">
 Composition is a powerful design principle in Rust that involves building complex types by combining simpler, reusable components. This approach offers significant advantages over inheritance, especially in terms of flexibility, modularity, and maintainability. Knowing when to use composition can help you design systems that are both robust and adaptable to change.
 </p>
@@ -1702,7 +1702,7 @@ In this <code>SmartHome</code> example, the system is designed to work with any 
 Composition is especially useful when you want to build complex types from simpler components, when you need flexibility in configuring or extending behavior, and when you want to avoid the pitfalls of deep inheritance hierarchies. By leveraging composition, you can create modular, maintainable, and adaptable systems that align with Rust’s emphasis on safety and performance.
 </p>
 
-## 20.6.2. When Inheritance Might Be Suitable
+### 20.6.2. When Inheritance Might Be Suitable
 <p style="text-align: justify;">
 Inheritance in Rust, though less common compared to languages with traditional class-based inheritance, can still be useful in certain scenarios. Rust uses traits to provide a form of inheritance through trait implementation, allowing you to share functionality and extend behavior across different types. However, there are specific cases where leveraging inheritance-like patterns can be advantageous.
 </p>
@@ -1823,7 +1823,7 @@ Inheritance might also be suitable in scenarios where you need to manage shared 
 Inheritance-like patterns in Rust, facilitated by traits, can be useful when you need to define a common interface for different types, provide default behavior that can be extended or overridden, or manage shared state across multiple types. By leveraging traits and default method implementations, you can create flexible and maintainable designs that align with Rust's emphasis on safety and performance.
 </p>
 
-# 20.7. Trade-offs and Best Practices
+## 20.7. Trade-offs and Best Practices
 <p style="text-align: justify;">
 When deciding whether to use composition or inheritance in Rust, it's important to weigh the trade-offs associated with each approach. Rust emphasizes composition over inheritance, primarily due to its focus on safety, performance, and modularity. However, understanding the trade-offs and best practices can help you make informed decisions about which approach to use in different scenarios.
 </p>
@@ -1965,7 +1965,7 @@ When choosing between composition and inheritance, it's crucial to consider best
 While inheritance can simplify certain hierarchical designs, Rust's emphasis on composition offers greater flexibility and modularity. By understanding the trade-offs and best practices associated with each approach, you can make informed decisions that align with Rust's principles of safety and performance.
 </p>
 
-## 20.7.1. Case Studies and Examples
+### 20.7.1. Case Studies and Examples
 <p style="text-align: justify;">
 Case studies are valuable for illustrating how theoretical concepts are applied in practical scenarios. In the context of Rust, case studies can showcase how composition and inheritance patterns are used to solve real-world problems effectively. By examining these examples, we can gain insights into best practices and potential pitfalls in Rust programming.
 </p>
@@ -2145,7 +2145,7 @@ In this case study, the <code>Character</code> trait provides a common interface
 Case studies in Rust often reveal that composition provides greater flexibility and modularity, especially in scenarios where components need to be easily combined and extended. Inheritance-like patterns, facilitated by traits, can simplify designs when dealing with well-defined hierarchies and shared behavior. By understanding and applying these patterns, you can create robust and maintainable Rust applications that effectively leverage the strengths of both composition and inheritance.
 </p>
 
-## 20.7.2. Real-world Scenarios of Composition in Rust
+### 20.7.2. Real-world Scenarios of Composition in Rust
 <p style="text-align: justify;">
 In Rust, composition is a powerful and versatile approach to building systems and managing complexity. Real-world scenarios often leverage composition to create modular, maintainable, and flexible designs. This approach is particularly beneficial when dealing with systems that require extensibility and adaptability. Below are some illustrative examples of how composition can be effectively applied in real-world Rust projects.
 </p>
@@ -2347,7 +2347,7 @@ In this example, the <code>Middleware</code> trait defines a method for handling
 These examples demonstrate how composition can be used in real-world scenarios to create modular, maintainable, and flexible systems. By defining common interfaces with traits and implementing them for various components, you can build complex systems with ease while keeping the codebase clean and adaptable.
 </p>
 
-# 20.8. Comparing with Inheritance-Based Designs
+## 20.8. Comparing with Inheritance-Based Designs
 <p style="text-align: justify;">
 In Rust, composition and inheritance are two fundamental design approaches for organizing code and managing complexity. While Rust does not support traditional class-based inheritance like some object-oriented languages, it provides alternatives such as traits and composition to achieve similar goals. Understanding how composition compares with inheritance-based designs can provide insights into when and why to use each approach.
 </p>
@@ -2464,7 +2464,7 @@ Moreover, Rust’s approach allows for better encapsulation and code reuse. Trai
 While inheritance can be useful in certain contexts, Rust’s composition-based design provides greater flexibility and modularity, making it a more robust choice for managing complexity in modern software development.
 </p>
 
-## 20.8.1. Rust’s Approach to Encapsulation and Abstraction
+### 20.8.1. Rust’s Approach to Encapsulation and Abstraction
 <p style="text-align: justify;">
 Rust's approach to encapsulation and abstraction differs significantly from traditional object-oriented languages that rely heavily on inheritance. Instead, Rust employs a combination of ownership, borrowing, traits, and modules to achieve these design principles. This methodology not only aligns with Rust’s goals of safety and concurrency but also promotes clarity and maintainability in code.
 </p>
@@ -2646,7 +2646,7 @@ Here, the <code>bank</code> module encapsulates the <code>BankAccount</code> str
 Rust’s approach to encapsulation and abstraction leverages its unique features to provide robust, flexible, and maintainable solutions without relying on inheritance. By using structs, traits, generics, and modules, Rust allows developers to build complex systems with clear and controlled interfaces, promoting safety and concurrency while managing complexity effectively.
 </p>
 
-## 20.8.2. How Rust's Features Support Composition
+### 20.8.2. How Rust's Features Support Composition
 <p style="text-align: justify;">
 Rust's features strongly support the composition over inheritance principle, promoting more flexible, modular, and maintainable code. Composition in Rust involves building complex types by combining simpler types, often using structs, enums, traits, and the module system. This approach contrasts with inheritance-based designs common in other languages.
 </p>
@@ -2827,7 +2827,7 @@ Here, the <code>Shape</code> enum can represent either a <code>Circle</code> or 
 Rust's support for composition is evident through its use of structs, traits, enums, and modules. These features allow developers to build complex systems from simple, reusable components, promoting flexibility, modularity, and maintainability. Rust's emphasis on composition over inheritance aligns with modern software design principles, providing powerful tools to create robust and scalable applications.
 </p>
 
-## 20.8.3. Encapsulation and Abstraction Without Inheritance
+### 20.8.3. Encapsulation and Abstraction Without Inheritance
 <p style="text-align: justify;">
 Encapsulation and abstraction are key principles in object-oriented programming that facilitate the creation of clean, maintainable, and modular code. Rust, despite not supporting classical inheritance, provides robust mechanisms to achieve encapsulation and abstraction, primarily through its use of structs, traits, and modules.
 </p>
@@ -2989,7 +2989,7 @@ In this example, the <code>geometry</code> module contains a nested <code>shapes
 Rust's support for encapsulation and abstraction without inheritance is robust and versatile. By using structs to encapsulate data, traits to define abstract behavior, and modules to organize code, Rust provides powerful tools to build clean, maintainable, and modular software. These features align with modern software design principles, encouraging developers to create flexible and reusable code without the pitfalls of traditional inheritance-based designs.
 </p>
 
-## 20.8.4. Best Practices and Patterns
+### 20.8.4. Best Practices and Patterns
 <p style="text-align: justify;">
 Best practices and patterns in Rust development revolve around creating code that is efficient, safe, maintainable, and idiomatic. Rust's unique features, such as its ownership system, type safety, and concurrency model, influence how developers approach these practices. Understanding these principles helps in writing robust and performant Rust code.
 </p>
@@ -3119,7 +3119,7 @@ In this example, the <code>main</code> function spawns ten threads, each printin
 Best practices and patterns in Rust involve leveraging the language's unique features to write safe, efficient, and maintainable code. Effective use of ownership and borrowing, pattern matching, error handling with <code>Result</code> and <code>Option</code>, and safe concurrency primitives are crucial. By embracing these practices, developers can create robust Rust applications that adhere to the principles of modern software design.
 </p>
 
-## 20.8.5. Recommended Patterns for Composition
+### 20.8.5. Recommended Patterns for Composition
 <p style="text-align: justify;">
 In Rust, composition is favored over inheritance for structuring complex systems due to its flexibility and the language's emphasis on safety and performance. Recommended patterns for composition in Rust involve using structs, enums, traits, and modules to build modular and reusable code. These patterns leverage Rust's unique features to create robust and maintainable software designs.
 </p>
@@ -3320,7 +3320,7 @@ In this example, the <code>geometry</code> module organizes shapes into the <cod
 Rust's recommended patterns for composition emphasize using structs to build complex types, enums for handling different variants, traits for defining shared behavior, and modules for organizing code. These patterns leverage Rust's strengths in safety and performance, promoting modular, reusable, and maintainable code. By applying these patterns, developers can create well-structured Rust programs that adhere to best practices and effectively utilize the language's features.
 </p>
 
-## 20.8.6. Common Pitfalls and How to Avoid Them
+### 20.8.6. Common Pitfalls and How to Avoid Them
 <p style="text-align: justify;">
 In Rust, leveraging its features for safe and efficient programming involves understanding and avoiding common pitfalls. These pitfalls can lead to code that is either incorrect, inefficient, or difficult to maintain. By recognizing these issues and understanding how to address them, developers can write more robust and idiomatic Rust code.
 </p>
@@ -3474,7 +3474,7 @@ In this example, the <code>Connection</code> struct is public, but its implement
 Avoiding common pitfalls in Rust involves careful handling of ownership and borrowing, proper use of concurrency primitives, effective error handling with <code>Result</code> and <code>Option</code>, understanding lifetimes, and managing module visibility. By being mindful of these areas and following best practices, developers can write reliable, safe, and idiomatic Rust code.
 </p>
 
-# 20.9. Advices
+## 20.9. Advices
 <p style="text-align: justify;">
 By using the following guidelines, Rust programmers can effectively use composition to build flexible, maintainable, and efficient systems. The emphasis on safety, clarity, and performance in Rust's design philosophy supports these practices, leading to well-structured and resilient software.
 </p>
@@ -3489,7 +3489,7 @@ By using the following guidelines, Rust programmers can effectively use composit
 - <p style="text-align: justify;"><strong>Use Documentation and Naming Conventions: </strong>Clear documentation and consistent naming conventions are essential in complex systems, particularly when using composition. Document the purpose of each struct and trait, the relationship between them, and the intended use cases. Good documentation helps others (and your future self) understand the design decisions and how to extend or modify the system.</p>
 - <p style="text-align: justify;"><strong>Test and Validate Composition:</strong> Testing is crucial, especially when composing multiple behaviors. Ensure that each component behaves correctly in isolation and as part of the larger system. Use unit tests for individual structs and traits, and integration tests for testing the interplay between composed components. This thorough testing approach helps catch edge cases and integration issues.</p>
 - <p style="text-align: justify;"><strong>Reflect on Rust’s Idioms and Best Practices: </strong>Rust has a unique set of idioms and best practices that often differ from other languages. Embrace these idioms, such as explicit error handling with <code>Result</code> and <code>Option</code>, avoiding nulls, and preferring immutability. These idioms, combined with composition, can lead to robust and maintainable code that leverages Rust's strengths in safety and performance.</p>
-# 20.10. Further Learning with GenAI
+## 20.10. Further Learning with GenAI
 <p style="text-align: justify;">
 Assign yourself the following tasks: Input these prompts to ChatGPT and Gemini, and glean insights from their responses to enhance your understanding.
 </p>

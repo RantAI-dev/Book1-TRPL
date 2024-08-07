@@ -10,7 +10,7 @@ toc: true
 ---
 <center>
 
-## 📘 Chapter 24: Vector and Matrix
+# 📘 Chapter 24: Vector and Matrix
 
 </center>
 
@@ -23,7 +23,7 @@ In this chapter, we delve into the fundamentals of working with vectors and matr
 {{% /alert %}}
 
 
-# 24.1 Introduction to Vector and Matrices
+## 24.1 Introduction to Vector and Matrices
 <p style="text-align: justify;">
 Vectors and matrices form the cornerstone of linear algebra and are crucial in various fields including physics, engineering, statistics, and computer science. In Rust, these mathematical constructs are not only fundamental in scientific computing but also in everyday programming where multi-dimensional data structures or transformations are involved. Rust’s emphasis on safety and performance makes it an apt choice for implementing and manipulating these structures efficiently. This section aims to delve deep into the nature and utility of vectors and matrices, exploring their implementation and application within the Rust programming language.
 </p>
@@ -36,7 +36,7 @@ Vectors in Rust can be thought of as resizable arrays, but in the context of lin
 Understanding vectors and matrices in Rust not only helps in applications requiring numerical computations but also enhances the ability to manage and manipulate data in any software development scenario. For instance, graphics programming, machine learning algorithms, and even game development often require extensive use of these mathematical constructs. The following subsections will provide a closer look at what vectors and matrices are, discuss their significance in programming, and illustrate how Rust serves as a powerful tool to handle them effectively.
 </p>
 
-## 24.1.1 What is Vector and Matrices?
+### 24.1.1 What is Vector and Matrices?
 <p style="text-align: justify;">
 Vectors and matrices are sequences of numbers; vectors are one-dimensional while matrices are two-dimensional. In programming, especially in Rust, these are represented using arrays or custom data structures that facilitate mathematical operations.
 </p>
@@ -71,7 +71,7 @@ fn main() {
 This code defines a vector and a matrix in Rust. The vector is a one-dimensional array of integers, and the matrix is a two-dimensional array, represented as a vector of vectors.
 </p>
 
-## 24.1.2. The Role of Vectors and Matrices in Programming
+### 24.1.2. The Role of Vectors and Matrices in Programming
 <p style="text-align: justify;">
 Vectors and matrices are fundamental components in a wide array of programming domains, including computer graphics, data analysis, and machine learning. In computer graphics, vectors are often used to represent points or directions in space, while matrices are employed to perform complex transformations on these vectors, such as rotations, scaling, and translations. These operations are critical for rendering 3D scenes and animations, where precise manipulation of objects and camera perspectives is required. In data analysis and machine learning, matrices are used to represent datasets, with each matrix's rows and columns corresponding to data points and features, respectively. Mathematical operations on these matrices, such as matrix multiplication and inversion, are essential for various algorithms, including linear regression, principal component analysis, and neural network computations.
 </p>
@@ -88,7 +88,7 @@ The Rust community has further enhanced support for vectors and matrices through
 In summary, Rust's treatment of vectors and matrices is both powerful and efficient, making it a compelling choice for developers working in fields that require high-performance computing and safe concurrent execution. The language's strong type system, memory safety guarantees, and community-supported libraries provide a solid foundation for developing robust applications that can leverage the full potential of modern hardware architectures.
 </p>
 
-## 24.1.3 Use Cases in Rust
+### 24.1.3 Use Cases in Rust
 <p style="text-align: justify;">
 The application of vectors and matrices spans across various fields and Rust’s robust system programming capabilities make it an excellent choice for implementing complex algorithms that require the use of these structures. For example, in game development, vectors are used to manage the positions and movements of objects, while matrices are crucial for rendering 3D graphics.
 </p>
@@ -119,7 +119,7 @@ fn main() {
 This example demonstrates how vectors in Rust can be applied in a game to manage the position of an object. The simplicity and power of Rust in handling such data structures efficiently illustrate its capabilities in fields requiring complex data manipulation and real-time performance.
 </p>
 
-# 24.2 Working with Vectors
+## 24.2 Working with Vectors
 <p style="text-align: justify;">
 Vectors are essential data structures in programming, particularly in fields such as physics, engineering, and computer graphics, where they are used to represent quantities that have both magnitude and direction. In Rust, working with vectors is supported by powerful syntax and efficient computational capabilities that make operations both simple and performant. This section will delve into how to define, initialize, and manipulate vectors in Rust, covering everything from basic arithmetic operations to more complex vector manipulations like dot and cross products. We will also explore how Rust's standard library supports these operations, simplifying the implementation of mathematical and graphical algorithms.
 </p>
@@ -132,7 +132,7 @@ Vectors in Rust can be handled using the <code>Vec<T></code> type for dynamic ar
 Basic operations such as addition, subtraction, and scaling are fundamental for manipulating the data within vectors, providing the building blocks for more complex mathematical models and simulations. Advanced operations, including dot and cross products, are crucial in many applications like 3D rendering and physics simulations, where these calculations form the backbone of the functionality. Rust's approach to these operations emphasizes clarity, performance, and safety, leveraging its powerful compiler and type system to prevent bugs and optimize execution.
 </p>
 
-## 24.2.1 Defining and Initializing Vectors
+### 24.2.1 Defining and Initializing Vectors
 <p style="text-align: justify;">
 Defining and initializing vectors in Rust is intuitive and flexible, accommodating a variety of use cases from simple lists to complex data structures. A vector in Rust is defined using the <code>Vec<T></code> type, where <code>T</code> is the type of elements stored in the vector.
 </p>
@@ -157,7 +157,7 @@ fn main() {
 These examples show two common ways to define and initialize vectors in Rust: using the <code>Vec::new()</code> method and the <code>vec!</code> macro, which is particularly useful for initializing vectors with a set of initial values.
 </p>
 
-## 24.2.2 Basic Operations with Vectors
+### 24.2.2 Basic Operations with Vectors
 <p style="text-align: justify;">
 Basic operations on vectors, such as addition, subtraction, and scaling, are essential for numerical computations and simulations. Rust does not support these operations natively on the <code>Vec<T></code> type, so they must be implemented manually or by using external crates that provide more mathematical functionalities. However, Rust's powerful iterator and functional programming capabilities make it straightforward to perform these operations in a clean and efficient manner.
 </p>
@@ -185,7 +185,7 @@ fn main() {
 This example demonstrates adding two vectors, subtracting one vector from another, and scaling a vector by a scalar, showing how iterators and closures can be combined for vector operations.
 </p>
 
-## 24.2.3 Advanced Vector Operations
+### 24.2.3 Advanced Vector Operations
 <p style="text-align: justify;">
 Advanced operations like dot products and cross products are pivotal in physics and 3D graphics programming. The dot product is a scalar representation of the vector alignment, which helps in understanding how much one vector extends in the direction of another. The cross product results in a vector perpendicular to the plane formed by the first two vectors, essential for determining orientations and rotations in 3D space.
 </p>
@@ -217,7 +217,7 @@ fn main() {
 These operations illustrate how vector mathematics can be manually implemented in Rust to perform complex spatial calculations. The dot product, computed by iterating over pairs of elements from two vectors, multiplying them together, and summing the results, reveals the degree of parallelism between the vectors. In contrast, the cross product, calculated through specific element combinations, produces a new vector orthogonal to both input vectors, a crucial calculation in many geometric and physical applications.
 </p>
 
-## 24.2.4 Using Rust’s Standard Library for Vectors
+### 24.2.4 Using Rust’s Standard Library for Vectors
 <p style="text-align: justify;">
 Rust’s standard library provides a robust set of tools for working with vectors, including methods for adding, removing, and manipulating elements. Beyond these basic capabilities, the ecosystem offers crates like <code>nalgebra</code> or <code>ndarray</code> for numerical and scientific computing, which extend the native capabilities significantly.
 </p>
@@ -240,7 +240,7 @@ fn main() {
 This simple example demonstrates inserting and removing elements in a vector, showcasing the flexibility and power of Rust's vector manipulation capabilities. The <code>insert</code> method adds an element at a specified index, while the <code>remove</code> method deletes an element from the specified index. These operations illustrate the fundamental capabilities of vectors in Rust, providing a foundation for more complex manipulations. section, we've explored the capabilities of Rust's standard library for basic vector manipulation, including adding, removing, and modifying elements. We demonstrated how these operations can be performed with simple, straightforward code.
 </p>
 
-# 24.3 Working with Matrices
+## 24.3 Working with Matrices
 <p style="text-align: justify;">
 Matrices are a fundamental tool in various fields such as mathematics, engineering, physics, and computer science, particularly for solving systems of linear equations, transforming geometrical data, and performing statistical analysis. In Rust, matrices are not part of the standard library’s basic types but can be efficiently handled using arrays or third-party crates designed for scientific computing. This section will explore how matrices are defined and initialized, and delve into both basic and advanced operations that can be performed with them. By understanding these operations, developers can effectively implement complex algorithms and data processing techniques in Rust.
 </p>
@@ -253,7 +253,7 @@ Defining and manipulating matrices in Rust involves understanding the array data
 The ability to work with matrices efficiently requires a solid grasp of both the theoretical aspects of matrix operations and practical implementation strategies in Rust. Whether you're developing algorithms for image processing, optimizing engineering simulations, or implementing machine learning algorithms, mastering matrix operations in Rust will provide a strong foundation for building robust and high-performance applications.
 </p>
 
-## 24.3.1 Defining and Initializing Matrices
+### 24.3.1 Defining and Initializing Matrices
 <p style="text-align: justify;">
 Defining and initializing matrices in Rust can be approached in various ways depending on the complexity and requirements of the task. For smaller or less complex matrices, a two-dimensional array can suffice:
 </p>
@@ -278,7 +278,7 @@ let matrix = Array2::<f64>::zeros((3, 3));
 This snippet uses the <code>ndarray</code> crate to define a 3x3 matrix filled with zeros, showcasing how external libraries can simplify the initialization and handling of matrices in Rust.
 </p>
 
-## 24.3.2 Basic Matrix Operations
+### 24.3.2 Basic Matrix Operations
 <p style="text-align: justify;">
 Basic matrix operations are essential for many computational tasks. In Rust, implementing these operations manually can be verbose but educational for understanding the underlying mechanics. Here’s an example of how you can perform matrix addition and multiplication manually:
 </p>
@@ -314,7 +314,7 @@ fn main() {
 This example demonstrates how to perform matrix addition and multiplication manually, iterating through each element according to matrix arithmetic rules. For matrix addition, each corresponding element from the two matrices is summed. For matrix multiplication, the elements are multiplied according to the standard matrix multiplication algorithm, where the element in the resulting matrix is the sum of the products of the corresponding elements in the rows of the first matrix and the columns of the second matrix.
 </p>
 
-## 24.3.3 Advanced Matrix Operations
+### 24.3.3 Advanced Matrix Operations
 <p style="text-align: justify;">
 Advanced operations such as finding the determinant or the inverse of a matrix are crucial for solving equations and transforming data. These operations are fundamental in fields like linear algebra, physics, and computer graphics, where they are used to determine matrix properties and perform complex transformations. While the Rust standard library does not provide direct support for matrix operations like determinants and inverses, you can implement these manually to gain a deeper understanding of the underlying principles.
 </p>
@@ -378,12 +378,12 @@ fn main() {
 Calculating the inverse of a 3x3 matrix involves more steps, including finding the matrix of minors, the cofactor matrix, and then the adjugate matrix before dividing by the determinant. Implementing this manually is possible but quite intricate.
 </p>
 
-## 24.3.4 Using Rust’s Standard Library for Matrices
+### 24.3.4 Using Rust’s Standard Library for Matrices
 <p style="text-align: justify;">
 In summary, while Rust's standard library does not directly support advanced matrix operations, these can be implemented manually to gain a solid understanding of the mathematical principles involved. For practical applications and more complex operations, it is often more efficient to use specialized libraries like <code>nalgebra</code>, which provide optimized and reliable implementations.
 </p>
 
-# 24.4 Libraries and Crates for Vectors and Matrices
+## 24.4 Libraries and Crates for Vectors and Matrices
 <p style="text-align: justify;">
 The Rust ecosystem is rich with libraries and crates that extend the basic functionalities provided by the standard library, especially when it comes to numerical and scientific computing. Two of the most prominent crates for handling vectors and matrices in Rust are <code>nalgebra</code> and <code>ndarray</code>. These libraries offer robust, efficient, and flexible tools that are indispensable for developers working in fields such as physics simulation, computer graphics, data science, and any other domain that requires intensive numerical computation. This section will delve into the functionalities provided by these crates, their setup and usage, and a comparative analysis to help you choose the right tool for your projects.
 </p>
@@ -392,7 +392,7 @@ The Rust ecosystem is rich with libraries and crates that extend the basic funct
 Both <code>nalgebra</code> and <code>ndarray</code> are designed to cater to high-performance numerical computations but they serve slightly different purposes and excel in different scenarios. <code>nalgebra</code> is primarily aimed at real-time computer graphics and physics simulations where matrix and vector operations are crucial, whereas <code>ndarray</code> is optimized for large-scale multi-dimensional data manipulation, making it well-suited for data analysis tasks. Understanding the nuances, strengths, and limitations of each can significantly impact the efficiency and simplicity of your code.
 </p>
 
-## 24.4.1 Introduction to nalgebra and ndarray
+### 24.4.1 Introduction to nalgebra and ndarray
 <p style="text-align: justify;">
 <code>nalgebra</code> is a linear algebra library that is highly optimized for small and large matrices and offers a vast array of features that are commonly used in graphics and physics engines. It supports various types of matrices, vectors, and complex mathematical operations such as quaternion arithmetic for 3D graphics and transformations. <code>nalgebra</code> is known for its extensive support for generic programming, allowing operations to be performed on matrices and vectors of any size and type determined at runtime or compile time.
 </p>
@@ -401,7 +401,7 @@ Both <code>nalgebra</code> and <code>ndarray</code> are designed to cater to hig
 On the other hand, <code>ndarray</code> provides an n-dimensional container for general elements and is particularly tailored towards numerical and scientific computing. It mimics the functionality of Python's NumPy library with capabilities such as broadcasting, sophisticated slicing, and linear algebra operations. <code>ndarray</code> is ideal for applications that require manipulation of high-dimensional data arrays, making it a staple in the toolkit of Rust developers working on data-intensive applications.
 </p>
 
-## 24.4.2 Installing and Using nalgebra
+### 24.4.2 Installing and Using nalgebra
 <p style="text-align: justify;">
 To start using <code>nalgebra</code> in your Rust projects, you need to add it to your <code>Cargo.toml</code> file:
 </p>
@@ -493,7 +493,7 @@ In this code, we create a 3x3 matrix and then attempt to find its inverse using 
 In conclusion, <code>nalgebra</code> is a versatile and powerful library that extends Rust’s capabilities in numerical and scientific computing. By adding <code>nalgebra</code> to your project, you can leverage its extensive functionality to perform complex matrix operations, transformations, and other linear algebra tasks efficiently and effectively.
 </p>
 
-## 24.4.3 Installing and Using ndarray
+### 24.4.3 Installing and Using ndarray
 <p style="text-align: justify;">
 To use <code>ndarray</code>, include it in your <code>Cargo.toml</code> as follows:
 </p>
@@ -596,7 +596,7 @@ In this example, a linear system of equations represented by the matrix <code>a<
 In summary, <code>ndarray</code> is a versatile and powerful library for numerical computing in Rust. It provides comprehensive support for multi-dimensional arrays and a wide range of operations, from basic element-wise arithmetic to advanced linear algebra. By incorporating <code>ndarray</code> into your projects, you can perform complex data manipulations and computations efficiently and effectively.
 </p>
 
-## 24.4.4 Comparing nalgebra and ndarrey
+### 24.4.4 Comparing nalgebra and ndarrey
 <p style="text-align: justify;">
 While both <code>nalgebra</code> and <code>ndarray</code> serve high-performance numerical computations, their use cases can overlap but are distinct enough to influence the choice between them. <code>nalgebra</code> is more specialized towards applications in simulations and interactive 3D applications where matrix and quaternion operations are frequent. Its API is designed to be both powerful and intuitive for these tasks.
 </p>
@@ -609,7 +609,7 @@ Conversely, <code>ndarray</code> excels in scenarios where handling of large, mu
 Choosing between <code>nalgebra</code> and <code>ndarray</code> depends largely on the specific requirements of your project and your workflow preferences. Each has its strengths and is well-maintained, making them excellent choices for their respective domains.
 </p>
 
-# 24.5 Performance Considerations
+## 24.5 Performance Considerations
 <p style="text-align: justify;">
 When working with vectors and matrices, especially in a high-performance context such as scientific computing, data analysis, or computer graphics, understanding and optimizing the performance of these operations is crucial. The handling of linear algebra structures is not just about correctness or ease of use, but also about efficiency, as the size and complexity of data grow. This section will explore the performance implications of vector and matrix operations in Rust, offering strategies to optimize these operations, and providing guidance on how to measure and improve performance using benchmarking and profiling tools available in the Rust ecosystem.
 </p>
@@ -618,7 +618,7 @@ When working with vectors and matrices, especially in a high-performance context
 Rust's focus on zero-cost abstractions and performance lends itself well to numerically intensive applications, but it still requires careful design and implementation to achieve optimal performance. This involves a deep understanding of both Rust's own constructs and the underlying hardware. The way data is laid out in memory, the use of efficient algorithms, and leveraging parallel execution all play significant roles in the performance of numerical computations.
 </p>
 
-## 24.5.1 Performance Impact of Vector and Matrix Operations
+### 24.5.1 Performance Impact of Vector and Matrix Operations
 <p style="text-align: justify;">
 Vector and matrix operations can have significant performance impacts in software applications due to their computational intensity. Operations like matrix multiplication, vector addition, and scalar multiplication are fundamental in many algorithms but can become bottlenecks if not implemented efficiently. In Rust, the performance of these operations can be influenced by factors such as the choice of data structures, the efficiency of the algorithms, and the use of concurrency and parallelism.
 </p>
@@ -647,7 +647,7 @@ fn main() {
 This example highlights a basic operation where memory access patterns and loop unrolling could further enhance performance.
 </p>
 
-## 24.5.2 Optimizing Vector and Matrix Computations
+### 24.5.2 Optimizing Vector and Matrix Computations
 <p style="text-align: justify;">
 Optimization of vector and matrix computations often involves more than just algorithmic efficiency; it also requires an understanding of how these operations fit into the larger context of an application. Optimizing for cache utilization, reducing memory overhead, and using SIMD (Single Instruction, Multiple Data) operations can significantly impact performance. Rust’s ability to interface with low-level system resources and its support for inline assembly can be leveraged to optimize critical numerical routines.
 </p>
@@ -670,7 +670,7 @@ fn main() {
 This code uses the <code>dot</code> function for matrix multiplication, which is typically optimized using BLAS when available.
 </p>
 
-## 24.5.3 Benchmarking and Profiling Tools in Rust
+### 24.5.3 Benchmarking and Profiling Tools in Rust
 <p style="text-align: justify;">
 To systematically improve the performance of vector and matrix operations, it is essential to measure their performance accurately. Rust provides several tools for benchmarking and profiling applications, such as Criterion.rs for benchmarking and tools like perf and Valgrind for profiling on Linux.
 </p>
@@ -712,7 +712,7 @@ criterion_main!(benches);
 This setup provides a framework for measuring the performance of vector addition, helping developers identify bottlenecks and assess the impact of optimizations. Through careful measurement and iterative refinement, Rust programs handling vectors and matrices can achieve performance that rivals or exceeds that of similar programs in lower-level languages.
 </p>
 
-# 24.6 Best Practices for Vector and Matrix Manipulation
+## 24.6 Best Practices for Vector and Matrix Manipulation
 <p style="text-align: justify;">
 Vectors and matrices are central to many computational tasks, from basic data processing to complex numerical simulations. The way they are handled in code can significantly affect both performance and maintainability. This section provides a comprehensive guide on best practices for vector and matrix manipulation in Rust. It delves into designing efficient data structures, managing large datasets, and the critical aspects of debugging and testing these types of operations. These practices not only help in achieving optimal performance but also ensure that the code remains clean, understandable, and maintainable.
 </p>
@@ -721,7 +721,7 @@ Vectors and matrices are central to many computational tasks, from basic data pr
 Properly managing vectors and matrices in Rust requires an understanding of both the language’s capabilities and the underlying mathematical concepts. The performance implications of different designs and implementations can be substantial, especially when dealing with large-scale data. Moreover, the choice of data structures and algorithms has a profound impact on the ease with which code can be debugged and tested. This section will explore these aspects, providing real-world applicable advice and detailed explanations to empower developers to use Rust effectively for their numerical computation needs.
 </p>
 
-## 24.6.1 Designing Efficient Data Structures
+### 24.6.1 Designing Efficient Data Structures
 <p style="text-align: justify;">
 The foundation of effective vector and matrix manipulation lies in the design of efficient data structures. In Rust, the choice of structure can affect not only performance but also the ease of use and integration within larger systems. It is crucial to select the appropriate type of storage and access patterns that align with the operations that will be performed most frequently.
 </p>
@@ -767,7 +767,7 @@ fn main() {
 This structure uses a dynamic approach to manage capacity, which helps in reducing the number of memory allocations during push operations, a common bottleneck in dynamically sized arrays.
 </p>
 
-## 24.6.2 Handling Large Datasets and Operations
+### 24.6.2 Handling Large Datasets and Operations
 <p style="text-align: justify;">
 When dealing with large datasets or operations, efficient memory management and computational strategies become paramount. Rust's ownership and borrowing rules, combined with its support for explicit memory layout control, can be leveraged to handle large matrices and vectors effectively.
 </p>
@@ -794,7 +794,7 @@ fn main() {
 This code snippet uses <code>ndarray</code> for handling a large matrix efficiently. By manipulating the matrix in place, it avoids the overhead of additional allocations and copies.
 </p>
 
-## 24.6.3 Debugging and Testing Vector and Matrix Code
+### 24.6.3 Debugging and Testing Vector and Matrix Code
 <p style="text-align: justify;">
 Debugging and testing numerical code can be challenging due to the complexity of the data and operations involved. Effective strategies include unit testing individual components, utilizing visualizations for debugging, and integrating checks and balances within the code to ensure consistency and correctness.
 </p>
@@ -827,7 +827,7 @@ This testing code ensures that the <code>scale_matrix</code> function behaves as
 Through careful structuring, diligent testing, and thoughtful implementation, developers can harness the full potential of Rust for efficient and robust vector and matrix manipulations, making their code not only performant but also easier to maintain and debug.
 </p>
 
-# 24.7 Case Studies and Examples
+## 24.7 Case Studies and Examples
 <p style="text-align: justify;">
 This section of the chapter dives into practical case studies and examples that highlight the effective use of vectors and matrices in Rust. These examples not only demonstrate how to implement mathematical algorithms but also showcase real-world applications where performance optimizations play a crucial role. Through detailed explanations and comprehensive code examples, readers will gain insights into how these principles are applied in practical scenarios, enhancing their understanding and skills in using vectors and matrices in their projects.
 </p>
@@ -836,7 +836,7 @@ This section of the chapter dives into practical case studies and examples that 
 The aim here is to bridge theory with practice, providing readers with tangible examples that they can relate to and learn from. These case studies are selected to cover a broad spectrum of applications, from simple mathematical tasks to complex, performance-critical systems, ensuring that the learnings are well-rounded and applicable to a variety of use cases in software development.
 </p>
 
-## 24.7.1 Implementing Mathematical Algorithms with Vectors and Matrices
+### 24.7.1 Implementing Mathematical Algorithms with Vectors and Matrices
 <p style="text-align: justify;">
 Mathematical algorithms often rely heavily on vectors and matrices for data representation and operations. Rust, with its focus on performance and safety, provides a fertile ground for implementing these algorithms efficiently. Let's explore an example where we implement a basic version of the Gaussian elimination method, which is used to solve systems of linear equations.
 </p>
@@ -881,7 +881,7 @@ fn main() {
 This code snippet showcases the Gaussian elimination process where the matrix is modified in place to reach its row echelon form, which can then be used to solve linear equations. Implementing such algorithms requires careful attention to performance, especially for larger matrices, and Rust’s safety features ensure that operations such as row swapping and element access are handled correctly.
 </p>
 
-## 24.7.2 Real-World Applications and Performance Optimization
+### 24.7.2 Real-World Applications and Performance Optimization
 <p style="text-align: justify;">
 Vectors and matrices are not just theoretical constructs but have extensive applications in fields such as physics, engineering, graphics programming, and machine learning. In these fields, the performance of vector and matrix operations can be critical. Let's consider an example from computer graphics, where transformation matrices are used to manipulate the position and orientation of objects in a scene.
 </p>
@@ -914,7 +914,7 @@ This example demonstrates the use of the <code>nalgebra</code> crate for creatin
 These case studies exemplify the practicality of Rust in handling complex mathematical operations and real-world applications efficiently. Through these examples, developers can see the direct application of theoretical knowledge in real-world scenarios, providing both a deeper understanding and a toolkit for their own projects.
 </p>
 
-# 24.8. Advices
+## 24.8. Advices
 <p style="text-align: justify;">
 Rust's powerful type system and ecosystem of libraries, like <code>nalgebra</code> and <code>ndarray</code>, provide robust tools for managing these data structures efficiently. This discussion covers basic to advanced topics, including the creation, initialization, manipulation, and optimization of vectors and matrices. We also emphasize best practices for code clarity, maintainability, and performance. Below are in-depth advices to help beginners write efficient and elegant code when working with vectors and matrices in Rust.
 </p>
@@ -927,7 +927,7 @@ Rust's powerful type system and ecosystem of libraries, like <code>nalgebra</cod
 By following these guidelines, programmers can effectively utilize Rust's capabilities in vector and matrix programming.
 </p>
 
-# 24.9. Further Learning with GenAI
+## 24.9. Further Learning with GenAI
 <p style="text-align: justify;">
 Assign yourself the following tasks: Input these prompts to ChatGPT and Gemini, and glean insights from their responses to enhance your understanding.
 </p>

@@ -10,7 +10,7 @@ toc: true
 ---
 <center>
 
-## 📘 Chapter 19: Encapsulation
+# 📘 Chapter 19: Encapsulation
 
 </center>
 
@@ -23,7 +23,7 @@ Chapter 19 of "The Rust Programming Language" delves into the concept of encapsu
 {{% /alert %}}
 
 
-# 19.1. Introduction to Encapsulation
+## 19.1. Introduction to Encapsulation
 <p style="text-align: justify;">
 Encapsulation is a fundamental concept in object-oriented programming that plays a crucial role in systems programming with Rust. It involves organizing data (variables) and the functions that manipulate that data into a single cohesive unit, often within a module or struct, while controlling the visibility and accessibility of these components. This means that some parts of the data or functionality are hidden from the outside world, which helps prevent unauthorized access and modifications. By restricting access to certain components, encapsulation helps safeguard the internal state of an object and ensures that its interface remains consistent and controlled.
 </p>
@@ -32,7 +32,7 @@ Encapsulation is a fundamental concept in object-oriented programming that plays
 In Rust, encapsulation is particularly important because it contributes to the language's strict memory safety model, which is designed to prevent common programming errors such as null pointer dereferencing and buffer overflows. Unlike languages that rely on a garbage collector, Rust manages memory through a system of ownership and borrowing rules. Encapsulation complements these rules by allowing developers to hide implementation details, thereby reducing the risk of unintended interactions between different parts of a program.
 </p>
 
-## 19.1.1. What is Encapsulation?
+### 19.1.1. What is Encapsulation?
 <p style="text-align: justify;">
 Encapsulation is achieved by controlling the visibility of modules, types, functions, and fields through the use of <code>pub</code> (public) and non-public (private) access modifiers. This visibility control is an essential aspect of Rust's module system, designed to help developers manage the boundaries between different parts of a codebase and maintain clear interfaces between them.
 </p>
@@ -89,7 +89,7 @@ fn main() {
 In this example, <code>MyStruct</code> has one public field and one private field. The private field can only be accessed by methods within <code>MyStruct</code>, such as <code>show_private</code>, which safely exposes the value of the private field.
 </p>
 
-## 19.1.2. Importance in Rust
+### 19.1.2. Importance in Rust
 <p style="text-align: justify;">
 Encapsulation is crucial in Rust for several reasons. It helps in managing complexity by hiding the internal implementation details of a module or a struct and exposing a clean and clear API. This is not only good practice for large software projects but is essential for writing safe and secure code in a systems programming language like Rust. Encapsulation prevents misuse by ensuring that critical data cannot be directly accessed or modified, thus adhering to Rust's strict safety and concurrency guarantees.
 </p>
@@ -148,7 +148,7 @@ fn main() {
 In this extended example, the <code>Server</code> struct encapsulates the details of a network server, and the <code>connect</code> function provides a controlled way to interact with it, ensuring that errors are handled explicitly, showcasing Rust's capability to combine encapsulation with robust error handling for safer and more reliable code.
 </p>
 
-# 19.2. Access Control
+## 19.2. Access Control
 <p style="text-align: justify;">
 Access control in Rust is a fundamental mechanism that enables the enforcement of encapsulation, providing a structured way to manage the visibility and accessibility of various components within a program. This system dictates how functions, structs, enums, constants, variables, and even modules can be accessed from different parts of a codebase. By precisely defining these boundaries, Rust's access control mechanism helps maintain the integrity of data and behavior, ensuring that only the intended interfaces are exposed for use.
 </p>
@@ -173,7 +173,7 @@ Furthermore, Rust's access control system is integral to the language's focus on
 In addition, access control plays a significant role in the modularization and organization of Rust programs. By encapsulating implementation details within modules and exposing only the necessary public components, developers can create well-defined boundaries within their codebase. This modular approach not only makes the code easier to understand and maintain but also facilitates independent development and testing of different parts of the program. Each module can be developed, tested, and debugged in isolation, with confidence that its internal state is protected from external interference.
 </p>
 
-## 19.2.1. Using pub and priv Modifiers
+### 19.2.1. Using pub and priv Modifiers
 <p style="text-align: justify;">
 The <code>pub</code> keyword is used to make items public, allowing them to be accessible from other modules or crates. By default, all items (functions, methods, structs, enums, etc.) are private. They are only accessible within the module where they are declared. This default helps enforce encapsulation by exposing only necessary parts of the API. Here’s how you can use <code>pub</code> and <code>priv</code>:
 </p>
@@ -210,7 +210,7 @@ fn main() {
 In this code, <code>Server</code> is a public struct with a public <code>address</code> field and a private <code>port</code> field. The <code>new</code> and <code>run</code> methods are public, allowing them to be called from outside the module, whereas <code>restart</code> is private and can only be called within the <code>network</code> module.
 </p>
 
-## 19.2.2. Struct Visibility
+### 19.2.2. Struct Visibility
 <p style="text-align: justify;">
 Struct visibility in Rust controls whether a struct and its fields can be accessed outside its module. By default, struct fields are private, even if the struct itself is public. This allows the struct to expose a public API while keeping its data hidden, ensuring that internal invariants are maintained.
 </p>
@@ -239,7 +239,7 @@ fn main() {
 This Rust code defines a module <code>authentication</code> containing a public submodule <code>login</code> with a public function <code>sign_in</code>, which prints a sign-in message, and a private submodule <code>password</code> with a private function <code>validate</code> that checks if a password length is greater than 8, demonstrating public and private visibility within modules.
 </p>
 
-## 19.2.3. Controlling Access to Module Contents
+### 19.2.3. Controlling Access to Module Contents
 <p style="text-align: justify;">
 Module access control is broader and involves not just structs and functions but also enums, constants, and other modules. By structuring your code into modules with controlled visibility, you can create robust and maintainable code architectures.
 </p>
@@ -272,7 +272,7 @@ In this example, the <code>sign_in</code> function within the <code>login</code>
 These mechanisms of access control are fundamental in Rust for building safe and modular applications, allowing developers to define clear interfaces for their code while protecting against misuse.
 </p>
 
-# 19.3. Access Control and Encapsulation Patterns
+## 19.3. Access Control and Encapsulation Patterns
 <p style="text-align: justify;">
 Encapsulation in Rust extends beyond the basic concept of restricting access to data; it also encompasses controlling how data can be manipulated and ensuring its integrity over time. This approach involves carefully designing the interface through which external code interacts with the data, typically by combining private fields with public methods. By keeping fields private and providing controlled access through public methods, Rust developers can enforce invariants and manage the internal state in a way that prevents misuse and unintended modifications.
 </p>
@@ -301,7 +301,7 @@ Moreover, encapsulation in Rust is not limited to data fields but also extends t
 Encapsulation is also critical for managing mutability and immutability in Rust. By default, methods that do not require mutable access to the internal state can be designed as immutable, ensuring that they do not alter the object. This distinction is enforced by the Rust compiler, which can help prevent accidental changes to an object's state. For cases where mutation is necessary, methods can be carefully designed to require mutable access, making the need for state changes explicit and controlled. This separation between mutable and immutable methods aligns with Rust's broader focus on safety and predictability, helping developers reason about how and when an object might change.
 </p>
 
-## 19.3.1. Private Fields and Public Methods
+### 19.3.1. Private Fields and Public Methods
 <p style="text-align: justify;">
 One of the core aspects of encapsulation in object-oriented programming is the ability to hide an object's internal state and require all interaction to be performed through methods. This pattern is fully supported in Rust, even though it is not an object-oriented language in the traditional sense.
 </p>
@@ -362,7 +362,7 @@ fn main() {
 In this example, the <code>Account</code> struct encapsulates the <code>username</code> and <code>balance</code> fields, exposing them only through methods that ensure the <code>balance</code> cannot become negative.
 </p>
 
-## 19.3.2. Constructor Patterns
+### 19.3.2. Constructor Patterns
 <p style="text-align: justify;">
 The constructor pattern in Rust typically involves defining one or more associated functions that construct an instance of a struct. These are often named <code>new</code> but can have any name. The purpose of a constructor is to return a new instance of a struct, potentially after performing some validation or initialization.
 </p>
@@ -403,7 +403,7 @@ This constructor ensures that every <code>Rectangle</code> instance starts with 
 Through these patterns, Rust allows developers to build safe, reliable software by controlling access to the internal state of types and ensuring that all interactions follow the specified rules and constraints. This approach not only secures the data integrity but also enhances code maintainability and readability.
 </p>
 
-# 19.4. Encapsulation in Enums
+## 19.4. Encapsulation in Enums
 <p style="text-align: justify;">
 Encapsulation is a versatile concept that applies not only to structs but also to enums, offering a robust mechanism for managing data and behavior across different states. Enums in Rust are commonly recognized for defining types with a limited set of possible values, but their capabilities extend far beyond simple enumerations. They can encapsulate both data and functionality, providing a powerful tool for modeling complex systems while preserving the integrity of each distinct state.
 </p>
@@ -432,7 +432,7 @@ The use of enums for encapsulation also facilitates the implementation of state 
 In addition, enums in Rust are often used in conjunction with other encapsulation techniques, such as traits and associated methods, to build more sophisticated abstractions. Traits can be implemented for enums to provide additional functionality or to define shared behavior across different variants. This combination of enums and traits allows for flexible and modular design, where enums can encapsulate various forms of state and behavior, while traits enable reusable and extensible functionality.
 </p>
 
-## 19.4.1. Using Enums to Protect State
+### 19.4.1. Using Enums to Protect State
 <p style="text-align: justify;">
 Enums are particularly useful for managing state in a way that ensures only valid state transitions can occur and invalid states cannot even be represented. This pattern is commonly used in state machines, where each state has certain rules and associated data.
 </p>
@@ -498,7 +498,7 @@ fn main() {
 In this example, the <code>ConnectionState</code> enum encapsulates different states of a network connection. Methods like <code>connect</code> and <code>establish</code> manipulate the internal state safely, transitioning only between valid states and preventing any invalid state combinations.
 </p>
 
-## 19.4.2. Privacy Considerations
+### 19.4.2. Privacy Considerations
 <p style="text-align: justify;">
 While enums can encapsulate state effectively, it's also important to consider the visibility of each enum variant and associated data. Rust allows each variant of an enum to be declared as public or private, providing fine-grained control over who can see or modify the state.
 </p>
@@ -549,7 +549,7 @@ In this scenario, the <code>set_disconnected</code> method is private and cannot
 Through these methods, enums not only help in creating expressive types but also in safeguarding the system's integrity by encapsulating and protecting the state within controlled transitions and visibility settings. This makes enums a powerful tool in the Rust developer’s toolkit for building robust and secure applications.
 </p>
 
-# 19.5. Methods and Encapsulation
+## 19.5. Methods and Encapsulation
 <p style="text-align: justify;">
 Encapsulation is a cornerstone of object-oriented programming, designed to safeguard the integrity of data structures and obscure their internal workings from external access. In Rust, this principle is rigorously applied to ensure that data structures remain in valid states and that their implementation details are shielded from unintended interactions. Methods in Rust are central to this encapsulation, providing a means to bundle behavior with the data they operate on, thereby reinforcing the integrity and consistency of the program's state.
 </p>
@@ -578,7 +578,7 @@ In addition to defining behavior, methods in Rust can also manage access to the 
 Furthermore, methods play a role in encapsulating complex interactions and workflows. They can orchestrate multiple operations on the data, manage state transitions, and coordinate interactions between different components. This encapsulation of functionality ensures that the data structure's behavior is managed in a cohesive and predictable manner, making it easier to reason about and maintain the code.
 </p>
 
-## 19.5.1. Getter and Setter Methods
+### 19.5.1. Getter and Setter Methods
 <p style="text-align: justify;">
 Getters and setters are conventional methods that provide controlled access to the fields of a struct. In Rust, where fields are private by default, getters and setters are essential for accessing and modifying these fields safely.
 </p>
@@ -646,7 +646,7 @@ fn main() {
 In this example, the <code>Account</code> struct has a private field <code>balance</code> that is accessed and modified through public methods. This ensures that the balance cannot be directly set to a negative number, which could violate business rules.
 </p>
 
-## 19.5.2. Encapsulating Logic in Methods
+### 19.5.2. Encapsulating Logic in Methods
 <p style="text-align: justify;">
 Encapsulating logic within methods not only hides complexity but also makes the code more maintainable and secure. Methods allow us to encapsulate and control how internal states are modified and interacted with, thus adhering to the principles of encapsulation.
 </p>
@@ -698,7 +698,7 @@ In this case, the <code>Temperature</code> struct encapsulates the conversion be
 By encapsulating logic in methods, Rust allows developers to manage complexity safely and effectively, providing clear interfaces for interaction while maintaining the integrity and validity of the internal state of objects.
 </p>
 
-# 19.6. Traits and Interface Encapsulation
+## 19.6. Traits and Interface Encapsulation
 <p style="text-align: justify;">
 Traits are a sophisticated feature designed to define and enforce interfaces in a flexible and abstract manner, playing a critical role in encapsulating shared behavior while managing data privacy. Traits provide a mechanism for specifying a common set of methods and behaviors that different types can implement, facilitating code reuse and polymorphism. By leveraging traits, developers can create abstract interfaces that define how various types should interact with each other, all while maintaining control over how data is accessed and manipulated.
 </p>
@@ -723,7 +723,7 @@ Traits also support the implementation of default methods, which provide a way t
 Moreover, traits can be used to define complex interactions between types through trait bounds and associated types. Trait bounds specify that a type must implement a particular trait in order to be used with a generic function or struct, ensuring that the type provides the required methods and behavior. Associated types, on the other hand, allow traits to define placeholders for types that can be specified by the implementing type. This mechanism provides a way to work with types in a more abstract and flexible manner, further encapsulating the details of type interactions.
 </p>
 
-## 19.6.1. Defining Public Interfaces with Traits
+### 19.6.1. Defining Public Interfaces with Traits
 <p style="text-align: justify;">
 Traits in Rust serve as a means to define public interfaces. By specifying a set of methods that a type must implement, traits allow different types to share the same interface. This is particularly useful for encapsulating and exposing only the necessary functionalities of a type, ensuring that the internal implementation details remain hidden.
 </p>
@@ -775,7 +775,7 @@ fn main() {
 In this code, the <code>Drawable</code> trait defines a public interface for drawing objects. Both <code>Circle</code> and <code>Square</code> implement this trait, enabling them to be used interchangeably in the <code>render_scene</code> function. This abstraction allows for flexibility and decoupling of the specifics of each drawable object from the rendering logic.
 </p>
 
-## 19.6.2. Trait Objects and Data Privacy
+### 19.6.2. Trait Objects and Data Privacy
 <p style="text-align: justify;">
 Trait objects in Rust enable runtime polymorphism, which is crucial for cases where behavior needs to be abstracted across different types. A trait object can point to any instance of a type that implements the trait, encapsulating the instance behind a trait interface. This mechanism ensures that only the methods defined in the trait are accessible, thereby maintaining data privacy.
 </p>
@@ -824,12 +824,12 @@ In this example, the <code>Encrypt</code> trait defines an <code>encrypt</code> 
 By combining traits and trait objects, Rust provides a robust mechanism to encapsulate functionality and protect sensitive data, adhering strictly to the principles of encapsulation. This approach not only secures the application but also enhances its modularity and maintainability.
 </p>
 
-# 19.7. Best Practices
+## 19.7. Best Practices
 <p style="text-align: justify;">
 The encapsulation principle is central not only to the design of robust systems but also in ensuring that libraries are easy to use, understand, and maintain. In this section, we delve into the best practices of applying encapsulation in library design and discuss common pitfalls in Rust programming, offering guidance on how to avoid them.
 </p>
 
-## 19.7.1. Encapsulation in Library Design
+### 19.7.1. Encapsulation in Library Design
 <p style="text-align: justify;">
 Encapsulation in library design is about exposing just enough for the library users to perform necessary tasks while hiding the implementation details. This approach reduces the library's complexity for the end user, increases robustness, and makes the library easier to maintain.
 </p>
@@ -874,7 +874,7 @@ fn main() {
 In this example, the <code>Rectangle</code> struct's fields are private, which means they can't be accessed or modified directly from outside the <code>geometry</code> module. This design choice encapsulates and protects the internal state of the <code>Rectangle</code>, ensuring that all instances remain valid and consistent.
 </p>
 
-## 19.7.2. Common Pitfalls and How to Avoid Them
+### 19.7.2. Common Pitfalls and How to Avoid Them
 <p style="text-align: justify;">
 One common pitfall in Rust, especially for those coming from other programming languages, is misunderstanding Rust’s ownership and borrowing rules, which can lead to issues like trying to modify immutable data or using values after they've moved.
 </p>
@@ -916,7 +916,7 @@ The potential issue here is not properly using the <code>&mut self</code> in the
 By emphasizing clear interfaces, minimizing exposed data, and leveraging Rust's strong type and ownership systems, library developers can create maintainable, efficient, and robust libraries. Avoiding common pitfalls requires a solid understanding of Rust's core principles, particularly ownership, scope, and borrowing. Understanding these will allow developers to leverage Rust’s powerful features to build safe and efficient applications.
 </p>
 
-# 19.8. Advices
+## 19.8. Advices
 <p style="text-align: justify;">
 Encapsulation is a powerful principle that, when effectively applied in Rust, can greatly enhance the safety, clarity, and maintainability of your code. By following these advices derived from practices in C++, you can leverage Rust’s features to manage complexity, safeguard data integrity, and ensure that your code remains robust and adaptable.
 </p>
@@ -935,7 +935,7 @@ Encapsulation is a powerful principle that, when effectively applied in Rust, ca
 Embrace Rust’s module system, traits, and methods to encapsulate data and behavior thoughtfully, and you’ll build systems that are both secure and resilient.
 </p>
 
-# 19.20. Further Learning with GenAI
+## 19.20. Further Learning with GenAI
 <p style="text-align: justify;">
 Assign yourself the following tasks: Input these prompts to ChatGPT and Gemini, and glean insights from their responses to enhance your understanding.
 </p>

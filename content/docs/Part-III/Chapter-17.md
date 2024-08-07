@@ -10,7 +10,7 @@ toc: true
 ---
 <center>
 
-## 📘 Chapter 17: Structs
+# 📘 Chapter 17: Structs
 
 </center>
 
@@ -23,7 +23,7 @@ In this chapter, we explored the essential role of structs in Rust, highlighting
 {{% /alert %}}
 
 
-# 17.1. Named-Field Structs
+## 17.1. Named-Field Structs
 <p style="text-align: justify;">
 In Rust, structures—or simply "structs"—are fundamental building blocks, akin to C and C++ structs, Python classes, or objects in JavaScript. They are tools for bundling multiple values of potentially different types into a cohesive unit, enabling you to manage related data together. Within a struct, you can access and manipulate individual components and define methods to operate on its data.
 </p>
@@ -119,7 +119,7 @@ Rust structs can also be used to create types with behavior through methods, fur
 Overall, named-field structs in Rust offer a powerful way to structure your data with clarity and precision, ensuring that each component is well-defined and correctly managed throughout the life of your program.
 </p>
 
-# 17.2. Tuple-Like Structs
+## 17.2. Tuple-Like Structs
 <p style="text-align: justify;">
 Diving into the realm of Rust's struct types, we encounter the tuple-like structs, which as the name suggests, mirror tuples. These structs provide a streamlined way to bundle together a set of values without assigning a specific name to each element.
 </p>
@@ -224,7 +224,7 @@ This code succinctly demonstrates how tuple-like structs can be used to encapsul
 Tuple-like structs strike a balance between simplicity and functionality, offering a compact, type-safe way to work with related data values. They are particularly useful when the emphasis is on the type itself rather than the names of its components, providing both legibility and a neat structure for managing data effectively in your Rust applications.
 </p>
 
-# 17.3. Unit-Like Structs
+## 17.3. Unit-Like Structs
 <p style="text-align: justify;">
 In the world of Rust, where every type and structure has a purpose, even the simplest forms—those without any fields—are no exception. Known as unit-like structs, these entities are the minimalists among data structures, defined entirely without elements:
 </p>
@@ -303,7 +303,7 @@ Here, <code>SerializableToken</code> serves as a proof or marker that some funct
 In summary, while unit-like structs don't hold any data, they play a critical role in scenarios where the existence of a type itself carries meaning or when compliance to certain behaviors is required without the need for associated state.
 </p>
 
-# 17.4. Generic Structs
+## 17.4. Generic Structs
 <p style="text-align: justify;">
 Expanding on our exploration of Rust's structs, another powerful feature that significantly enhances the language's capability for abstraction and code reuse is generic structs. Generics allow you to define structures that can operate on a variety of data types while maintaining type safety.
 </p>
@@ -395,7 +395,7 @@ The use of generic structs is crucial for building reusable components in Rust. 
 Through generics, Rust achieves a balance between powerful type safety features and the flexibility necessary for effective abstraction and reuse in software development.
 </p>
 
-# 17.5. Struct Ownership and Borrowing
+## 17.5. Struct Ownership and Borrowing
 <p style="text-align: justify;">
 In Rust, the concepts of ownership and borrowing are foundational to the language's approach to memory safety and concurrency. These concepts are crucial for developers to grasp, especially when working with structs, which are custom data types that group together related data. Ownership determines who owns a piece of data, while borrowing allows temporary access to data without taking ownership. This distinction is critical for preventing issues like data races and dangling pointers, which are common problems in other programming languages. When a struct is created, its fields may contain values that have their own ownership rules. Understanding how these rules interact within the context of structs is vital for ensuring that data is accessed safely and efficiently.
 </p>
@@ -408,7 +408,7 @@ For instance, when a struct owns a piece of data, it is responsible for cleaning
 In practice, these principles mean that when designing structs and functions in Rust, developers must carefully consider how data flows through the program. They need to think about whether data should be moved, borrowed, or cloned, depending on the specific use case. For example, if a function needs to modify a struct's data, it will require a mutable reference to that data, ensuring exclusive access during the modification. Conversely, if multiple parts of a program only need to read the data, multiple immutable references can coexist, enabling safe concurrent access. By adhering to Rust's ownership and borrowing rules, developers can write code that is not only safe and efficient but also clear in terms of how data is managed and shared throughout the program.
 </p>
 
-## 17.5.1. Ownership with Structs
+### 17.5.1. Ownership with Structs
 <p style="text-align: justify;">
 Ownership in Rust is a powerful concept that prevents data races at compile time. When a struct is created, it owns all its fields unless those fields explicitly use types like <code>Box</code>, <code>Rc</code>, or <code>Arc</code>, which internally manage ownership in more complex ways. This ownership is exclusive—meaning that when a struct instance is passed to a function, it is moved unless the type implements the <code>Copy</code> trait. Here’s an example:
 </p>
@@ -439,7 +439,7 @@ fn main() {
 In this example, <code>my_book</code> is moved into the <code>display_book</code> function. After the move, <code>my_book</code> is no longer usable in the <code>main</code> function because its ownership has been transferred to <code>display_book</code>.
 </p>
 
-## 17.5.2. Borrowing with Structs
+### 17.5.2. Borrowing with Structs
 <p style="text-align: justify;">
 Borrowing allows you to access data without taking ownership of it. This is crucial for allowing multiple parts of your code to read the data, or for a single part to modify it, without relinquishing total control. Rust has two types of borrows: immutable and mutable. Immutable borrows allow multiple readers, but no modification, while mutable borrows allow modification, but only one at a time.
 </p>
@@ -507,7 +507,7 @@ These ownership and borrowing mechanisms are not just theoretical—they have pr
 In summary, understanding and applying the principles of ownership and borrowing to structs in Rust not only helps in managing data safely but also optimizes resource usage and enhances program reliability, particularly in multi-threaded environments.
 </p>
 
-# 17.6. Trait Implementation for Structs
+## 17.6. Trait Implementation for Structs
 <p style="text-align: justify;">
 A fundamental feature of Rust’s type system is its support for traits, which allow for the definition of shared behavior across different types. Structs can implement traits, thereby extending their functionality and enabling code reuse. This section delves into the specifics of implementing traits for structs, highlighting both derived traits and custom implementations.
 </p>
@@ -609,7 +609,7 @@ Implementing traits for structs not only enhances the functionality of your type
 In summary, by understanding and utilizing trait implementations, you can harness the full potential of structs in Rust, making your code more modular, maintainable, and expressive.
 </p>
 
-# 17.7. Advices
+## 17.7. Advices
 <p style="text-align: justify;">
 Structs are essential building blocks in Rust, enabling developers to group related data under a single type. There are three main types of structs: named-field, tuple-like, and unit-like, each suited for different purposes and use cases. Named-field structs provide clear and explicit field names, which enhance code readability and maintainability, making them ideal for complex data structures. Tuple-like structs, on the other hand, offer a simpler, positional approach that is useful when the order of data elements is more important than their names. Unit-like structs, although they don't contain data, are valuable for type-centric operations and signaling unique types. Understanding and effectively utilizing these different types of structs is crucial for writing robust and idiomatic Rust code. Here are some tips to help you use structs more effectively.
 </p>
@@ -628,7 +628,7 @@ Structs are essential building blocks in Rust, enabling developers to group rela
 These practices help Rust programmers create safe, efficient, and maintainable data structures, laying a solid foundation for building complex systems.
 </p>
 
-# 17.8. Further Learning with GenAI
+## 17.8. Further Learning with GenAI
 <p style="text-align: justify;">
 Assign yourself the following tasks: Input these prompts to ChatGPT and Gemini, and glean insights from their responses to enhance your understanding.
 </p>

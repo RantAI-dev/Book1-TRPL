@@ -10,7 +10,7 @@ toc: true
 ---
 <center>
 
-## 📘 Chapter 13: Select Operations
+# 📘 Chapter 13: Select Operations
 
 </center>
 
@@ -23,7 +23,7 @@ In this chapter, we explore Rust's select operations for managing asynchronous t
 {{% /alert %}}
 
 
-# 13.1. Select Operation
+## 13.1. Select Operation
 <p style="text-align: justify;">
 This section delves into the <code>select!</code> macro in Rust, a powerful tool for handling multiple asynchronous operations concurrently. The <code>select!</code> macro, available through the <code>tokio</code> and <code>async-std</code> libraries, allows you to wait for multiple futures simultaneously, executing the code associated with the first future that completes. Unlike some other languages' concurrency models, Rust's <code>select!</code> macro provides a non-blocking way to manage asynchronous tasks, reinforcing its focus on efficiency and responsiveness. These operations, while varied in their application, are unified by their ability to handle complex asynchronous workflows seamlessly.
 </p>
@@ -74,7 +74,7 @@ In this example, we set up a channel to send and receive messages asynchronously
 The <code>select!</code> macro provides a straightforward way to handle multiple asynchronous operations in Rust. By leveraging this macro, you can write efficient, non-blocking code that remains readable and maintainable, ensuring that your applications are both responsive and robust.
 </p>
 
-# 13.2. Tokio!
+## 13.2. Tokio!
 <p style="text-align: justify;">
 This section delves into Tokio, a premier asynchronous runtime in Rust that is pivotal for developing high-performance and responsive applications. Tokio stands out due to its robust feature set designed to handle the complexities of asynchronous programming with elegance and efficiency. At its core, Tokio offers a sophisticated system for managing asynchronous tasks, which allows developers to write non-blocking code that can handle numerous operations concurrently without the pitfalls of traditional multi-threading. This is crucial for building scalable applications that need to maintain high performance even under heavy loads.
 </p>
@@ -95,7 +95,7 @@ What sets Tokio apart from other concurrency models is its focus on performance 
 Overall, Tokio's comprehensive set of tools and its emphasis on performance and flexibility make it an essential component for any Rust developer looking to harness the power of asynchronous programming. Its ability to manage complex asynchronous workflows seamlessly allows developers to create responsive, high-performance applications that can handle a wide range of tasks efficiently.
 </p>
 
-## 13.2.1. Task Spawning
+### 13.2.1. Task Spawning
 <p style="text-align: justify;">
 Tokio allows you to spawn asynchronous tasks using the <code>tokio::spawn</code> function. This function runs a future to completion on the Tokio runtime, ensuring that tasks are managed efficiently.
 </p>
@@ -119,7 +119,7 @@ async fn main() {
 In this example, an asynchronous task is spawned that prints messages before and after performing operations. The <code>#[tokio::main]</code> attribute sets up the Tokio runtime, allowing the task to run concurrently with the main task.
 </p>
 
-## 13.2.2. Asynchronous I/O
+### 13.2.2. Asynchronous I/O
 <p style="text-align: justify;">
 Tokio provides non-blocking I/O operations, making it ideal for network programming and other I/O-bound tasks. For instance, <code>tokio::net::TcpStream</code> can be used for asynchronous TCP communication.
 </p>
@@ -142,7 +142,7 @@ async fn main() -> io::Result<()> {
 In this example, a TCP connection is established, a message is sent, and the response is read asynchronously. This non-blocking approach ensures that the application remains responsive while waiting for I/O operations to complete.
 </p>
 
-## 13.2.3. Timers
+### 13.2.3. Timers
 <p style="text-align: justify;">
 Tokio includes a set of utilities for working with timers, such as setting timeouts and intervals. This is crucial for tasks that require delays or need to perform actions at regular intervals.
 </p>
@@ -161,7 +161,7 @@ async fn main() {
 In this example, the <code>sleep</code> function is used to pause execution for a specified duration. This allows for precise control over timing in asynchronous workflows, ensuring that tasks are executed at the right moments.
 </p>
 
-# 13.3. Async-std
+## 13.3. Async-std
 <p style="text-align: justify;">
 This section explores Async-std, a prominent asynchronous runtime in Rust that is designed to make the transition from synchronous to asynchronous programming as seamless and intuitive as possible. Async-std is particularly notable for its commitment to mirroring the API of Rust’s standard library, which significantly eases the learning curve for developers who are familiar with synchronous programming patterns but are new to asynchronous concepts. By aligning closely with the standard library’s API, Async-std allows developers to leverage familiar interfaces and idioms while adopting asynchronous programming techniques.
 </p>
@@ -182,7 +182,7 @@ In addition to I/O operations, Async-std offers robust support for timers, which
 Overall, Async-std’s emphasis on simplicity and familiarity, combined with its comprehensive set of asynchronous tools, makes it a valuable choice for Rust developers looking to integrate asynchronous programming into their projects. Its alignment with the standard library’s API and its user-friendly approach to non-blocking code facilitate a smooth transition to asynchronous programming, while its support for I/O and timer management ensures that it can handle a wide range of asynchronous tasks effectively.
 </p>
 
-## 13.3.1. Task Spawning
+### 13.3.1. Task Spawning
 <p style="text-align: justify;">
 Async-std allows you to spawn asynchronous tasks using the <code>task::spawn</code> function. This function runs a future to completion, ensuring efficient task management.
 </p>
@@ -207,7 +207,7 @@ fn main() {
 In this example, an asynchronous task is spawned that prints messages before and after performing operations. The <code>task::block_on</code> function sets up the Async-std runtime, allowing the task to run concurrently with the main task.
 </p>
 
-## 13.3.2. Asynchronous I/O
+### 13.3.2. Asynchronous I/O
 <p style="text-align: justify;">
 Async-std provides non-blocking I/O operations, making it ideal for network programming and other I/O-bound tasks. For instance, <code>async_std::net::TcpStream</code> can be used for asynchronous TCP communication.
 </p>
@@ -231,7 +231,7 @@ fn main() -> async_std::io::Result<()> {
 In this example, a TCP connection is established, a message is sent, and the response is read asynchronously. This non-blocking approach ensures that the application remains responsive while waiting for I/O operations to complete.
 </p>
 
-## 13.3.3. Timers
+### 13.3.3. Timers
 <p style="text-align: justify;">
 Async-std includes utilities for working with timers, such as setting timeouts and intervals. This is crucial for tasks that require delays or need to perform actions at regular intervals.
 </p>
@@ -252,7 +252,7 @@ fn main() {
 In this example, the <code>task::sleep</code> function is used to pause execution for a specified duration. This allows for precise control over timing in asynchronous workflows, ensuring that tasks are executed at the right moments.
 </p>
 
-# 13.4. Miscellaneous Operators
+## 13.4. Miscellaneous Operators
 <p style="text-align: justify;">
 This section delves into Rust’s various operators, which play crucial roles in controlling the flow and logic of programs. We explore logical operators, including <code>&&</code> (logical AND), <code>||</code> (logical OR), and <code>!</code> (logical NOT), which are fundamental for performing boolean operations and making decisions based on multiple conditions. These operators allow for clear and concise boolean logic, enabling developers to write conditions that determine the flow of execution in a straightforward manner.
 </p>
@@ -273,7 +273,7 @@ Rust deliberately omits increment (<code>++</code>) and decrement (<code>--</cod
 Together, these operators—logical, bitwise, and conditional—are grouped because they serve distinct yet fundamental roles in programming. Logical operators handle boolean logic, bitwise operators manage binary data, and conditional expressions direct the flow of execution. Despite their varied applications, they all contribute to Rust’s overarching goals of safety, clarity, and explicitness in programming.
 </p>
 
-## 13.4.1. Logical Operators
+### 13.4.1. Logical Operators
 <p style="text-align: justify;">
 The logical operators <code>&&</code> (and), <code>||</code> (or), and <code>!</code> (not) in Rust operate on boolean values and return a boolean result. Unlike C++, Rust does not automatically convert arithmetic or pointer types to <code>bool</code>; all operands must explicitly be of the <code>bool</code>type. The <code>&&</code> and <code>||</code> operators exhibit short-circuiting behavior, meaning they evaluate the second operand only if necessary, allowing control over the evaluation order. For instance:
 </p>
@@ -287,7 +287,7 @@ while p.is_some() && !whitespace(p.unwrap()) {
 In this example, <code>p</code> is an <code>Option</code> type, and <code>unwrap</code> is called only if <code>p</code> is <code>Some</code>. This ensures safe dereferencing, avoiding potential runtime errors associated with null pointers.
 </p>
 
-## 13.4.2. Bitwise Logical Operators
+### 13.4.2. Bitwise Logical Operators
 <p style="text-align: justify;">
 The bitwise operators in Rust, including <code>&</code> (and), <code>|</code> (or), <code>^</code> (exclusive or, xor), <code>!</code> (complement), <code>>></code> (right shift), and <code><<</code> (left shift), operate on integral types such as <code>u8</code>, <code>i8</code>, <code>u16</code>, <code>i16</code>, <code>u32</code>, <code>i32</code>, <code>u64</code>, <code>i64</code>, <code>usize</code>, and <code>isize</code>. These operators allow direct manipulation of the bits within these types. Enum variants in Rust cannot be implicitly converted to integers but can be explicitly cast if needed.
 </p>
@@ -378,7 +378,7 @@ In Rust, <code>!</code> is only defined for boolean types, not for integers. Thi
 When you need to perform bitwise operations, remember that they are powerful tools best used with care. They can extract, set, and manipulate individual bits or groups of bits in a way that higher-level abstractions cannot match. However, for more general set operations, leveraging Rust's standard collections or external crates will often result in more readable and maintainable code.
 </p>
 
-## 13.4.3. Conditional Expressions
+### 13.4.3. Conditional Expressions
 <p style="text-align: justify;">
 In Rust, some <code>if</code> statements can be succinctly replaced by conditional expressions. For example:
 </p>
@@ -401,7 +401,7 @@ max = if a <= b { b } else { a };
 While parentheses around the condition are optional, using them can enhance readability. Conditional expressions are valuable because they can be used within constant expressions. In Rust, the expressions in a conditional statement must be of the same type, or there must be a common type to which they can both be implicitly converted.
 </p>
 
-## 13.4.4. Increment and Decrement
+### 13.4.4. Increment and Decrement
 <p style="text-align: justify;">
 In Rust, there are no direct equivalents to the <code>++</code> and <code>--</code> operators used for incrementing and decrementing. Instead, these operations are expressed using addition and subtraction combined with assignment. For instance, <code>x += 1</code> is used to increment a variable, which translates to <code>x = x + 1</code>. Similarly, <code>x -= 1</code> is used for decrementing, which translates to <code>x = x - 1</code>. This approach ensures that the expression evaluating the variable occurs only once, avoiding any side effects.
 </p>
@@ -465,7 +465,7 @@ for (i, &value) in q.iter().enumerate() {
 This method is both efficient and readable, making use of Rust's powerful iterator system. It ensures that the code is safe and easy to understand, maintaining the reliability and clarity that Rust strives for in all aspects of its design.
 </p>
 
-# 13.5. Advices
+## 13.5. Advices
 <p style="text-align: justify;">
 As you delve into mastering Rust's select operations, it's essential to approach this journey with patience and determination. At first glance, the <code>select!</code> macro from the <code>tokio</code> or <code>async-std</code> libraries might seem complex and challenging. However, with consistent practice and a structured approach, you will find that these tools become more intuitive and their interactions clearer.
 </p>
@@ -490,7 +490,7 @@ Practice implementing Rust programs that heavily utilize the <code>select!</code
 Embrace the learning process with curiosity and perseverance. By systematically exploring and practicing with Rust's select operations, you will build a strong foundation in asynchronous programming, positioning yourself to create efficient, reliable, and maintainable Rust applications.
 </p>
 
-# 13.6. Further Learning with GenAI
+## 13.6. Further Learning with GenAI
 <p style="text-align: justify;">
 Assign yourself the following tasks: Input these prompts to ChatGPT and Gemini, and glean insights from their responses to enhance your understanding.
 </p>

@@ -10,7 +10,7 @@ toc: true
 ---
 <center>
 
-## 📘 Chapter 16: Source Files, Modules and Program
+# 📘 Chapter 16: Source Files, Modules and Program
 
 </center>
 
@@ -23,7 +23,7 @@ Chapter 16 of TRPL delves into the intricacies of source files, modules, and pro
 {{% /alert %}}
 
 
-# 16.1. Overview of Rust Module
+## 16.1. Overview of Rust Module
 <p style="text-align: justify;">
 Rust's module system is a powerful feature that helps organize code, promote reusability, and manage scope. It allows developers to structure their programs into smaller, more manageable pieces, each encapsulated within its own namespace. This modular approach not only aids in reducing complexity but also enhances readability, maintainability, and testability of the codebase. Here's an in-depth overview of the Rust module system, along with examples to illustrate its usage.
 </p>
@@ -148,7 +148,7 @@ Why module is important concept in Rust?
 The Rust module system is a foundational aspect of the language, providing robust tools for organizing, encapsulating, and managing code. By leveraging modules, developers can build scalable, maintainable, and reusable codebases that stand the test of time. Understanding and effectively using the module system is essential for any Rust programmer aiming to write clean and efficient code.
 </p>
 
-# 16.2. Source Files and Crates
+## 16.2. Source Files and Crates
 <p style="text-align: justify;">
 Rust’s ecosystem is built around the concept of crates and modules, which provide a powerful way to manage and organize code. This section will delve into the definitions and purposes of source files, the creation and usage of crates, the distinction between binary and library crates, and the role of the <code>Cargo.toml</code> file in Rust projects.
 </p>
@@ -287,7 +287,7 @@ Cargo uses the information in <code>Cargo.toml</code> to download dependencies, 
 Understanding the structure and purpose of source files and crates is fundamental to working effectively in Rust. Source files provide a way to organize code within a crate, while crates themselves are the units of compilation and distribution. Binary crates produce executables, while library crates provide reusable code for other projects. The <code>Cargo.toml</code> file plays a crucial role in managing project configuration and dependencies. Mastering these concepts allows Rust developers to create modular, maintainable, and scalable applications.
 </p>
 
-# 16.3. Paths in Module
+## 16.3. Paths in Module
 <p style="text-align: justify;">
 In Rust, paths are used to refer to items within the module tree, such as functions, structs, constants, and other modules. Understanding how to navigate these paths is crucial for organizing and accessing code effectively. There are different types of paths to refer to items: absolute paths, relative paths, and special paths like <code>super</code> and <code>self</code>. This section provides an in-depth explanation of these paths with examples.
 </p>
@@ -429,7 +429,7 @@ In this example, <code>self::start</code> uses the <code>self</code> keyword to 
 Paths in Rust, including absolute paths, relative paths, and the special <code>super</code> and <code>self</code> paths, provide robust mechanisms for navigating and organizing the module tree. Absolute paths offer clarity by starting from the crate root, while relative paths provide brevity within nested modules. The <code>super</code> and <code>self</code> keywords enhance modular code interaction by allowing references to parent and current modules. Mastering these path types is essential for efficient and maintainable Rust code organization.
 </p>
 
-# 16.4. Re-export
+## 16.4. Re-export
 <p style="text-align: justify;">
 Re-exports are a powerful feature in Rust that allow a module to re-expose items from its submodules or from external crates, making them accessible from a higher-level module. This can simplify the public interface of a library or application, enabling users to access important items more conveniently. In this section, we'll explore the purpose and benefits of re-exports, and demonstrate their syntax and usage with <code>pub use</code> through detailed examples.
 </p>
@@ -503,7 +503,7 @@ fn main() {
 In this example, the <code>lib.rs</code> file of our crate re-exports the entire <code>serde</code> crate along with specific items (<code>Serialize</code>, <code>Deserialize</code>), and the <code>main.rs</code> file in another crate imports <code>my_crate</code> to use the re-exported items directly. This setup allows end-users to utilize <code>Serialize</code> and <code>Deserialize</code> functionalities without needing to explicitly depend on <code>serde</code>, simplifying the dependency management and making the API more user-friendly.
 </p>
 
-# 16.5. Nested Modules
+## 16.5. Nested Modules
 <p style="text-align: justify;">
 Rust's module system allows for the creation of nested modules, which enable better organization and structuring of code. Nested modules can encapsulate functionality, provide clear namespaces, and help manage the visibility of items. This section explores how to create nested modules, the visibility rules that apply to them, and how to access items within nested modules.
 </p>
@@ -618,7 +618,7 @@ fn main() {
 In this example, the <code>restart</code> function in the <code>server</code> module uses a relative path with <code>super::client::disconnect</code> to call a function from its sibling module <code>client</code>. It also uses <code>self::start</code> to call its own module's function. The <code>main</code> function demonstrates accessing the <code>start</code>, <code>restart</code>, and <code>connect</code> functions using absolute paths. The use of <code>super</code> and <code>self</code> helps to navigate the module hierarchy effectively and maintain clean and modular code.
 </p>
 
-# 16.6. Export and Import Modules
+## 16.6. Export and Import Modules
 <p style="text-align: justify;">
 In Rust, managing code through modules involves importing and exporting items to structure and access functionality across different parts of your project. This process facilitates modular design, code reusability, and a clean separation of concerns.
 </p>
@@ -676,7 +676,7 @@ pub use internal::public_function; // Re-exporting the public function
 In this example, the <code>internal</code> module defines a public function <code>public_function</code> and a private function <code>private_function</code>. The <code>pub use internal::public_function</code> statement re-exports <code>public_function</code> from the <code>internal</code> module, making it available directly from the <code>lib.rs</code> module. Users of the crate can call <code>public_function</code> without knowing about the <code>internal</code> module, while <code>private_function</code> remains inaccessible.
 </p>
 
-# 16.7. Module Privacy
+## 16.7. Module Privacy
 <p style="text-align: justify;">
 Rust’s privacy system is integral to its module system, dictating which items are visible across different modules. By default, items are private to their module, meaning they are not accessible from outside unless explicitly made public. This encapsulation promotes a clear separation between the internal workings of a module and its external interface.
 </p>
@@ -740,7 +740,7 @@ Here, <code>utils</code> module defines both a public function <code>exposed_fun
 In summary, Rust’s module system, combined with its privacy rules, allows for precise control over code visibility and access. By understanding how to import and export modules and manage visibility, programmers can create well-structured, modular, and maintainable code.
 </p>
 
-# 16.8. External Crates.io
+## 16.8. External Crates.io
 <p style="text-align: justify;">
 External crates play a crucial role in the Rust ecosystem, providing a way to leverage libraries and tools created by the community or third parties. These crates allow developers to enhance their projects with functionality that has already been developed, tested, and maintained by others, thereby improving code quality and accelerating development.
 </p>
@@ -807,7 +807,7 @@ By utilizing external crates, developers can take advantage of pre-built solutio
 When selecting and using external crates, it's crucial to consider factors such as the crate's popularity, recent updates, and active maintenance to ensure reliability and compatibility with your project. Start by checking the crate’s download statistics and user reviews on crates.io to gauge its adoption and community trust. Evaluate the documentation quality and the crate's adherence to best practices, as well-maintained documentation can significantly ease integration. Ensure compatibility with your Rust version and other dependencies by reviewing the crate’s version requirements and any potential conflicts. Additionally, assess the crate's license to ensure it aligns with your project's licensing requirements. Regularly update your dependencies to benefit from the latest features and security patches while testing changes to prevent introducing new issues. By carefully selecting and managing external crates, you can leverage proven solutions effectively while maintaining the stability and security of your Rust project.
 </p>
 
-# 16.9. Best Practices
+## 16.9. Best Practices
 <p style="text-align: justify;">
 Managing modules in large Rust projects involves adhering to best practices for organization, naming conventions, and documentation. These practices help maintain code clarity and ease of maintenance as the project scales.
 </p>
@@ -890,7 +890,7 @@ In this refactored example, the <code>utils</code> module is created in <code>sr
 In summary, managing modules in large Rust projects involves careful organization, adherence to naming conventions, and proper documentation. By following these practices and examples, you can ensure that your project remains maintainable, understandable, and scalable.
 </p>
 
-# 16.10. Advices
+## 16.10. Advices
 <p style="text-align: justify;">
 For beginners aiming to master Rust’s organizational features, understanding how to effectively use source files, modules, and crates is crucial for writing clean, maintainable, and scalable code.
 </p>
@@ -905,7 +905,7 @@ For beginners aiming to master Rust’s organizational features, understanding h
 By understanding and applying these principles, you'll be able to create well-structured Rust programs that are both efficient and easy to navigate. Mastering these aspects of Rust’s module system will significantly enhance your ability to manage complex projects and collaborate effectively with other developers.
 </p>
 
-# 16.11. Further Learning with GenAI
+## 16.11. Further Learning with GenAI
 <p style="text-align: justify;">
 Assign yourself the following tasks: Input these prompts to ChatGPT and Gemini, and glean insights from their responses to enhance your understanding.
 </p>

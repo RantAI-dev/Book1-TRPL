@@ -10,7 +10,7 @@ toc: true
 ---
 <center>
 
-## 📘 Chapter 8: Types, Declaration, and Mutability
+# 📘 Chapter 8: Types, Declaration, and Mutability
 
 </center>
 
@@ -23,7 +23,7 @@ Chapter 8 of TRPL - "Types, Declaration, and Mutability" provides an in-depth ex
 {{% /alert %}}
 
 
-# 8.1. The Rust Language Standard
+## 8.1. The Rust Language Standard
 <p style="text-align: justify;">
 Rust's language and standard library are defined by their official specifications and Rust RFCs (<a href="https://rust-lang.github.io/rfcs/">https://rust-lang.github.io/rfcs/</a>). In this book, references to these standards will be made as necessary. If any part of this book seems imprecise, incomplete, or potentially incorrect, consult the official Rust documentation. However, note that the documentation is not designed to serve as a tutorial or to be easily accessible for non-experts.
 </p>
@@ -78,7 +78,7 @@ Possible outcomes include overwriting unrelated data and triggering a runtime er
 It is crucial to invest time and effort to ensure a program does not use unspecified or undefined features. Tools like the Rust compiler's built-in checks and external linters can assist in this process.
 </p>
 
-## 8.1.1. Implementations
+### 8.1.1. Implementations
 <p style="text-align: justify;">
 Rust can be implemented in two primary ways: hosted or freestanding. A hosted implementation includes the full range of standard library features as outlined in the standard and this book. This means it provides comprehensive support for operating system interaction, file I/O, networking, concurrency, and other high-level abstractions.
 </p>
@@ -115,7 +115,7 @@ The specifics of what a freestanding implementation must provide can vary, but t
 Freestanding implementations are designed for environments with minimal operating system support. Many such implementations also offer options to exclude specific features, like panic handling, for extremely low-level, hardware-focused programs.
 </p>
 
-## 8.1.2. The Basic Source Character Set
+### 8.1.2. The Basic Source Character Set
 <p style="text-align: justify;">
 The Rust language standard and the examples in this book utilize UTF-8 encoding, which encompasses letters, digits, graphical symbols, and whitespace characters from the Unicode character set. This can pose challenges for developers working in environments that use different character sets:
 </p>
@@ -148,7 +148,7 @@ VS Code offers several features to manage and convert file encodings seamlessly:
 By leveraging these features in VS Code, developers can ensure that their Rust source code meets the guidelines set forth in RFC 2442. This not only makes the code more portable and maintainable but also reduces the risk of encoding-related issues that could lead to bugs or misinterpretations of the code's intent.
 </p>
 
-# 8.2. Types
+## 8.2. Types
 <p style="text-align: justify;">
 Consider the following Rust code snippet:
 </p>
@@ -180,7 +180,7 @@ These declarations make the initial example valid. Since <code>y</code> is decla
 This chapter introduces the fundamental types and declarations in Rust. The examples provided illustrate language features and are not intended for practical tasks. More detailed and realistic examples will be covered in subsequent sections. This chapter lays out the basic components from which Rust programs are built. Familiarity with these elements, along with the associated terminology and syntax, is crucial for developing Rust projects and understanding code written by others. However, a thorough grasp of every detail in this chapter is not necessary for comprehending the following chapters. You may choose to skim through this chapter to understand the main concepts and return later for a more detailed study as needed.
 </p>
 
-## 8.2.1. Fundamental Types
+### 8.2.1. Fundamental Types
 <p style="text-align: justify;">
 Rust provides a variety of fundamental types that align with the basic storage units of a computer and the typical ways they are used to store data:
 </p>
@@ -219,7 +219,7 @@ For most applications, <code>bool</code> is used for logical values, <code>char<
 Fundamental types in Rust are simpler and more elegant compared to C++ due to Rust's emphasis on safety, simplicity, and platform independence. Rust consolidates and standardizes its types, such as using a unified <code>bool</code> type for logical values and ensuring all character data is represented by a 4-byte Unicode scalar value <code>char</code>, which eliminates ambiguity and reduces the risk of errors. Unlike C++, which has multiple integer types with varying definitions and potential pitfalls, Rust's integer and floating-point types are consistently defined and straightforward to use. Rust's built-in types, including references and pointers, are designed with safety mechanisms like ownership and borrowing, which prevent common errors such as null pointer dereferencing and buffer overflows. This coherent and streamlined approach, paired with Rust's focus on safety and concurrency, provides a simpler, more robust foundation for programming compared to the often complex and error-prone type system of C++.
 </p>
 
-## 8.2.2. Booleans
+### 8.2.2. Booleans
 <p style="text-align: justify;">
 In Rust, a Boolean type (<code>bool</code>) can have one of two values: <code>true</code> or <code>false</code>. Booleans are used to represent the results of logical operations. For example:
 </p>
@@ -294,7 +294,7 @@ fn g(p: *const i32) {
 Using <code>if !p.is_null()</code> is preferred as it directly expresses "if p is valid" and is more concise, reducing the chance of errors.
 </p>
 
-## 8.2.3. Character Types
+### 8.2.3. Character Types
 <p style="text-align: justify;">
 Rust offers several character types to accommodate various character sets and encodings frequently used in programming:
 </p>
@@ -375,7 +375,7 @@ In this example, <code>b'0'</code> is the ASCII value for <code>0</code>, and ad
 Rust manages character encoding and decoding through the <code>std::str</code> and <code>std::string</code> modules, providing strong support for working with text in multilingual and multi-character-set environments. This ensures your programs handle various character sets and encodings effectively and accurately.
 </p>
 
-## 8.2.4. Signed and Unsigned Characters
+### 8.2.4. Signed and Unsigned Characters
 <p style="text-align: justify;">
 In Rust, the <code>char</code> type represents a Unicode scalar value and is always 4 bytes. For handling smaller character sets like ASCII, Rust provides the <code>u8</code> type. Rust avoids the issues found in C++ regarding whether a <code>char</code> is signed or unsigned, ensuring more predictable behavior. However, it is still important to handle conversions between different types with care.
 </p>
@@ -440,7 +440,7 @@ fn main() {
 Using <code>u8</code> and explicit type conversions in Rust prevents many of the potential issues and confusions associated with C++'s signed and unsigned <code>char</code> types. By handling type conversions explicitly and safely, Rust ensures that your programs behave predictably and correctly.
 </p>
 
-## 8.2.5. Character Literals
+### 8.2.5. Character Literals
 <p style="text-align: justify;">
 Character literals are single characters enclosed in single quotes, such as <code>'a'</code> and <code>'0'</code>. The type of these literals is <code>char</code>, which represents a Unicode scalar value, allowing for a broad range of characters. For instance, the character <code>'0'</code> has the integer value <code>48</code> in ASCII. Using character literals instead of numeric values enhances the portability of your code.
 </p>
@@ -525,7 +525,7 @@ fn main() {
 The shorter notation <code>\u{XXXX}</code> is equivalent to <code>\U{0000XXXX}</code> for any hexadecimal digit. This ensures that characters are handled correctly according to the Unicode standard, making the program more portable and robust across different environments.
 </p>
 
-## 8.2.6. Integer Types
+### 8.2.6. Integer Types
 <p style="text-align: justify;">
 Similar to characters, integer types come in different forms: <code>i32</code> for signed integers and <code>u32</code> for unsigned integers. Various integer types are available in multiple sizes: <code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>, and <code>i128</code> for signed integers, and <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>, and <code>u128</code> for unsigned integers. These types offer precise control over the number of bits used and whether the values are signed or unsigned.
 </p>
@@ -546,7 +546,7 @@ In addition to standard integer types, extended integer types may be provided. T
 By using these integer types, precise control over data size and representation is ensured, leading to more efficient and reliable programs.
 </p>
 
-## 8.2.7. Integer Literals
+### 8.2.7. Integer Literals
 <p style="text-align: justify;">
 Integer literals can be written in three formats: decimal, octal, and hexadecimal. Decimal literals are the most commonly used and appear as expected: <code>7</code>, <code>1234</code>, <code>976</code>, <code>12345678901234567890</code> Compilers should warn about literals that exceed the maximum representable size, although errors are guaranteed only in specific contexts.
 </p>
@@ -580,7 +580,7 @@ If no suffix is provided, the compiler assigns an appropriate type to the intege
 To maintain code clarity and readability, it is recommended to limit the use of obscure constants to a few well-documented <code>const</code>, <code>static</code>, or <code>enum</code> initializers.
 </p>
 
-## 8.2.8. Types of Integer Literals
+### 8.2.8. Types of Integer Literals
 <p style="text-align: justify;">
 The type of an integer literal is determined by its form, value, and suffix:
 </p>
@@ -602,7 +602,7 @@ For instance, the literal <code>100000</code> is <code>i32</code> on a system wi
 Using suffixes helps maintain consistency and avoids potential problems with type size and representation across different systems.
 </p>
 
-## 8.2.9. Floating-Point Types
+### 8.2.9. Floating-Point Types
 <p style="text-align: justify;">
 Floating-point types in Rust are used to represent numbers with decimal points and approximate real numbers within a fixed memory allocation. The Rust language defines three primary floating-point types:
 </p>
@@ -632,7 +632,7 @@ If you are not familiar with floating-point arithmetic, it is advisable to:
 Understanding these aspects ensures that you can make informed decisions about floating-point precision based on the specific needs and constraints of your application. Floating-point arithmetic in Rust offers several advantages over C++ primarily due to Rust's strong emphasis on safety and simplicity. Rust's type system enforces strict type checking, reducing the risk of type-related errors that can occur with floating-point operations. Additionally, Rust's robust handling of undefined behavior ensures that floating-point operations are safer by default, preventing issues like uninitialized memory access which can be problematic in C++. Rust also provides clear and consistent definitions for its floating-point types (<code>f32</code>, <code>f64</code>), ensuring predictable behavior across different platforms. This consistency, combined with Rust's powerful compiler and error-checking capabilities, helps developers avoid common pitfalls associated with floating-point arithmetic, such as rounding errors and precision loss. Moreover, Rust's default to <code>f64</code> for most floating-point operations simplifies decision-making for developers, providing a sensible balance between precision and performance without the need for extensive configuration. These features collectively make Rust's approach to floating-point arithmetic more user-friendly and reliable compared to C++.
 </p>
 
-## 8.2.10. Floating-Point Literals
+### 8.2.10. Floating-Point Literals
 <p style="text-align: justify;">
 In Rust, floating-point literals are interpreted as type <code>f64</code> by default, which provides double-precision floating-point representation. This means literals such as <code>1.23</code>, <code>.23</code>, <code>0.23</code>, <code>1.0</code>, and <code>1.2e10</code> are treated as <code>f64</code> unless explicitly specified otherwise. The default behavior ensures that most floating-point calculations benefit from the greater precision of <code>f64</code>.
 </p>
@@ -653,7 +653,7 @@ Similarly, to define a floating-point literal of type <code>f128</code>, which o
 Compilers are expected to provide warnings if floating-point literals exceed the representable size of the specified type, helping to prevent potential issues with precision or overflow. By following these conventions and using appropriate suffixes, you can ensure that your floating-point literals are accurate and consistent across different platforms and implementations, enhancing both precision and type safety in your Rust programs.
 </p>
 
-# 8.3. Prefixes and Suffixes
+## 8.3. Prefixes and Suffixes
 <p style="text-align: justify;">
 There is a range of prefixes and suffixes used to specify the types of literals. Here’s a summary:
 </p>
@@ -716,7 +716,7 @@ You can also define new suffixes for user-defined types. For example, by creatin
 Suffixes not starting with <code>_</code> are reserved for the standard library.
 </p>
 
-# 8.4. void
+## 8.4. void
 <p style="text-align: justify;">
 In Rust, the concept of <code>void</code> as seen in some other languages does not exist. Instead, Rust uses more explicit types and constructs to handle scenarios where a function does not return a value or where a pointer might be to an unknown type.
 </p>
@@ -755,7 +755,7 @@ Rust does not allow the creation of references or variables of the <code>void</c
 In summary, Rust replaces the concept of <code>void</code> with the unit type <code>()</code>, and uses explicit type annotations and raw pointers to handle cases where types are unknown or not applicable. This approach maintains clarity and type safety while avoiding the pitfalls associated with <code>void</code> in other programming languages.
 </p>
 
-# 8.5. Sizes
+## 8.5. Sizes
 <p style="text-align: justify;">
 The sizes of fundamental types, such as integers, can vary between implementations, making it essential to recognize and address these dependencies. While developers working on a single system might not prioritize portability, this view is narrow. Programs often need to be ported or compiled with different compilers on the same system, and future compiler updates might introduce variations. Handling these implementation-dependent issues during development is far more manageable than resolving them later.
 </p>
@@ -830,7 +830,7 @@ let z: usize = 10; // size type for array indexing
 The standard library defines <code>usize</code> for sizes and <code>isize</code> for pointer differences, ensuring they fit the architecture's needs.
 </p>
 
-# 8.6. Alignment
+## 8.6. Alignment
 <p style="text-align: justify;">
 In Rust, objects require not only sufficient storage for their data but also proper alignment to ensure efficient or even possible access on specific hardware architectures. For example, a 4-byte integer typically needs to be aligned on a 4-byte boundary, while an 8-byte floating-point number might need to be aligned on an 8-byte boundary. Alignment requirements are highly implementation-specific and are often implicit for most developers. Many programmers can work effectively without explicitly managing alignment issues until they encounter object layout problems, where structures may include "padding" to maintain proper alignment.
 </p>
@@ -874,7 +874,7 @@ fn process_vector(vx: &Vec<X>) {
 In this code, <code>AlignedX</code> ensures that the <code>x</code> field is properly aligned, while <code>MaybeUninit</code> allows for uninitialized storage, providing explicit control over alignment when necessary.
 </p>
 
-# 8.7. Declarations
+## 8.7. Declarations
 <p style="text-align: justify;">
 Before an identifier can be used in a Rust program, it must be declared. This involves specifying its type so the compiler understands what kind of entity the name refers to. For instance:
 </p>
@@ -949,7 +949,7 @@ These principles ensure that all entities in a Rust program are properly declare
 Please note that in Rust, declaration and definition serve distinct purposes. A declaration introduces a variable, function, or type to the compiler, indicating its existence and type but not allocating or initializing any storage. For example, declaring a function with <code>fn my_func();</code> specifies that <code>my_func</code> exists but does not provide its implementation. In contrast, a definition provides the complete implementation or initialization. For instance, defining <code>fn my_func() { /<strong> implementation </strong>/ }</code> not only declares the function but also specifies its behavior. Similarly, defining a variable with <code>let x = 10;</code> initializes <code>x</code> with the value <code>10</code>, whereas declaring it with <code>let x: i32;</code> only informs the compiler of its type without assigning a value. Thus, declarations lay the groundwork for use, while definitions supply the necessary details for functionality.
 </p>
 
-## 8.7.1. The Structure of Declarations
+### 8.7.1. The Structure of Declarations
 <p style="text-align: justify;">
 The structure of a declaration follows a clear and concise syntax. Typically, a declaration consists of:
 </p>
@@ -1024,7 +1024,7 @@ Here is a table summarizing some of the common declarator operators and their us
 By using these declarator operators, type safety and clarity in code are ensured, making it easier to read and maintain.
 </p>
 
-## 8.7.2. Declaring Multiple Names
+### 8.7.2. Declaring Multiple Names
 <p style="text-align: justify;">
 Multiple variables can be declared in a single statement using a comma-separated list. However, care should be taken to maintain readability and clarity. For instance, two integers can be declared like this:
 </p>
@@ -1062,7 +1062,7 @@ let pv: *const i32 = std::ptr::null();
 This method ensures each variable's type and initial value are clear, making the code easier to understand and maintain.
 </p>
 
-# 8.8. Names
+## 8.8. Names
 <p style="text-align: justify;">
 A name (identifier) consists of a sequence of letters and digits, with the first character being a letter. The underscore character, \_, is considered a letter. Rust does not impose a limit on the number of characters in a name. However, some parts of an implementation may have restrictions due to runtime environment or linker constraints. Keywords like <code>fn</code> or <code>let</code> cannot be used as names for user-defined entities.
 </p>
@@ -1124,7 +1124,7 @@ Choose names that reflect the meaning of an entity rather than its implementatio
 Choosing good names is an art. Maintain a consistent naming style. For instance, capitalize user-defined type names and start non-type names with a lowercase letter (e.g., <code>Shape</code> and <code>current_token</code>). Use all capitals for macros (if used, e.g., <code>HACK</code>) and never for non-macros. Use underscores to separate words in an identifier; <code>number_of_elements</code> is more readable than <code>numberOfElements</code>. However, consistency can be difficult because programs often combine fragments from different sources, each with its own style. Be consistent with abbreviations and acronyms. The language and standard library use lowercase for types, which indicates they are part of the standard.
 </p>
 
-# 8.9. Keywords
+## 8.9. Keywords
 <p style="text-align: justify;">
 Rust includes a set of reserved keywords that are essential to the language's syntax and cannot be used as identifiers for variables, functions, or other entities. Here is a list of Rust keywords:
 </p>
@@ -1164,7 +1164,7 @@ These reserved keywords ensure that the language maintains a clear and unambiguo
 When writing Rust code, it is crucial to follow these rules and avoid using reserved keywords for naming variables, functions, or types. Instead, select meaningful names that accurately reflect the purpose and role of each entity within your program. This practice not only prevents syntax errors but also enhances code clarity and maintainability.
 </p>
 
-# 8.10. Scopes
+## 8.10. Scopes
 <p style="text-align: justify;">
 A declaration introduces a name into a particular scope, meaning the name can only be used within that designated part of the code.
 </p>
@@ -1282,7 +1282,7 @@ This contains no name clashes.
 A declaration is not allowed as the only statement in the branch of an <code>if</code> statement.
 </p>
 
-# 8.11. Initialization
+## 8.11. Initialization
 <p style="text-align: justify;">
 When initializing an object, the initializer determines its initial value. Various initialization styles exist, but clear and safe syntax is emphasized. Consider these examples for different initialization styles:
 </p>
@@ -1373,7 +1373,7 @@ Most types have a default value. For integral types, the default is zero. For po
 Direct initialization and conversion rules are strict to ensure type safety and prevent unexpected behavior. The <code>Default</code> trait and type inference play crucial roles in initializing variables with expected values, making the code safer and more predictable.
 </p>
 
-## 8.11.1. Missing Initializers
+### 8.11.1. Missing Initializers
 <p style="text-align: justify;">
 For various types, especially built-in ones, it’s possible to leave out the initializer. However, this can lead to complexities. To avoid these issues, consistently initializing variables is recommended. One main exception might be a large input buffer. For example:
 </p>
@@ -1426,7 +1426,7 @@ fn ff() {
 Members of an array or a struct are initialized by default if the array or struct itself is initialized. Consistent initialization practices help ensure predictable behavior and can prevent subtle bugs.
 </p>
 
-## 8.11.2. Initializer Lists
+### 8.11.2. Initializer Lists
 <p style="text-align: justify;">
 For more complex objects that need multiple initial values, Rust uses initializer lists within <code>{}</code>. Here are some examples:
 </p>
@@ -1479,7 +1479,7 @@ let x3 = vec![1.0, 2]; // error: cannot infer the type for a mixed initializer l
 In conclusion, initializer lists in Rust provide a clear and concise method for initializing complex objects while ensuring type safety and avoiding narrowing conversions. Consistent use of these practices enhances code readability and reduces potential bugs.
 </p>
 
-# 8.12. Deducing a Type: `let` and `typeof`
+## 8.12. Deducing a Type: `let` and `typeof`
 <p style="text-align: justify;">
 Rust provides robust mechanisms for type inference, streamlining the process of variable declaration and improving code readability and maintainability. Type inference in Rust allows the compiler to automatically deduce the type of a variable based on the value assigned to it, eliminating the need for explicit type annotations in many cases. This feature is particularly useful in scenarios where the type is evident from the context, thus reducing boilerplate code and potential errors.
 </p>
@@ -1500,7 +1500,7 @@ Rust's type inference is designed to be straightforward and intuitive. The <code
 By relying on type inference, Rust allows developers to write cleaner, more concise code while maintaining the language's strong emphasis on safety and performance. This feature is a testament to Rust's design philosophy, which aims to provide powerful abstractions without sacrificing control over low-level details.
 </p>
 
-## 8.12.1. The `let` Keyword for Type Inference
+### 8.12.1. The `let` Keyword for Type Inference
 <p style="text-align: justify;">
 When declaring a variable with an initializer, Rust allows you to omit the explicit type specification by inferring the type from the initializer. For instance:
 </p>
@@ -1576,7 +1576,7 @@ fn update_value(v: &mut i32) {
 This approach guarantees clear and accurate type handling within the code.
 </p>
 
-## 8.12.2. `let` and `{}` Lists
+### 8.12.2. `let` and `{}` Lists
 <p style="text-align: justify;">
 When initializing variables, it's important to consider both the type of the variable and the type of the initializer. For example:
 </p>
@@ -1631,7 +1631,7 @@ The type of a homogeneous list of elements is determined by the type of the init
 Therefore, it's advisable to use <code>=</code> for variable initialization with <code>let</code> unless you intend to initialize a collection or a list, ensuring clarity and preventing unintended type deductions. This practice maintains the safety and predictability of your code.
 </p>
 
-## 8.12.3. The `typeof()` Specifier
+### 8.12.3. The `typeof()` Specifier
 <p style="text-align: justify;">
 We can use <code>let</code> when we have an appropriate initializer. However, there are instances where we need to deduce a type without initializing a variable. In these cases, we use the <code>typeof</code> specifier. This is especially useful in generic programming scenarios. For example, when writing a function to add two matrices with potentially different element types, we need to determine the type of the result. The element type of the sum should match the type resulting from adding elements from each matrix. Thus, the function can be declared like this:
 </p>
@@ -1670,7 +1670,7 @@ In this example, <code>typeof(T::default() + U::default())</code> specifies the 
 Using <code>typeof()</code> ensures that the result type is accurately deduced based on the operand types involved in the addition, making the code more flexible and adaptable.
 </p>
 
-# 8.13. Objects and Values
+## 8.13. Objects and Values
 <p style="text-align: justify;">
 In programming, objects refer to contiguous blocks of memory allocated to store data. These objects can be manipulated directly, whether they are explicitly named or allocated dynamically without direct references. For instance, you might interact with memory through expressions like <code>p[a + 10] = 7</code>, where <code>p</code> is a pointer and <code>a + 10</code> is an offset, which does not require explicit naming of the underlying memory block. Therefore, the term "object" is used to describe any block of memory used for storing data.
 </p>
@@ -1687,7 +1687,7 @@ It is crucial to distinguish between this low-level concept of an object and mor
 Understanding these concepts is essential for efficient memory management and safe data manipulation in Rust. Rust's strict type system and ownership model ensure that interactions with objects are predictable and controlled, thus preventing many common issues related to memory safety and concurrency.
 </p>
 
-## 8.13.1. Lvalues and Rvalues
+### 8.13.1. Lvalues and Rvalues
 <p style="text-align: justify;">
 In Rust, the concept of rvalue complements the idea of lvalue. While an lvalue represents a location in memory that can be assigned a new value, an rvalue is essentially any value that does not qualify as an lvalue. For example, a temporary value, such as the result of a function call or an intermediate calculation, is considered an rvalue. This distinction helps in understanding how values are handled in expressions and operations, particularly in terms of addressing, copying, and moving.
 </p>
@@ -1769,7 +1769,7 @@ Here, <code>std::mem::take(&mut vs)</code> is an xvalue: it has identity (we can
 For practical programming, thinking in terms of rvalue and lvalue is typically enough. Remember that every expression is either an lvalue or an rvalue, but not both.
 </p>
 
-## 8.13.2. Lifetimes of Objects
+### 8.13.2. Lifetimes of Objects
 <p style="text-align: justify;">
 The lifetime of an object begins when its constructor completes and ends when its destructor starts. Types without explicit constructors, like int, can be thought of as having default constructors and destructors that perform no actions.
 </p>
@@ -1850,7 +1850,7 @@ fn main() {
 In summary, objects in Rust are classified by their lifetimes into several categories. Automatic objects are created and destroyed with their enclosing function scope, typically allocated on the stack. Static objects, declared globally or using <code>static</code>, persist for the entire program's duration, maintaining the same memory address and potentially requiring synchronization in multi-threaded contexts. Free store objects, allocated on the heap using methods like <code>Box::new</code>, have their lifetimes controlled manually by the programmer. Temporary objects, used for intermediate values or const references, exist as long as needed for an expression and are automatically destroyed afterward. Thread-local objects are unique to each thread, created when the thread starts and destroyed when it terminates, ensuring thread-specific storage.
 </p>
 
-# 8.14. Type Aliases
+## 8.14. Type Aliases
 <p style="text-align: justify;">
 There are instances when a new name for a type is needed. Some reasons for this include:
 </p>
@@ -1927,7 +1927,7 @@ type Char = char;
 type Uchar = unsigned Char; // error
 type Uchar = unsigned char; // correct
 {{< /prism >}}
-# 8.15. Immutability
+## 8.15. Immutability
 <p style="text-align: justify;">
 In Rust, mutability and immutability are fundamental concepts that influence how data can be accessed and modified. Immutability is the default in Rust, meaning that once a variable is bound to a value, that value cannot be changed. This immutability provides guarantees about the safety and predictability of code by ensuring that data cannot be altered unexpectedly. For instance, the following code snippet demonstrates an immutable variable:
 </p>
@@ -1985,7 +1985,7 @@ Rust also enforces strict borrowing rules, which work in tandem with immutabilit
 Overall, Rust's emphasis on immutability provides robust guarantees about data integrity and concurrency safety. It simplifies the development process by reducing the likelihood of bugs and making concurrent programming more manageable, which can be a complex and error-prone aspect of C++ programming.
 </p>
 
-# 8.16. Advices
+## 8.16. Advices
 <p style="text-align: justify;">
 In Rust programming, it's essential to adhere to the latest Rust documentation and Rust Reference for accurate and up-to-date information on language standards. This practice helps ensure that your code complies with Rust's evolving best practices and avoids pitfalls related to unspecified or undefined behavior. Rust's ownership and borrowing principles are fundamental to preventing issues with memory safety and data races. Following these principles diligently will help maintain predictable and consistent behavior across different platforms.
 </p>
@@ -1998,7 +1998,7 @@ When working with integers and character literals, it's important to avoid assum
 To maintain organized and clear code, declare only one item per statement and use concise names for local variables. Reserve longer names for global or less common variables to improve readability and avoid naming conflicts. Ensure that variable names are unique within their scopes and avoid using ALL_CAPS for variable names, as this convention is typically reserved for constants. When initializing structs, use Rust's <code>{}</code> initializer syntax, and for auto types, use the <code>=</code> sign. Always initialize variables before use and leverage type aliases to provide meaningful names for built-in types or to create new types using enums and structs. By following these practices, you ensure that your code is not only functional but also maintainable and easy to understand.
 </p>
 
-# 8.17. Further Learning with GenAI
+## 8.17. Further Learning with GenAI
 <p style="text-align: justify;">
 Assign yourself the following tasks: Input these prompts to ChatGPT and Gemini, and glean insights from their responses to enhance your understanding.
 </p>

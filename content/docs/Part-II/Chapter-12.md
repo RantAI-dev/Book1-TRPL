@@ -10,7 +10,7 @@ toc: true
 ---
 <center>
 
-## 📘 Chapter 12: Statements and Expressions
+# 📘 Chapter 12: Statements and Expressions
 
 </center>
 
@@ -22,7 +22,7 @@ In this chapter, we explored the differences between statements and expressions 
 </p>
 {{% /alert %}}
 
-# 12.1. Introduction to Statements and Expressions
+## 12.1. Introduction to Statements and Expressions
 <p style="text-align: justify;">
 In Rust, statements are the building blocks of a program, and they come in several forms, each serving a distinct purpose. One type of statement is a declaration. Declarations define variables, constants, functions, structs, enums, and other items that introduce new names into the program and set their initial values or behaviors. For example, declaring a variable might look like <code>let x = 5;</code>, which defines an immutable variable <code>x</code> with a value of 5. Similarly, <code>fn add(a: i32, b: i32) -> i32 { a + b }</code> declares a function named <code>add</code> that takes two integers and returns their sum.
 </p>
@@ -165,7 +165,7 @@ Block expressions are enclosed in curly braces <code>{ statement-list }</code>, 
 Function calls use arguments to pass values, formatted as <code>expression, argumentsopt</code>, representing one or more expressions separated by commas. Types in Rust define the kind of values and include identifiers for named types (such as <code>i32</code>, <code>String</code>), references (<code>& type</code>, <code>&mut type</code>), arrays (<code>[type; constant]</code>), tuples (<code>(type, type)</code>), and function types (<code>fn(parameters) -> type</code>). Parameters in function definitions specify input types using <code>pattern: type</code>, and multiple parameters are separated by commas.
 </p>
 
-# 12.2. Statements
+## 12.2. Statements
 <p style="text-align: justify;">
 Statements are integral to any programming language as they perform actions but do not return values. In Rust, statements follow this same principle. One of the most common examples of a statement in Rust is a variable declaration. Variable declarations use the <code>let</code> keyword to bind a name to a value or memory location. This binding is crucial for managing and accessing data throughout your program. Let's explore the different types of statements in Rust with sample codes and clear explanations.
 </p>
@@ -291,7 +291,7 @@ Finally, a statement list is simply a series of statements, forming a sequence o
 Overall, understanding these different types of statements and their uses in Rust is essential for writing clear and effective code.
 </p>
 
-# 12.3. Expressions
+## 12.3. Expressions
 <p style="text-align: justify;">
 Rust's expressions compute values and encompass various forms. These include literals, paths, and binary operations such as <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>. Literals are the simplest form of expressions, representing constant values directly in the code. They include numbers, characters, strings, and booleans. For example:
 </p>
@@ -529,7 +529,7 @@ println!("Sum: {}", result);
 Understanding expressions and statements in Rust is crucial for writing efficient and readable code. By mastering these constructs, you can fully leverage the language's power to create robust and performant applications.
 </p>
 
-# 12.4. Combining Statements and Expressions
+## 12.4. Combining Statements and Expressions
 <p style="text-align: justify;">
 Rust's syntax allows for combining statements and expressions to create more complex and expressive code. This combination is a key feature of Rust, enabling you to write concise and readable programs. For instance, a <code>let</code> statement can include an expression to initialize a variable, providing both action and value in a single line of code. Consider the following example:
 </p>
@@ -599,7 +599,7 @@ In this example, the variable <code>factorial</code> is initialized using a bloc
 By practicing these techniques and exploring different ways to combine statements and expressions, you'll become more proficient in writing Rust code that is both efficient and easy to read. Familiarizing yourself with these constructs and experimenting with them in various scenarios will help you fully leverage Rust's expressive power, allowing you to tackle more complex programming challenges with confidence.
 </p>
 
-# 12.5. Expressions in Control Flow
+## 12.5. Expressions in Control Flow
 <p style="text-align: justify;">
 Control flow constructs in Rust, such as <code>if</code>, <code>match</code>, and loops, are also expressions. This means they evaluate to values and can be used in places where expressions are expected, such as the right-hand side of a <code>let</code> statement. This capability allows for more flexible and concise code. For example, an <code>if</code> expression can be used to initialize a variable based on a condition. Here's an example:
 </p>
@@ -697,7 +697,7 @@ In this example, the outer <code>if</code> expression checks if <code>number</co
 Understanding these expressions and statements in Rust helps you write efficient and readable code, leveraging the full power of the language to create robust and performant applications. By practicing these constructs and exploring their various uses, you can master the expressive capabilities of Rust, enabling you to tackle complex programming challenges with ease and confidence.
 </p>
 
-# 12.6. The return Expression
+## 12.6. The return Expression
 <p style="text-align: justify;">
 The <code>return</code> keyword in Rust is used to exit a function and return a value. This can be particularly useful for exiting early from a function when a certain condition is met. Unlike some other languages, Rust's <code>return</code> is an expression that produces a value. Consider the following example:
 </p>
@@ -810,7 +810,7 @@ In this code, the <code>describe_number</code> function uses a <code>match</code
 Understanding and utilizing the <code>return</code> keyword in Rust helps you write efficient and readable code. By clearly defining exit points and return values, you can create functions that are easier to understand and maintain. Practicing the use of <code>return</code> in various scenarios will enhance your ability to write robust and performant Rust applications.
 </p>
 
-# 12.7. Advanced Expression Usage
+## 12.7. Advanced Expression Usage
 <p style="text-align: justify;">
 Expressions in Rust can be used in more advanced contexts, such as closures, which are anonymous functions that can capture variables from their environment. Closures are powerful tools for creating small, reusable blocks of code that can be passed as arguments to other functions. For instance, consider the following example:
 </p>
@@ -901,7 +901,7 @@ In this code, the <code>Rectangle</code> struct has a method <code>area</code> t
 Combining these advanced uses of expressions allows you to write highly expressive and efficient Rust code. By leveraging closures, iterator chains, higher-order functions, and expressions within data structures, you can create robust and modular programs. Familiarizing yourself with these patterns and practicing their use will enhance your ability to write powerful and concise Rust applications.
 </p>
 
-# 12.8. Patterns and Guards
+## 12.8. Patterns and Guards
 <p style="text-align: justify;">
 Patterns in Rust are a powerful feature used to destructure and match values. They allow you to bind variables to parts of data, test data structures for specific shapes, and create complex conditions in a concise and readable way. Patterns can include literals, wildcards, variables, and compound patterns. For example:
 </p>
@@ -1007,7 +1007,7 @@ Here, the pattern <code>Person { name, age: 30 }</code> matches a <code>Person</
 Combining these patterns with guards and other control flow constructs in Rust allows you to write expressive, concise, and powerful code. By mastering patterns, you can handle complex data structures and conditions elegantly and efficiently, leveraging Rust’s full potential for creating robust applications.
 </p>
 
-# 12.9. Advices
+## 12.9. Advices
 <p style="text-align: justify;">
 As a seasoned Rust programmer, here are refined guidelines for effectively using statements and expressions in Rust:
 </p>
@@ -1020,7 +1020,7 @@ As a seasoned Rust programmer, here are refined guidelines for effectively using
 By adhering to these guidelines, you can write more efficient, readable, and maintainable Rust code. Embracing these practices will help you harness the full power of Rust's capabilities.
 </p>
 
-# 12.10. Further Learning with GenAI
+## 12.10. Further Learning with GenAI
 <p style="text-align: justify;">
 Assign yourself the following tasks: Input these prompts to ChatGPT and Gemini, and glean insights from their responses to enhance your understanding.
 </p>
