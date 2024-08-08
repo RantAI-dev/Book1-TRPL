@@ -28,7 +28,7 @@ Part I of "The Rust Programming Language" (TRPL) serves as an introductory guide
 
 <center>
 
-**🧠 Chapters**
+## **🧠 Chapters**
 
 </center>
 

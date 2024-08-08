@@ -25,7 +25,7 @@ Part III of "The Rust Programming Language" (TRPL) delves into advanced topics c
 
 <center>
 
-**🧠Chapters**
+## **🧠Chapters**
 
 </center>
 
