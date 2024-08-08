@@ -15,7 +15,7 @@ toc: true
 
 </center>
 
-{{% alert icon="💡" context="info" %}}<strong>"<em>TBD</em>" — TBD</strong>{{% /alert %}}
+{{% alert icon="💡" context="info" %}}<strong>"<em>Talk is cheap. Show me the code.</em>" — Linus Torvalds</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}
 
@@ -67,6 +67,11 @@ Here’s a simple example of defining an asynchronous function:
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
 use std::time::Duration;
 use tokio::time::sleep;
 
@@ -88,20 +93,35 @@ Here’s a basic example of a custom future implementation:
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "test-code"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
 use std::pin::Pin;
-use std::task::{Context, Poll};
-use futures::Future;
+use std::task::{Context, Poll, Waker};
+use std::future::Future;
+use std::time::{Duration, Instant};
+use tokio::time::sleep;
 
 struct DelayedFuture {
-    delay: std::time::Duration,
-    start_time: std::time::Instant,
+    delay: Duration,
+    start_time: Instant,
+    waker: Option<Waker>,
 }
 
 impl DelayedFuture {
-    fn new(delay: std::time::Duration) -> Self {
+    fn new(delay: Duration) -> Self {
         DelayedFuture {
             delay,
-            start_time: std::time::Instant::now(),
+            start_time: Instant::now(),
+            waker: None,
         }
     }
 }
@@ -110,13 +130,31 @@ impl Future for DelayedFuture {
     type Output = ();
 
     fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
-        if self.start_time.elapsed() >= self.delay {
+        let elapsed = self.start_time.elapsed();
+        if elapsed >= self.delay {
             Poll::Ready(())
         } else {
-            cx.waker().wake_by_ref();
+            let this = self.get_mut();
+            let waker = cx.waker().clone();
+            this.waker = Some(waker);
+
+            let remaining_time = this.delay - elapsed;
+            let waker_clone = this.waker.clone().unwrap();
+            tokio::spawn(async move {
+                sleep(remaining_time).await;
+                waker_clone.wake();
+            });
+
             Poll::Pending
         }
     }
+}
+
+#[tokio::main]
+async fn main() {
+    let delayed_future = DelayedFuture::new(Duration::from_secs(2));
+    delayed_future.await;
+    println!("Future completed after delay.");
 }
 {{< /prism >}}
 <p style="text-align: justify;">
@@ -132,9 +170,20 @@ Consider a more complex example where we create a future that simulates fetching
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "test-code"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
 use std::pin::Pin;
 use std::task::{Context, Poll};
 use std::future::Future;
+use tokio::time::{sleep, Duration};
 
 struct FetchDataFuture {
     completed: bool,
@@ -149,16 +198,28 @@ impl FetchDataFuture {
 impl Future for FetchDataFuture {
     type Output = String;
 
-    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
+    fn poll(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
         if self.completed {
             Poll::Ready("Fetched data".to_string())
         } else {
             // Simulate some work
-            self.get_mut().completed = true;
-            cx.waker().wake_by_ref();
+            self.completed = true;
+            let waker = cx.waker().clone();
+            tokio::spawn(async move {
+                // Simulate network delay
+                sleep(Duration::from_secs(2)).await;
+                waker.wake();
+            });
             Poll::Pending
         }
     }
+}
+
+#[tokio::main]
+async fn main() {
+    let fetch_future = FetchDataFuture::new();
+    let result = fetch_future.await;
+    println!("{}", result);
 }
 {{< /prism >}}
 <p style="text-align: justify;">
@@ -174,15 +235,28 @@ Consider using the <code>map</code> combinator to transform the result of a futu
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+[package]
+name = "test-code"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
 use futures::FutureExt; // For `map` combinator
 
 async fn add_one(n: i32) -> i32 {
     n + 1
 }
 
-let future = async { 5 }.map(add_one);
-let result = future.await;
-println!("Result: {}", result); // Output: Result: 6
+#[tokio::main]
+async fn main() {
+    let future = async { 5 }.map(|n| async move { add_one(n).await });
+    let result = future.await.await; // Need to await twice since map returns a Future<Future<i32>>
+    println!("Result: {}", result); // Output: Result: 6
+}
 {{< /prism >}}
 <p style="text-align: justify;">
 In this example, the <code>map</code> combinator applies the <code>add_one</code> function to the result of the future, producing a new future that will resolve to <code>6</code>.
@@ -193,7 +267,17 @@ You can also use the <code>and_then</code> combinator to chain futures:
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
-use futures::FutureExt; // For `and_then` combinator
+[package]
+name = "test-code"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
+use futures::FutureExt; // For `then` combinator
 
 async fn fetch_data() -> String {
     "Data fetched".to_string()
@@ -203,9 +287,12 @@ async fn process_data(data: String) -> String {
     format!("Processed {}", data)
 }
 
-let future = fetch_data().map(|data| process_data(data));
-let result = future.await;
-println!("Result: {}", result); // Output: Result: Processed Data fetched
+#[tokio::main]
+async fn main() {
+    let future = fetch_data().then(|data| async move { process_data(data).await });
+    let result = future.await;
+    println!("Result: {}", result); // Output: Result: Processed Data fetched
+}
 {{< /prism >}}
 <p style="text-align: justify;">
 Here, <code>map</code> is used to chain the result of <code>fetch_data</code> into <code>process_data</code>, demonstrating how combinators can be used to build complex asynchronous workflows in a readable and maintainable manner.
@@ -228,6 +315,15 @@ An asynchronous function in Rust is defined using the <code>async</code> keyword
 Here’s a simple example of an asynchronous function:
 </p>
 
+{{< prism lang="python" line-numbers="true">}}
+[package]
+name = "async-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
 {{< prism lang="rust" line-numbers="true">}}
 use std::time::Duration;
 use tokio::time::sleep;
@@ -235,6 +331,12 @@ use tokio::time::sleep;
 async fn fetch_data() -> String {
     sleep(Duration::from_secs(2)).await; // Simulate a delay
     "Fetched Data".to_string()
+}
+
+#[tokio::main]
+async fn main() {
+    let data = fetch_data().await;
+    println!("{}", data);
 }
 {{< /prism >}}
 <p style="text-align: justify;">
@@ -250,6 +352,24 @@ Here’s how you can use <code>await</code>:
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "async-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
+use std::time::Duration;
+use tokio::time::sleep;
+
+async fn fetch_data() -> String {
+    sleep(Duration::from_secs(2)).await; // Simulate a delay
+    "Fetched Data".to_string()
+}
+
 #[tokio::main]
 async fn main() {
     let data = fetch_data().await; // Await the future returned by fetch_data
@@ -269,6 +389,16 @@ Here’s an example using async blocks:
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+//Cargo.Toml
+[package]
+name = "async-example"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
 use std::time::Duration;
 use tokio::time::sleep;
 
@@ -279,6 +409,11 @@ async fn perform_task() {
     }.await;
 
     println!("{}", result); // Output: Task Complete
+}
+
+#[tokio::main]
+async fn main() {
+    perform_task().await;
 }
 {{< /prism >}}
 <p style="text-align: justify;">
@@ -293,6 +428,16 @@ Error handling in asynchronous code follows a similar pattern to synchronous cod
 Here’s an example of error handling in an async function:
 </p>
 
+{{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "async-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
 {{< prism lang="rust" line-numbers="true">}}
 use std::fs::File;
 use std::io::prelude::*;
@@ -337,20 +482,32 @@ Here’s a custom implementation of the <code>Future</code> trait:
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "custom-future"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
 use std::pin::Pin;
 use std::task::{Context, Poll};
 use std::future::Future;
 use std::time::{Duration, Instant};
-use std::task::Waker;
+use tokio::time::{sleep, Sleep};
 
 struct Delay {
     when: Instant,
+    sleep: Pin<Box<Sleep>>,
 }
 
 impl Delay {
     fn new(duration: Duration) -> Self {
         Delay {
             when: Instant::now() + duration,
+            sleep: Box::pin(sleep(duration)),
         }
     }
 }
@@ -359,13 +516,20 @@ impl Future for Delay {
     type Output = ();
 
     fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
-        if Instant::now() >= self.when {
+        let mut_self = self.get_mut();
+        if Instant::now() >= mut_self.when {
             Poll::Ready(())
         } else {
-            cx.waker().wake_by_ref();
-            Poll::Pending
+            mut_self.sleep.as_mut().poll(cx)
         }
     }
+}
+
+#[tokio::main]
+async fn main() {
+    let delay = Delay::new(Duration::from_secs(2));
+    delay.await;
+    println!("Delay elapsed!");
 }
 {{< /prism >}}
 <p style="text-align: justify;">
@@ -381,11 +545,21 @@ Here’s a detailed explanation of how <code>Context</code> and <code>Waker</cod
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
-use std::task::{Context, Waker};
+//Cargo.toml
+[package]
+name = "waker-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
+use std::task::{Context, Poll, Waker};
 use std::future::Future;
 use std::pin::Pin;
 use std::time::{Duration, Instant};
-use std::task::Poll;
+use tokio::time::sleep;
 
 struct Delay {
     when: Instant,
@@ -405,10 +579,21 @@ impl Future for Delay {
     type Output = ();
 
     fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
-        if Instant::now() >= self.when {
+        let mut_self = self.get_mut();
+
+        if Instant::now() >= mut_self.when {
             Poll::Ready(())
         } else {
-            self.get_mut().waker = Some(cx.waker().clone());
+            mut_self.waker = Some(cx.waker().clone());
+            let waker_clone = mut_self.waker.clone().unwrap();
+            let when = mut_self.when;
+            tokio::spawn(async move {
+                let now = Instant::now();
+                if when > now {
+                    sleep(when - now).await;
+                }
+                waker_clone.wake();
+            });
             Poll::Pending
         }
     }
@@ -416,80 +601,6 @@ impl Future for Delay {
 {{< /prism >}}
 <p style="text-align: justify;">
 In this refined example, <code>Delay</code> now includes an optional <code>Waker</code>. When <code>poll</code> is called, if the future is not yet ready, the <code>Waker</code> is saved in the <code>waker</code> field. The <code>Waker</code> can later be used to wake up the future when it needs to be polled again. By storing a <code>Waker</code>, the future avoids unnecessary polling and ensures it only gets polled when it can make progress.
-</p>
-
-<p style="text-align: justify;">
-To actually run asynchronous tasks, you need an executor. The executor drives the futures to completion by repeatedly polling them. In Rust’s standard library, there is no built-in executor; typically, external crates like Tokio or async-std provide this functionality. However, for simplicity, let's demonstrate a basic executor:
-</p>
-
-{{< prism lang="rust" line-numbers="true">}}
-use std::future::Future;
-use std::pin::Pin;
-use std::task::{Context, Poll};
-use std::task::Waker;
-use std::sync::{Arc, Mutex};
-use std::thread;
-use std::collections::VecDeque;
-
-struct Task {
-    future: Pin<Box<dyn Future<Output = ()> + Send>>,
-    waker: Option<Waker>,
-}
-
-impl Task {
-    fn new(future: Pin<Box<dyn Future<Output = ()> + Send>>) -> Self {
-        Task { future, waker: None }
-    }
-
-    fn poll(&mut self, cx: &mut Context<'_>) {
-        self.waker = Some(cx.waker().clone());
-        let _ = self.future.as_mut().poll(cx);
-    }
-}
-
-struct Executor {
-    tasks: Arc<Mutex<VecDeque<Task>>>,
-}
-
-impl Executor {
-    fn new() -> Self {
-        Executor {
-            tasks: Arc::new(Mutex::new(VecDeque::new())),
-        }
-    }
-
-    fn spawn<F>(&self, future: F)
-    where
-        F: Future<Output = ()> + Send + 'static,
-    {
-        let mut tasks = self.tasks.lock().unwrap();
-        tasks.push_back(Task::new(Box::pin(future)));
-    }
-
-    fn run(&self) {
-        while let Some(mut task) = self.tasks.lock().unwrap().pop_front() {
-            let waker = waker_fn::waker_fn(move || {
-                // Implement wake logic here
-            });
-            let mut cx = Context::from_waker(&waker);
-            task.poll(&mut cx);
-        }
-    }
-}
-
-fn main() {
-    let executor = Executor::new();
-
-    executor.spawn(async {
-        Delay::new(Duration::from_secs(1)).await;
-        println!("Task completed");
-    });
-
-    executor.run();
-}
-{{< /prism >}}
-<p style="text-align: justify;">
-In this example, <code>Executor</code> is a simple task scheduler. It maintains a queue of tasks and provides methods to spawn and run them. The <code>spawn</code> method takes a future and adds it to the queue. The <code>run</code> method continuously polls tasks until they complete. Note that this example is highly simplified; real-world executors involve more sophisticated scheduling and handling of <code>Waker</code> notifications.
 </p>
 
 <p style="text-align: justify;">
@@ -505,6 +616,16 @@ In Rust, asynchronous I/O operations enable efficient handling of file and netwo
 Asynchronous file I/O operations allow reading and writing files without blocking the thread. While Rust's standard library itself doesn’t directly support asynchronous file I/O, crates like Tokio provide this functionality. Here’s an example of how to perform asynchronous file I/O using Tokio:
 </p>
 
+{{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "async-file-io"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] 
+{{< /prism >}}
 {{< prism lang="rust" line-numbers="true">}}
 use tokio::fs::File;
 use tokio::io::{self, AsyncReadExt, AsyncWriteExt};
@@ -536,6 +657,16 @@ In this example, <code>File::create</code> and <code>File::open</code> are used 
 Asynchronous network I/O is crucial for building high-performance network applications. Tokio provides asynchronous network operations with its <code>tokio::net</code> module. Here’s an example of an asynchronous TCP client:
 </p>
 
+{{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "async-tcp-client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
 {{< prism lang="rust" line-numbers="true">}}
 use tokio::net::TcpStream;
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
@@ -569,13 +700,29 @@ Here’s how you might use <code>std::io</code> traits with Tokio’s asynchrono
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "async-file-copy"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
 use tokio::fs::File;
 use tokio::io::{self, AsyncReadExt, AsyncWriteExt};
+use std::path::Path;
 
-async fn copy_file() -> io::Result<()> {
+async fn copy_file(src: &str, dst: &str) -> io::Result<()> {
     // Open source and destination files asynchronously
-    let mut src_file = File::open("source.txt").await?;
-    let mut dst_file = File::create("destination.txt").await?;
+    if !Path::new(src).exists() {
+        println!("Source file {} does not exist.", src);
+        return Ok(());
+    }
+
+    let mut src_file = File::open(src).await?;
+    let mut dst_file = File::create(dst).await?;
 
     // Buffer to hold the data read from the source file
     let mut buffer = [0; 1024];
@@ -594,7 +741,7 @@ async fn copy_file() -> io::Result<()> {
 
 #[tokio::main]
 async fn main() -> io::Result<()> {
-    copy_file().await
+    copy_file("source.txt", "destination.txt").await
 }
 {{< /prism >}}
 <p style="text-align: justify;">
@@ -619,9 +766,20 @@ The <code>Pin</code> type wraps a value and prevents it from being moved, which 
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "pinned-future"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+futures = "0.3"
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
 use std::pin::Pin;
 use std::task::{Context, Poll};
 use std::future::Future;
+use futures::task::{noop_waker, ArcWake};
 
 struct MyFuture {
     value: u32,
@@ -637,12 +795,12 @@ impl Future for MyFuture {
 
 fn main() {
     let future = MyFuture { value: 42 };
-    let mut pinned_future = Pin::new(&future);
+    let mut pinned_future = Box::pin(future);
 
-    let waker = futures::task::noop_waker();
+    let waker = noop_waker();
     let mut context = Context::from_waker(&waker);
 
-    if let Poll::Ready(value) = pinned_future.poll(&mut context) {
+    if let Poll::Ready(value) = pinned_future.as_mut().poll(&mut context) {
         println!("Future resolved with value: {}", value);
     }
 }
@@ -660,16 +818,27 @@ Here’s an example of how to work with asynchronous streams:
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
-use tokio::stream::{Stream, StreamExt};
+//Cargo.toml
+[package]
+name = "async-stream-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tokio-stream = "0.1"
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
+use tokio_stream::{Stream, StreamExt};
 use tokio::time::{self, Duration};
 
 async fn simple_stream() -> impl Stream<Item = u32> {
-    tokio::stream::iter(vec![1, 2, 3, 4, 5])
+    tokio_stream::iter(vec![1, 2, 3, 4, 5])
 }
 
 #[tokio::main]
 async fn main() {
-    let mut stream = simple_stream().await;
+    let mut stream = simple_stream().await; // Await to get the stream itself.
 
     while let Some(item) = stream.next().await {
         println!("Got item: {}", item);
@@ -685,6 +854,16 @@ In this example, <code>simple_stream</code> creates an asynchronous stream of <c
 Concurrency in Rust with <code>async</code> and <code>await</code> allows you to run multiple tasks simultaneously without blocking. Using <code>async</code> functions and the <code>await</code> keyword, you can manage concurrent tasks efficiently. Here’s an example that demonstrates running multiple asynchronous tasks concurrently:
 </p>
 
+{{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "concurrent-tasks"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
 {{< prism lang="rust" line-numbers="true">}}
 use tokio::time::{self, Duration};
 
@@ -729,6 +908,16 @@ In Tokio, tasks are managed using the <code>task::spawn</code> function, which s
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "tokio-example"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
 use tokio::task;
 use tokio::time::{self, Duration};
 
@@ -742,7 +931,7 @@ async fn main() {
     let task1 = task::spawn(perform_task("1", Duration::from_secs(2)));
     let task2 = task::spawn(perform_task("2", Duration::from_secs(1)));
 
-    let _ = tokio::try_join!(task1, task2);
+    let _ = tokio::try_join!(task1, task2).unwrap();
 
     println!("All tasks completed");
 }
@@ -756,7 +945,19 @@ In async-std, you use <code>task::spawn</code> to create tasks and <code>task::b
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
+//Cargo.toml
+[package]
+name = "async-std-example"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+async-std = "1.10.0"
+futures = "0.3"
+{{< /prism >}}
+{{< prism lang="rust" line-numbers="true">}}
 use async_std::task;
+use futures::join;
 use std::time::Duration;
 
 async fn perform_task(name: &'static str, delay: Duration) {
@@ -769,7 +970,7 @@ fn main() {
         let t1 = task::spawn(perform_task("1", Duration::from_secs(2)));
         let t2 = task::spawn(perform_task("2", Duration::from_secs(1)));
 
-        futures::try_join!(t1, t2).unwrap();
+        join!(t1, t2);
 
         println!("All tasks completed");
     });
