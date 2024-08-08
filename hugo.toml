@@ -172,3 +172,7 @@ title = 'The Rust Programming Language'
 #     url = "https://github.com/colinwilson/lotusdocs/discussions"
 #     identifier = "community"
 #     weight = 30
+
+[services]
+  [services.disqus]
+    shortname = 'rantai'
