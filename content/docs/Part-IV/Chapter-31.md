@@ -103,28 +103,6 @@ Here, the pattern <code>(\d{4})-(\d{2})-(\d{2})</code> includes three capturing 
 </p>
 
 <p style="text-align: justify;">
-Additionally, the <code>regex</code> crate supports various advanced features, such as lookahead and lookbehind assertions, which provide powerful ways to match patterns based on surrounding context without including those parts in the match result. For instance, a lookahead assertion might be used to find all occurrences of a word that is followed by a specific character, without including that character in the match:
-</p>
-
-{{< prism lang="rust" line-numbers="true">}}
-use regex::Regex;
-
-fn main() {
-    // Define a regex pattern with a positive lookahead assertion
-    let re = Regex::new(r"\b\w+(?=\s)").unwrap();
-    let text = "Find all words followed by a space";
-    
-    // Find all matches based on the lookahead assertion
-    for word in re.find_iter(text) {
-        println!("Found word: {}", word.as_str());
-    }
-}
-{{< /prism >}}
-<p style="text-align: justify;">
-In this example, the pattern <code>\b\w+(?=\s)</code> uses a positive lookahead assertion <code>(?=\s)</code> to match words that are followed by a whitespace character, but only the words are included in the match result.
-</p>
-
-<p style="text-align: justify;">
 The <code>regex</code> crate's integration with Rust's features, such as iterators and error handling, ensures that regex operations are not only powerful but also safe and efficient. By using the <code>regex</code> crate, developers can leverage Rust's strengths to perform complex text-processing tasks while maintaining high performance and safety standards.
 </p>
 
