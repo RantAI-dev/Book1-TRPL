@@ -61,14 +61,14 @@ title = 'The Rust Programming Language'
 
     [params.social]
         github = "RantAi-dev"        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
-        twitter = ""       # YOUR_TWITTER_ID
+        # twitter = ""       # YOUR_TWITTER_ID
         # instagram = "colinwilson"     # YOUR_INSTAGRAM_ID
         # rss = true                    # show rss icon with link
 
     [params.docs] # Parameters for the /docs 'template'
         title           = "Lotus Docs Example Site"           # default html title for documentation pages/sections
 
-        # pathName        = "docs"                            # path name for documentation site | default "docs"
+        # pathName        = "book"                            # path name for documentation site | default "docs"
 
         themeColor      = "cardinal"                            # (optional) - Set theme accent colour. Options include: blue (default), green, red, yellow, emerald, cardinal, magenta, cyan
 
@@ -81,7 +81,7 @@ title = 'The Rust Programming Language'
         # gitinfo
         repoURL         = "https://github.com/colinwilson/lotusdocs.dev"  # Git repository URL for your site [support for GitHub, GitLab, and BitBucket]
         repoBranch      = "release"                           # Name of your Git repository branch
-        editPage        = true                                # enable 'Edit this page' feature - default false
+        editPage        = false                                # enable 'Edit this page' feature - default false
         lastMod         = true                                # enable 'Last modified' date on pages - default false
         lastModRelative = true                                # format 'Last modified' time as relative - default true
 
@@ -108,7 +108,7 @@ title = 'The Rust Programming Language'
         # Link behaviour
         intLinkTooltip  = true                                # Enable a tooltip for internal links that displays info about the destination? default false
         # extLinkNewTab   = false                               # Open external links in a new Tab? default true
-        logoLinkURL = "https://colinwilson.uk"                                      # Set a custom URL destination for the top h
+        logoLinkURL = "https://rantai.dev"                                      # Set a custom URL destination for the top h
 
     [params.flexsearch] # Parameters for FlexSearch
         enabled             = true
