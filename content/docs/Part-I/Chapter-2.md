@@ -55,13 +55,9 @@ This tour presents Rust as an integrated whole rather than a collection of separ
 Rust is a compiled language, meaning that its source code needs to be processed by a compiler to create a runnable program. You write your Rust code in one or more source files, commonly named <code>Main.rs</code> and <code>Lib.rs</code>. The Rust compiler processes these source files to produce object files, such as <code>Main.o</code> and <code>Lib.o</code>. These object files are then combined by a linker to create the final executable program. This process ensures that all parts of your program are correctly compiled and linked together, resulting in a file that you can run on your computer.
 </p>
 
-{{< prism lang="{figure} images\P8MKxO7NRG2n396LeSEs-Z2pkvBAKxWT6RtooMKT4-v2.png" line-numbers="true">}}
-:name: hslWLEubma
-:align: center
-:width: 70%
+{{< figure src="images/P8MKxO7NRG2n396LeSEs-Z2pkvBAKxWT6RtooMKT4-v2.png" width="500" height="300" class="text-center" >}}
 
-Separate compilation using rustc compiler.
-{{< /prism >}}
+
 <p style="text-align: justify;">
 When we talk about the portability of Rust programs, we refer to the ability of Rust’s source code to be compiled and run on different systems. It’s important to note that the compiled executable is specific to the hardware and operating system it was built for. For instance, an executable built on a Mac will not run on a Windows PC without recompilation. However, the same Rust source code can be compiled on different systems, such as Mac, Windows, and Linux, to produce executables for those systems.
 </p>
@@ -83,10 +79,10 @@ rustc --emit=obj -o Lib.o Lib.rs
 <p style="text-align: justify;">
 Again, <code>--emit=obj</code> tells the compiler to create an object file, and <code>-o</code> specifies the output file name, <code>Lib.o</code>. Here, <code>rustc</code> takes the two object files, <code>Main.o</code> and <code>Lib.o</code>, and the following command links them together to generate an executable named <code>MyProgram</code>.
 </p>
-
 {{< prism lang="shell">}}
 rustc Main.o Lib.o -o MyProgram
 {{< /prism >}}
+
 <p style="text-align: justify;">
 These commands should be executed in your VS Code terminal or command prompt from the directory where your source files are located. By following these steps, you compile and link your Rust code into a runnable program. Another technique for compiling a library is using the cargo tool and compiler option <code>--crate-type=lib</code>. You can practice this later using ChatGPT.
 </p>
@@ -112,6 +108,7 @@ The minimal Rust program is:
 fn main() {}
 // the minimal Rust program
 {{< /prism >}}
+
 <p style="text-align: justify;">
 This defines a function called \<code>main\</code>, which takes no arguments and does nothing. Curly braces \<code>{}\</code> are used to group code in Rust, indicating the start and end of the function body. The double slash \<code>//\</code> begins a comment that extends to the end of the line, intended for human readers and ignored by the compiler. Every Rust program must have exactly one global function named \<code>main()\</code>. The program starts by executing this function. Unlike C++, the \<code>main\</code> function in Rust does not return a value to the system by default; it assumes successful completion unless an explicit return value or error is specified.
 </p>
@@ -125,6 +122,7 @@ fn main() {
     println!("Hello, World!");
 }
 {{< /prism >}}
+
 <p style="text-align: justify;">
 In Rust, the <code>println!</code> macro is used for output. The expression
 </p>
@@ -132,6 +130,7 @@ In Rust, the <code>println!</code> macro is used for output. The expression
 {{< prism lang="rust">}}
 println!("Hello, World!");
 {{< /prism >}}
+
 <p style="text-align: justify;">
 writes "Hello, World!" to the console. The <code>println!</code> macro is part of Rust's standard library and requires no additional imports to use. The <code>println!</code> macro uses the format string syntax, where the string literal "Hello, World!" is surrounded by double quotes. In a string literal, the backslash character <code>\</code> followed by another character denotes a special character. In this case, <code>\n</code> is the newline character, so the output is "Hello, World!" followed by a newline.
 </p>
@@ -153,6 +152,7 @@ fn main() {
     print_square(1.234); // prints: the square of 1.234 is 1.522756
 }
 {{< /prism >}}
+
 <p style="text-align: justify;">
 A <code>()</code> return type indicates that a function does not return a value.
 </p>
@@ -165,6 +165,7 @@ Every name and every expression in Rust has a type that determines the operation
 {{< prism lang="rust">}}
 let inch: i32;
 {{< /prism >}}
+
 <p style="text-align: justify;">
 specifies that <code>inch</code> is of type <code>i32</code>; that is, <code>inch</code> is an integer variable.
 </p>
@@ -191,6 +192,7 @@ char // character, for example, 'a', 'z', and '9'
 i32 // 32-bit integer, for example, 1, 42, and 1066
 f64` // double-precision floating-point number, for example, 3.14 and 299793.0
 {{< /prism >}}
+
 <p style="text-align: justify;">
 Each fundamental type corresponds directly to hardware facilities and has a fixed size that determines the range of values that can be stored in it.
 </p>
@@ -202,6 +204,7 @@ Each fundamental type corresponds directly to hardware facilities and has a fixe
 
 Fundamental types in Rust
 {{< /prism >}}
+
 <p style="text-align: justify;">
 In Rust, the <code>char</code> type is used to represent a single Unicode scalar value, which encompasses most of the characters you might use, including letters, digits, and symbols from various languages and scripts. By design, a <code>char</code> in Rust is 4 bytes (32 bits) in size. This 32-bit size is chosen to accommodate the full range of Unicode characters, ensuring that each <code>char</code> can represent any valid Unicode scalar value.
 </p>
