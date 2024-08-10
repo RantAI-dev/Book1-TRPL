@@ -17,7 +17,7 @@ This section provides an overview of all chapters included in the book. Navigate
 
 ### **Main Sections**
 
-- [**The Rust Programming Language**](/docs/1-the-rust-programming-language/)
+- [**The Rust Programming Language**](/docs/the-rust-programming-language/)
 - [**Preface**](/docs/preface/)
 - [**Foreword**](/docs/foreword/)
 
