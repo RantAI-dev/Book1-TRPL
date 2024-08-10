@@ -362,7 +362,7 @@ Rust's ecosystem provides several crates to facilitate asynchronous programming,
 To implement asynchronous TCP and UDP communication, we can use the <code>tokio</code> and <code>async-std</code> crates. Here, we will cover how to create asynchronous echo servers and clients for both TCP and UDP using these crates.
 </p>
 
-##### Asynchronous TCP Echo Server Using `tokio`
+#### Asynchronous TCP Echo Server Using `tokio`
 <p style="text-align: justify;">
 To create an asynchronous TCP echo server using <code>tokio</code>, we first need to include the <code>tokio</code> crate in our <code>Cargo.toml</code> file:
 </p>
@@ -407,7 +407,7 @@ async fn main() -> std::io::Result<()> {
     }
 }
 {{< /prism >}}
-##### Asynchronous TCP Echo Client Using `tokio`
+#### Asynchronous TCP Echo Client Using `tokio`
 <p style="text-align: justify;">
 Next, we create a client that connects to the server and sends a message:
 </p>
@@ -429,7 +429,7 @@ async fn main() -> std::io::Result<()> {
     Ok(())
 }
 {{< /prism >}}
-##### Asynchronous UDP Echo Server Using `async-std`
+#### Asynchronous UDP Echo Server Using `async-std`
 <p style="text-align: justify;">
 To create an asynchronous UDP echo server using <code>async-std</code>, we need to include the <code>async-std</code> crate in our <code>Cargo.toml</code> file:
 </p>
@@ -459,7 +459,7 @@ async fn main() -> std::io::Result<()> {
     }
 }
 {{< /prism >}}
-##### Asynchronous UDP Echo Client Using `async-std`
+#### Asynchronous UDP Echo Client Using `async-std`
 <p style="text-align: justify;">
 Finally, we create a client that sends a message to the server and waits for a response:
 </p>
@@ -752,7 +752,7 @@ To use TLS with <code>rustls</code>, you first need to add the crate to your <co
 
 {{< prism lang="text" line-numbers="true">}}
 [dependencies]
-rustls = "0.23.12" ## Check for the latest version
+rustls = "0.23.12" # Check for the latest version
 tokio = { version = "1", features = ["full"] }
 {{< /prism >}}
 <p style="text-align: justify;">
@@ -828,6 +828,7 @@ use tokio::net::TcpStream;
 use tokio::io::AsyncWriteExt;
 use tokio_rustls::TlsConnector;
 use webpki::DNSNameRef;
+use std::io::Read; // Import the `Read` trait to use `read_to_end`
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -851,7 +852,7 @@ fn load_certs(path: &str) -> Result<Vec<rustls::Certificate>, Box<dyn std::error
     let mut file = std::fs::File::open(path)?;
     let mut buf = vec![];
     file.read_to_end(&mut buf)?;
-    Ok(rustls::Certificate(buf))
+    Ok(vec![rustls::Certificate(buf)]) // Wrap the buffer in a Vec as expected
 }
 {{< /prism >}}
 <p style="text-align: justify;">
@@ -904,11 +905,11 @@ Here is a practical example of writing unit tests for network code in Rust. Cons
 </p>
 
 {{< prism lang="rust" line-numbers="true">}}
-// File: src/main.rs
 use tokio::net::TcpListener;
-use tokio::prelude::*;
+use tokio::io::{AsyncReadExt, AsyncWriteExt}; // Import the necessary traits
+use std::sync::Arc;
 
-async fn handle_client(mut socket: tokio::net::TcpStream) -> Result<(), Box<dyn std::error::Error>> {
+async fn handle_client(mut socket: tokio::net::TcpStream) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let mut buf = [0; 1024];
     let n = socket.read(&mut buf).await?;
     if n == 0 {
@@ -918,7 +919,7 @@ async fn handle_client(mut socket: tokio::net::TcpStream) -> Result<(), Box<dyn 
     Ok(())
 }
 
-async fn run_server(address: &str) -> Result<(), Box<dyn std::error::Error>> {
+async fn run_server(address: &str) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let listener = TcpListener::bind(address).await?;
     while let Ok((socket, _)) = listener.accept().await {
         tokio::spawn(handle_client(socket));
@@ -927,7 +928,7 @@ async fn run_server(address: &str) -> Result<(), Box<dyn std::error::Error>> {
 }
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
+async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     run_server("127.0.0.1:8080").await
 }
 {{< /prism >}}
@@ -940,7 +941,7 @@ For testing the server, we can create a test module in the same file:
 mod tests {
     use super::*;
     use tokio::net::TcpStream;
-    use tokio::io::AsyncWriteExt;
+    use tokio::io::{AsyncWriteExt, AsyncReadExt};
 
     #[tokio::test]
     async fn test_echo_server() -> Result<(), Box<dyn std::error::Error>> {
@@ -952,7 +953,7 @@ mod tests {
         });
 
         // Allow some time for the server to start
-        tokio::time::sleep(std::time::Duration::from_secs(1)).await;
+        tokio::time::sleep(std::time::Duration::from_millis(500)).await;
 
         // Create a TCP client to connect to the server
         let mut stream = TcpStream::connect("127.0.0.1:8080").await?;
@@ -1015,14 +1016,19 @@ Consider a simple TCP server implementation with a common pitfall related to res
 
 {{< prism lang="rust" line-numbers="true">}}
 use tokio::net::TcpListener;
-use tokio::prelude::*;
+use tokio::io::{AsyncReadExt, AsyncWriteExt};
+use tokio::sync::Semaphore;
+use std::sync::Arc;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let listener = TcpListener::bind("127.0.0.1:8080").await?;
     println!("Server listening on port 8080");
 
+    let semaphore = Arc::new(Semaphore::new(100)); // Limit to 100 concurrent connections
+
     loop {
+        let permit = semaphore.clone().acquire_owned().await.unwrap();
         let (mut socket, _) = match listener.accept().await {
             Ok(conn) => conn,
             Err(e) => {
@@ -1032,6 +1038,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         };
 
         tokio::spawn(async move {
+            let _permit = permit; // Keep permit alive in the task
             let mut buf = [0; 1024];
             loop {
                 match socket.read(&mut buf).await {
