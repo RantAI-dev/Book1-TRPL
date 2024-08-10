@@ -56,7 +56,7 @@ Rust is a compiled language, meaning that its source code needs to be processed 
 </p>
 
 {{< figure src="images/P8MKxO7NRG2n396LeSEs-Z2pkvBAKxWT6RtooMKT4-v2.png" width="500" height="300" class="text-center" >}}
-
+<p style="text-align: center;">Figure 1: Separate compilation using rustc compiler.</p>
 
 <p style="text-align: justify;">
 When we talk about the portability of Rust programs, we refer to the ability of Rust’s source code to be compiled and run on different systems. It’s important to note that the compiled executable is specific to the hardware and operating system it was built for. For instance, an executable built on a Mac will not run on a Windows PC without recompilation. However, the same Rust source code can be compiled on different systems, such as Mac, Windows, and Linux, to produce executables for those systems.
@@ -197,13 +197,8 @@ f64` // double-precision floating-point number, for example, 3.14 and 299793.0
 Each fundamental type corresponds directly to hardware facilities and has a fixed size that determines the range of values that can be stored in it.
 </p>
 
-{{< prism lang="{figure} images\P8MKxO7NRG2n396LeSEs-Qv2pBisqZHsgb6GqSmro-v1.png" line-numbers="true">}}
-:name: rSDVQKe7Pj
-:align: center
-:width: 70%
-
-Fundamental types in Rust
-{{< /prism >}}
+{{< figure src="images/P8MKxO7NRG2n396LeSEs-Qv2pBisqZHsgb6GqSmro-v1.png" width="500" height="300" class="text-center" >}}
+<p style="text-align: center;">Figure 2: Fundamental types in Rust</p>
 
 <p style="text-align: justify;">
 In Rust, the <code>char</code> type is used to represent a single Unicode scalar value, which encompasses most of the characters you might use, including letters, digits, and symbols from various languages and scripts. By design, a <code>char</code> in Rust is 4 bytes (32 bits) in size. This 32-bit size is chosen to accommodate the full range of Unicode characters, ensuring that each <code>char</code> can represent any valid Unicode scalar value.
@@ -544,13 +539,8 @@ fn main() {
 In Rust, dereferencing a raw pointer requires an <code>unsafe</code> block because raw pointers bypass the language's usual safety guarantees. Unlike references, raw pointers do not enforce borrowing rules or guarantee that the memory they point to is valid, which could lead to undefined behavior if misused. By requiring an <code>unsafe</code> block, Rust ensures that developers explicitly acknowledge and take responsibility for the potential risks involved in manipulating raw pointers, such as accessing uninitialized memory or causing data races, thereby reinforcing the language's commitment to safety and preventing inadvertent unsafe operations.
 </p>
 
-{{< prism lang="{figure} images\P8MKxO7NRG2n396LeSEs-kU9amdLwJ3QZfYnTmaWW-v1.png" line-numbers="true">}}
-:name: ISTZCLsC75
-:align: center
-:width: 70%
-
-Unsafe dereferencing of a raw pointer in Rust.
-{{< /prism >}}
+{{< figure src="images/P8MKxO7NRG2n396LeSEs-kU9amdLwJ3QZfYnTmaWW-v1.png" width="500" height="300" class="text-center" >}}
+<p style="text-align: center;">Figure 3: Unsafe dereferencing of a raw pointer in Rust.</p>
 <p style="text-align: justify;">
 Consider copying ten elements from one array to another in Rust:
 </p>
@@ -849,13 +839,8 @@ In this example, the <code>Vector</code> struct has private fields (<code>elem</
 We can illustrate a <code>Vector</code> object graphically:
 </p>
 
-{{< prism lang="{figure} images\P8MKxO7NRG2n396LeSEs-htidjDEZZtzXYAx4UQE0-v1.png" line-numbers="true">}}
-:name: UBWuMBmfLf
-:align: center
-:width: 70%
-
-Vector implementation in Rust.
-{{< /prism >}}
+{{< figure src="images/P8MKxO7NRG2n396LeSEs-htidjDEZZtzXYAx4UQE0-v1.png" width="500" height="300" class="text-center" >}}
+<p style="text-align: center;">Figure 4: Vector implementation in Rust.</p>
 <p style="text-align: justify;">
 Essentially, the <code>Vector</code> object acts as a "handle" that contains a pointer to the elements (<code>elem</code>) and the number of elements (<code>sz</code>). The number of elements (6 in this example) can differ between <code>Vector</code> objects and can change over time for a given <code>Vector</code> object. Despite this variability, the <code>Vector</code> object itself maintains a consistent size. This approach, where a fixed-size handle manages a variable amount of data stored elsewhere, is a fundamental technique in Rust for managing dynamic information. Understanding how to design and use such objects is a key aspect of Rust programming.
 </p>
@@ -1381,14 +1366,9 @@ fn sqrt_sum(v: &Vector) -> f64 {
 <p style="text-align: justify;">
 In this setup, <code>Main.rs</code> and <code>Vector.rs</code> share the <code>Vector</code> interface information defined in <code>Vector.rs</code>, but the two files are otherwise independent and can be compiled separately. This modular approach allows for separate compilation and maintains the independence of program components.
 </p>
-
-{{< prism lang="{figure} images\P8MKxO7NRG2n396LeSEs-Dx2q7fIbxugxD2wtXfax-v1.png" line-numbers="true">}}
-:name: O4UPXvXezE
-:align: center
-:width: 50%
-
-Modular design of Vector implementation.
-{{< /prism >}}
+{{< figure src="images/P8MKxO7NRG2n396LeSEs-Dx2q7fIbxugxD2wtXfax-v1.png" width="500" height="300" class="text-center" >}}
+<p style="text-align: center;">Figure 5: Modular design of Vector implementation.
+</p>
 <p style="text-align: justify;">
 Separate compilation is a concept that extends beyond the specifics of any one programming language. Instead, it relates to how a language's features and implementation can be used to manage and compile code in a modular and efficient way. While the underlying principle is not unique to Rust or any other language, Rust provides robust mechanisms to support and enhance this practice.
 </p>

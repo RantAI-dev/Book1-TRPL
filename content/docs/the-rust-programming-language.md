@@ -110,7 +110,7 @@ At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia
     <div class="col-md-4 col-12 py-2">
         <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/farrel-rassya-1b6991257/">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
-                <img src="../../images/P8MKxO7NRG2n396LeSEs-Ra9qnq6ahPYHkvvzi71z-v1.png" class="card-img-top" alt="Farrel Rasya">
+                <img src="../../images/farrel-rasya.png" class="card-img-top" alt="Farrel Rasya">
                 <div class="card-body p-0 content">
                     <p class="fs-5 fw-semibold card-title mb-1">Farrel Rasya</p>
                 </div>
