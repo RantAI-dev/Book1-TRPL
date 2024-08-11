@@ -6,48 +6,49 @@ hero:
   weight: 10
   template: hero
 
-  backgroundImage:
-    path: "images/templates/hero"
-    filename:
-      desktop: "gradient-desktop.webp"
-      mobile: "gradient-mobile.webp"
+  # backgroundImage:
+  #   path: "images/templates/hero"
+  #   filename:
+  #     desktop: "gradient-desktop.webp"
+  #     mobile: "gradient-mobile.webp"
 
   badge:
     text: v0.1.0
-    color: primary # primary, secondary, success, danger, warning, info, light, dark
+    color: success # primary, secondary, success, danger, warning, info, light, dark
     pill: false # boolean
     soft: true # boolean
 
-  # titleLogo:
-  #   path: "images/logos"
-  #   filename: "title_logo.png"
-  #   alt: "Lotus Docs Logo"
-  #   height: 80px
+  titleLogo:
+    path: "images/logos"
+    filename: "title_logo.png"
+    alt: "Lotus Docs Logo"
+    height: 80px
 
-  title: "Lotus Docs"
-  subtitle: A lightweight, **modern documentation** theme for Hugo. Easily customised for building **fast**, **secure**, and **SEO-friendly** documentation sites.
-
+  title: "The Rust Programming Language"
+  subtitle: A Modern Rust Book
   image:
     path: "images" # path to image under configured assets directory. default 'images'
-    filename: "lotus_docs_screenshot.png" # filename of your hero image (including file extension)
-    alt: "Lotus Docs Screenshot" # Optional but recommended
+    filename: "P8MKxO7NRG2n396LeSEs-GwKBjxxYsu065L5olhOV-v1.png" # filename of your hero image (including file extension)
+    alt: "TRPL Cover" # Optional but recommended
+    Width: 1000px
+    Height: 500px
     boxShadow: true # default 'false' (excludes .svg images)
     rounded: true # round the image corners? default 'false' (excludes .svg images)
 
   ctaButton:
     icon: rocket_launch
-    btnText: "Get Started"
-    url: "/docs/quickstart/#create-a-new-lotus-docs-site"
+    btnText: "Read Book"
+    url: "/docs/the-rust-programming-language"
   cta2Button:
-    icon: construction
-    btnText: "In Development"
-    url: "https://github.com/colinwilson/lotusdocs"
+    icon: toc
+    btnText: "Table of Contents"
+    url: "/docs/table-of-contents"
 
-  info: "**Open Source** MIT Licensed."
+  info: "This book is licensed under a **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.**"
 
 # Feature Grid
 featureGrid:
-  enable: true
+  enable: false
   weight: 20
   template: feature grid
 
@@ -93,7 +94,7 @@ featureGrid:
 
 # Image compare
 imageCompare:
-  enable: true
+  enable: false
   weight: 30
   template: image compare
 

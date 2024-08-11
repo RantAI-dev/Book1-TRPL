@@ -61,28 +61,51 @@
                     {{ end }}
 
                     <div class="mt-3">
-                        {{ with .ctaButton }}
-                            <a href="{{ relLangURL .Site.Data.landing.hero.ctaButton.url }}" class="btn btn-lg btn-primary me-2 mt-2">
-                                {{ with .icon }}
-                                    <span class="material-icons align-middle">{{ . }}</span>
-                                {{ end }}
-                                {{ with .btnText }}
-                                    {{ . }}
-                                {{ end }}
-                            </a>
-                        {{ end }}
-                        {{ with .cta2Button }}
-                        <a href="{{ relLangURL .url }}" class="btn btn-lg btn-outline-primary mt-2">
-                            {{ with .icon }}
-                                <span class="material-icons align-middle">{{ . }}</span>
-                            {{ end }}
-                            {{ with .btnText }}
-                                {{ . }}
-                            {{ end }}
-                        </a>
-                        {{ end }}
-                    </div>
-
+                      <style>
+                          .btn-cardinal {
+                              background-color: #C41E3A;
+                              color: white;
+                              border-color: #C41E3A;
+                          }
+                          .btn-cardinal:hover {
+                              background-color: #A3162D; /* Slightly darker for hover */
+                              color: white;
+                              border-color: #A3162D;
+                          }
+                          .btn-outline-cardinal {
+                              color: #C41E3A;
+                              border-color: #C41E3A;
+                              background-color: transparent;
+                          }
+                          .btn-outline-cardinal:hover {
+                              background-color: #C41E3A;
+                              color: white;
+                              border-color: #C41E3A;
+                          }
+                      </style>
+                  
+                      {{ with .ctaButton }}
+                          <a href="{{ relLangURL .Site.Data.landing.hero.ctaButton.url }}" class="btn btn-lg btn-cardinal me-2 mt-2">
+                              {{ with .icon }}
+                                  <span class="material-icons align-middle">{{ . }}</span>
+                              {{ end }}
+                              {{ with .btnText }}
+                                  {{ . }}
+                              {{ end }}
+                          </a>
+                      {{ end }}
+                      {{ with .cta2Button }}
+                          <a href="{{ relLangURL .url }}" class="btn btn-lg btn-outline-cardinal mt-2">
+                              {{ with .icon }}
+                                  <span class="material-icons align-middle">{{ . }}</span>
+                              {{ end }}
+                              {{ with .btnText }}
+                                  {{ . }}
+                              {{ end }}
+                          </a>
+                      {{ end }}
+                  </div>
+                  
                     {{ with .info }}
                     <p class="text-muted mb-0 mt-3">{{ . | markdownify }}</p>
                     {{ end }}
@@ -105,7 +128,7 @@
                                         {{ .Content | safeHTML }}
                                     {{ else }}
                                         {{ with .Resize (printf "%dx%d webp q85 drawing Lanczos" .Width .Height) }}
-                                            <img src="{{ .RelPermalink }}" class="{{ if $boxShadow }}shadow-lg{{ else }}{{ end }} mx-auto d-block {{ if $rounded }}rounded-top-4{{ else }}{{ end }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}">
+                                            <img src="{{ .RelPermalink }}" class="{{ if $boxShadow }}shadow-lg{{ else }}{{ end }} mx-auto d-block {{ if $rounded }}rounded-top-4{{ else }}{{ end }}" width="450" height="1200" alt="{{ $alt }}">
                                         {{ end }}
                                     {{ end }}
                                 {{ end }}
