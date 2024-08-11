@@ -27,7 +27,6 @@
 <section id="{{ $sectionTitle }}" class="d-table w-100 overflow-hidden hero">
     <div class="container">
         <div class="row mt-5 align-items-center">
-
             <div class="col-lg-6 col-md-6">
                 <div class="title-heading">
                     {{ with .badge }}
@@ -85,7 +84,7 @@
                       </style>
                   
                       {{ with .ctaButton }}
-                          <a href="{{ relLangURL .Site.Data.landing.hero.ctaButton.url }}" class="btn btn-lg btn-cardinal me-2 mt-2">
+                          <a href="/docs/the-rust-programming-language" class="btn btn-lg btn-cardinal me-2 mt-2">
                               {{ with .icon }}
                                   <span class="material-icons align-middle">{{ . }}</span>
                               {{ end }}

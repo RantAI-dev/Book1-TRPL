@@ -36,7 +36,7 @@ hero:
   ctaButton:
     icon: rocket_launch
     btnText: "Read Book"
-    url: "/docs/the-rust-programming-language"
+    url: "/docs/"
   cta2Button:
     icon: toc
     btnText: "Table of Contents"
