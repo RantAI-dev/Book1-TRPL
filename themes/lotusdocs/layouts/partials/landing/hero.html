@@ -128,7 +128,7 @@
                                         {{ .Content | safeHTML }}
                                     {{ else }}
                                         {{ with .Resize (printf "%dx%d webp q85 drawing Lanczos" .Width .Height) }}
-                                            <img src="{{ .RelPermalink }}" class="{{ if $boxShadow }}shadow-lg{{ else }}{{ end }} mx-auto d-block {{ if $rounded }}rounded-top-4{{ else }}{{ end }}" width="600" height="1200" alt="{{ $alt }}">
+                                            <img src="{{ .RelPermalink }}" class="{{ if $boxShadow }}shadow-lg{{ else }}{{ end }} mx-auto d-block {{ if $rounded }}rounded-top-4{{ else }}{{ end }}" width="300" height= "auto" alt="{{ $alt }}">
                                         {{ end }}
                                     {{ end }}
                                 {{ end }}

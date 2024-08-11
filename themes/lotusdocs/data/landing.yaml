@@ -24,16 +24,14 @@ hero:
     alt: "Lotus Docs Logo"
     height: 80px
 
-  title: "The Rust Programming Language"
-  subtitle: A Modern Rust Book
+  title: "Welcome!"
+  subtitle: The Rust Programming Language
   image:
     path: "images" # path to image under configured assets directory. default 'images'
     filename: "P8MKxO7NRG2n396LeSEs-GwKBjxxYsu065L5olhOV-v1.png" # filename of your hero image (including file extension)
     alt: "TRPL Cover" # Optional but recommended
-    Width: 1000px
-    Height: 500px
     boxShadow: true # default 'false' (excludes .svg images)
-    rounded: true # round the image corners? default 'false' (excludes .svg images)
+    rounded: false # round the image corners? default 'false' (excludes .svg images)
 
   ctaButton:
     icon: rocket_launch
@@ -52,7 +50,7 @@ featureGrid:
   weight: 20
   template: feature grid
 
-  title: Why choose Lotus Docs?
+  title: Why Read Our Book?
   subtitle: Lotus Docs is a highly configurable Hugo documentation theme. Yet, with the default configuration you can deploy and publish your documentation site in a matter of minutes. Check out some core features below.
 
   items:

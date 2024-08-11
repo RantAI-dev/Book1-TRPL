@@ -1,25 +1,69 @@
 {{ define "main" }}
-    <meta http-equiv='refresh' content='0; URL=https://trpl.rantai.dev/docs/the-rust-programming-language'>
+    <!-- Custom Notification for Redirection -->
+    <div id="redirectionModal" style="position: fixed; bottom: 20px; right: 20px; width: auto; z-index: 1050;">
+      <div class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="redirectionModalLabel" aria-hidden="false" style="display: block; background: rgba(0,0,0,0.4);">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="redirectionModalLabel">Welcome to Our Book!</h5>
+                      <button type="button" class="close" aria-label="Close" onclick="closeModalAndCancelRedirect();">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <p>You will be redirected to the Main Page in <span id="countdown">3</span> seconds. <a href="#" onclick="closeModalAndCancelRedirect(); return false;">Cancel</a></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script>
+      var redirectTimeout;
+      function startRedirect() {
+          var countdownElement = document.getElementById('countdown');
+          var secondsLeft = 3;
+          redirectTimeout = setTimeout(function() {
+              window.location = 'https://trpl.rantai.dev/docs/the-rust-programming-language';
+          }, 3000);
+
+          var countdownTimer = setInterval(function() {
+              secondsLeft--;
+              countdownElement.textContent = secondsLeft;
+              if (secondsLeft <= 0) {
+                  clearInterval(countdownTimer);
+              }
+          }, 1000);
+      }
+
+      function closeModalAndCancelRedirect() {
+          var modalElement = document.getElementById('redirectionModal');
+          modalElement.style.display = 'none';
+          clearTimeout(redirectTimeout);
+      }
+
+      // Start the redirection process when the page loads
+      startRedirect();
+  </script>
+
+    <!-- Hugo Data Processing -->
     {{ $landingData := .Site.Data.landing }}
     {{ $map := newScratch }}
-
     {{ range $key, $value := $landingData }}
         {{ $sectionTitle := (index $key) }}
         {{ $weight := string ($value.weight) }}
         {{ $template := string (replaceRE `( |-{1,})` "_" $value.template) }}
         {{ with and $template $weight }}
             {{ $map.SetInMap "wgtTpl" $sectionTitle (dict
-            "weight" $weight
-            "template" $template
-            "sectionTitle" $sectionTitle
+                "weight" $weight
+                "template" $template
+                "sectionTitle" $sectionTitle
             )}}
         {{ end }}
     {{ end }}
-
     {{ range sort ($map.Get "wgtTpl") ".weight" }}
         {{ $.Scratch.Set "sectionTitle" .sectionTitle }}
         {{ $path := printf "landing/%s.html" .template }}
         {{ partial $path $.Page }}
     {{ end }}
-    {{/* printf "%s" (sort ($map.Get "wgtTpl") ".weight" ) */}}
 {{ end }}
