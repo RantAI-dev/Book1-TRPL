@@ -56,7 +56,7 @@
                         {{ with .title }}{{ . }}{{ end }}
                     </h4>
                     {{ with .subtitle }}
-                    <p class="para-desc text-muted mb-0">{{ . | markdownify }}</p>
+                    <p style="font-size: 32px; font-weight: bold; color: #C41E3A;">{{ . | markdownify }}</p>
                     {{ end }}
 
                     <div class="mt-3">
@@ -106,7 +106,21 @@
                   </div>
                   
                     {{ with .info }}
-                    <p class="text-muted mb-0 mt-3">{{ . | markdownify }}</p>
+                    <div style="margin-top: 20px;">
+                      <p style="font-size: 16px; font-weight: bold; color: #C41E3A;">License Information</p>
+                      <div style="padding: 15px; background-color: #f9f9f9; border-left: 5px solid #C41E3A; margin-bottom: 20px;">
+                          This publication is available under the following terms:
+                          <div style="margin-top: 10px; font-weight: bold; color: #333;">
+                              Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
+                              <div style="color: #C41E3A;">(CC BY-NC-ND 4.0)</div>
+                          </div>
+                          <p style="margin-top: 10px;">
+                              This license allows you to share — copy and redistribute the material in any medium or format under the condition that you give appropriate credit, do not use the material for commercial purposes, and do not modify the material.
+                              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" style="text-decoration: none; color: #0056b3;">Learn more about this license.</a>
+                          </p>
+                      </div>
+                  </div>
+                  
                     {{ end }}
                 </div>
             </div>
@@ -127,7 +141,7 @@
                                         {{ .Content | safeHTML }}
                                     {{ else }}
                                         {{ with .Resize (printf "%dx%d webp q85 drawing Lanczos" .Width .Height) }}
-                                            <img src="{{ .RelPermalink }}" class="{{ if $boxShadow }}shadow-lg{{ else }}{{ end }} mx-auto d-block {{ if $rounded }}rounded-top-4{{ else }}{{ end }}" width="300" height= "auto" alt="{{ $alt }}">
+                                            <img src="{{ .RelPermalink }}" class="{{ if $boxShadow }}shadow-lg{{ else }}{{ end }} mx-auto d-block {{ if $rounded }}rounded-top-4{{ else }}{{ end }}" width="375" height= "auto" alt="{{ $alt }}">
                                         {{ end }}
                                     {{ end }}
                                 {{ end }}

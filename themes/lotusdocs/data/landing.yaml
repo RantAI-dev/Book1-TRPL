@@ -13,7 +13,7 @@ hero:
   #     mobile: "gradient-mobile.webp"
 
   badge:
-    text: v0.1.0
+    text: v1.0.0
     color: success # primary, secondary, success, danger, warning, info, light, dark
     pill: false # boolean
     soft: true # boolean
@@ -25,7 +25,7 @@ hero:
     height: 80px
 
   title: "Welcome!"
-  subtitle: The Rust Programming Language
+  subtitle: The Rust Programming Language (TRPL)
   image:
     path: "images" # path to image under configured assets directory. default 'images'
     filename: "P8MKxO7NRG2n396LeSEs-GwKBjxxYsu065L5olhOV-v1.png" # filename of your hero image (including file extension)
@@ -42,7 +42,9 @@ hero:
     btnText: "Table of Contents"
     url: "/docs/table-of-contents"
 
-  info: "This book is licensed under a **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.**"
+  info: "This book is licensed under a 
+  **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 
+  International License**"
 
 # Feature Grid
 featureGrid:
