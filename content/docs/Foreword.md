@@ -9,12 +9,6 @@ draft: false
 toc: true
 ---
 
-<center>
-
-## 📖 Foreword
-
-</center>
-
 {{% alert icon="💡" context="info" %}}<strong>"<em>The best way to predict the future is to invent it.</em>" — Alan Kay.</strong>{{% /alert %}}
 
 {{% alert icon="📖" context="success" %}}

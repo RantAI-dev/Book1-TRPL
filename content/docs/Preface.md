@@ -9,14 +9,6 @@ draft: false
 toc: true
 ---
 
----
-
-<center>
-
-## 📘 Preface
-
-</center>
-
 {{% alert icon="💡" context="info" %}}<strong>"<em>Any problem in computer science can be solved with another layer of indirection. But that usually will create another problem.</em>" —  Butler Lampson.</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}
