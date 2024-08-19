@@ -176,3 +176,5 @@ title = 'The Rust Programming Language'
 [services]
   [services.disqus]
     shortname = 'rantai'
+  [services.googleAnalytics]
+    ID = 'G-7EQYB0Z9ZK'
