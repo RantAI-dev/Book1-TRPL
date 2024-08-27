@@ -41,8 +41,7 @@ Your comprehensive guide to mastering Rust. This book takes you on a journey thr
 
 {{% alert icon="🚀" context="success" %}}
 <p style="text-align: justify;">
-At RantAI, emerging from the vibrant ecosystem of Telkom University in Indonesia, we are revolutionizing scientific computing and digital twin simulations with a forward-thinking vision. By leveraging Rust for exceptional system safety, Blockchain for robust security, and advanced AI and Machine Learning for transformative innovation, we are pioneering next-generation digital twin solutions. Our mission is to set new standards in technological excellence, delivering secure and intelligent applications that redefine the limits of what’s possible. Join us as we forge a new era of technology, where our foundations at Telkom University propel us towards groundbreaking advancements in scientific computing and simulation.
-</p>
+RantAI started as pioneer in open book publishing for scientific computing, setting the standard for technological innovation. As a premier System Integrator (SI), we specialize in addressing complex scientific challenges through advanced Machine Learning, Deep Learning, and Agent-Based Modeling. Our proficiency in AI-driven coding and optimization allows us to deliver comprehensive, end-to-end scientific simulation and digital twin solutions. At RantAI, we are dedicated to pushing the boundaries of technology, delivering cutting-edge solutions to tackle the world's most critical scientific problems.</p>
 {{% /alert %}}
 
 <center>
