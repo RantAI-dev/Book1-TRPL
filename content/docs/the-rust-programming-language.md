@@ -31,7 +31,7 @@ Your comprehensive guide to mastering Rust. This book takes you on a journey thr
 
 <div class="row justify-content-center">
     <div class="col-md-4 col-12 py-2">
-        <a class="text-decoration-none text-reset" href="https://www.linkedin.com/in/rantai/">
+        <a class="text-decoration-none text-reset" href="rantai.dev">
             <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1 text-center">
                 <img src="../../images/Logo.png" class="card-img-top" alt="Rantai Logo">
             </div>
