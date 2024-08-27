@@ -8,12 +8,6 @@ lastmod: "2024-08-05T21:24:59+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 19: Encapsulation
-
-</center>
-
 {{% alert icon="💡" context="info" %}}<strong>"<em>I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.</em>" — Bjarne Stroustrup</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}

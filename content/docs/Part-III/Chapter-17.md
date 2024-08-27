@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:24:55+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 17: Structs
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>Abstraction organizes the mind about what programs do and lets you focus on higher-level ideas. When you're working with high-level data structures, you're managing the complexity very effectively.</em>" — Bjarne Stroustrup</strong>{{% /alert %}}
 

@@ -8,11 +8,6 @@ lastmod: "2024-08-05T20:35:29+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-## 📘 Welcome to "The Rust Programming Language"
-
-</center>
 
 {{< figure src="images/P8MKxO7NRG2n396LeSEs-GwKBjxxYsu065L5olhOV-v1.png" width="500" height="300" class="text-center" >}}
 

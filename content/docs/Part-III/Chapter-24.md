@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:25:10+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 24: Vector and Matrix
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>Mathematics is the language in which God has written the universe.</em>" — Galileo Galilei</strong>{{% /alert %}}
 

@@ -5,15 +5,9 @@ description: "Exception Handling"
 icon: "article"
 date: "2024-08-05T21:21:29+07:00"
 lastmod: "2024-08-05T21:21:29+07:00"
-draft: falsee
+draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 15: Exception Handling
-
-</center>
-
 {{% alert icon="💡" context="info" %}}<strong>"<em>Understanding complexity allows us to distill it into elegant simplicity.</em>" — Don Norman</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}

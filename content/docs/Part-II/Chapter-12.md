@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:21:09+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 12: Statements and Expressions
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>Simplicity is prerequisite for reliability.</em>" — Edsger W. Dijkstra</strong>{{% /alert %}}
 

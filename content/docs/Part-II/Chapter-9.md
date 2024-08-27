@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:21:04+07:00"
 draft: falsee
 toc: true
 ---
-<center>
-
-# 📘 Chapter 9: Ownership and Move
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>Simplicity does not precede complexity, but follows it.</em>" — Alan J. Perlis</strong>{{% /alert %}}
 

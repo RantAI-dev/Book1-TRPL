@@ -9,11 +9,6 @@ draft: false
 toc: true
 ---
 
-<center>
-
-# 📘 Chapter 3: A Tour of Rust: Abstraction Mechanism
-
-</center>
 {{% alert icon="💡" context="info" %}}
 <strong>
 

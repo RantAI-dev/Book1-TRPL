@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:21:31+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 16: Source Files, Modules and Program
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>Good design is as little design as possible.</em>" — Dieter Rams</strong>{{% /alert %}}
 

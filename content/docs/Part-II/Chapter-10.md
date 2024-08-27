@@ -9,12 +9,6 @@ draft: false
 toc: true
 ---
 
-<center>
-
-# 📘 Chapter 10: Pointers and Arrays
-
-</center>
-
 {{% alert icon="💡" context="info" %}}<strong>"<em>Simplicity does not precede complexity, but follows it.</em>" — Alan J. Perlis</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}

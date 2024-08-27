@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:23:20+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Part 3 : Abstraction Mechanism
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>Design and programming are human activities; forget that and all is lost.</em>" — Bjarne Stroustrup</strong>{{% /alert %}}
 

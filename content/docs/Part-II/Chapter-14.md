@@ -8,12 +8,6 @@ lastmod: "2024-08-05T21:21:14+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 14: Functions
-
-</center>
-
 {{% alert icon="💡" context="info" %}}<strong>"<em>The real problem is that programmers have spent far too much time worrying about efficiency in the wrong places and at the wrong times; premature optimization is the root of all evil (or at least most of it) in programming.</em>" — Donald Knuth</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}

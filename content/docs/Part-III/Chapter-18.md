@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:24:57+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 18: Traits
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>A good design is not about how you structure your code, but how you think about your problem.</em>" — Grady Booch</strong>{{% /alert %}}
 

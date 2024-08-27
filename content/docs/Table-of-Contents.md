@@ -10,8 +10,6 @@ toc: true
 ---
 
 {{% alert icon="📚" context="info" %}}
-### **TRPL's Table of Contents**
-
 This section provides an overview of all chapters included in the book. Navigate through the chapters to dive deeper into Rust programming.
 {{% /alert %}}
 

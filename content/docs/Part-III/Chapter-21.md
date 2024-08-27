@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:25:03+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 21: Generics
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>A computer is like a bicycle for our minds.</em>" — Steve Jobs</strong>{{% /alert %}}
 

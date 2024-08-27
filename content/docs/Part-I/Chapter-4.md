@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:16:18+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 4 : A Tour of Rust: Containers and Algorithms
-
-</center>
 
 {{% alert icon="💡" context="info" %}}
 <strong>

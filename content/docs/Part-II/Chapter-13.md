@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:21:12+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 13: Select Operations
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>With select! in Rust, you can manage concurrent operations with the same safety and performance guarantees that Rust promises. It's a prime example of how Rust simplifies complex system programming tasks.</em>" — Yehuda Katz</strong>{{% /alert %}}
 

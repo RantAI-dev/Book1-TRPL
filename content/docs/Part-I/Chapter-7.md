@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:16:27+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 7 : A Tour of Rust: The Toolchain
-
-</center>
 
 {{% alert icon="💡" context="info" %}}
 

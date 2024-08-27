@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:16:20+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 5 : A Tour of Rust: Memory Safety and Concurrency
-
-</center>
 
 {{% alert icon="💡" context="info" %}}
 <strong>

@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:20:53+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 8: Types, Declaration, and Mutability
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>We don't just want to think about how to design our programs, but also how to design the code we write so it can help us discover errors and improve readability.</em>" — Bjarne Stroustrup</strong>{{% /alert %}}
 

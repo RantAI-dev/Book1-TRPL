@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:21:07+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 11: Structures, Unions, and Enumerations
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>Good programmers worry about data structures and their relationships.</em>" — Linus Torvalds</strong>{{% /alert %}}
 

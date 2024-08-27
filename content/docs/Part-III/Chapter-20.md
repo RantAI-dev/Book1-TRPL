@@ -8,12 +8,6 @@ lastmod: "2024-08-05T21:25:01+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 20: Composition vs Inheritance
-
-</center>
-
 {{% alert icon="💡" context="info" %}}<strong>"<em>Composition is more flexible than inheritance. It allows you to change the behavior of a system at runtime.</em>" — Robert C. Martin</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}

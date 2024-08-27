@@ -9,11 +9,6 @@ draft: false
 toc: true
 ---
 
-<center>
-
-# 📘 Part 4: Common Libraries
-
-</center>
 
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>Programs are meant to be read by humans and only incidentally for computers to execute.</em>" — Donald Knuth.</strong>{{% /alert %}}

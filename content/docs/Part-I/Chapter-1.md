@@ -9,11 +9,6 @@ draft: false
 toc: true
 ---
 
-<center>
-
-# 📘 Chapter 1: Notes to the Reader
-
-</center>
 {{% alert icon="💡" context="info" %}}
 <strong>
 

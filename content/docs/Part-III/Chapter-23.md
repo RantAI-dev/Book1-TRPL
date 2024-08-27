@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:25:07+07:00"
 draft: falseee
 toc: true
 ---
-<center>
-
-# 📘 Chapter 23: Pattern Matching
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>Simplicity is a great virtue but it requires hard work to achieve it and education to appreciate it. And to make matters worse: complexity sells better.</em>" — Edsger W. Dijkstra</strong>{{% /alert %}}
 

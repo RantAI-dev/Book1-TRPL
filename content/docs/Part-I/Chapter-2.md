@@ -8,11 +8,6 @@ lastmod: "2024-08-05T21:16:13+07:00"
 draft: false
 toc: true
 ---
-<center>
-
-# 📘 Chapter 2 : A Tour of Rust: The Basics
-
-</center>
 {{% alert icon="💡" context="info" %}}
 <strong>
 

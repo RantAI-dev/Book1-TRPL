@@ -9,11 +9,6 @@ draft: false
 toc: true
 ---
 
-<center>
-
-# 📘 Part 2: Basic Facilities
-
-</center>
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>Bad programmers worry about the code. Good programmers worry about data structures and their relationships</em>" — Linus Torvalds</strong>{{% /alert %}}
 

@@ -9,12 +9,6 @@ draft: false
 toc: true
 ---
 
-<center>
-
-# 📘 Part 1: Introduction to Rust
-
-</center>
-
 
 {{% alert icon="💡" context="info" %}}<strong>"<em>The limits of my language mean the limits of my world</em>" — Ludwig Wittgenstein.</strong>{{% /alert %}}
 

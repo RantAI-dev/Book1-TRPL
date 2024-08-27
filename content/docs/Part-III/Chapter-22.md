@@ -8,12 +8,6 @@ lastmod: "2024-08-05T21:25:05+07:00"
 draft: falsee
 toc: true
 ---
-<center>
-
-## 📘 Chapter 22: Macros
-
-</center>
-
 {{% alert icon="💡" context="info" %}}<strong>"<em>The most dangerous kind of code is the code you think you understand but don't.</em>" — Andrew Hunt</strong>{{% /alert %}}
 
 {{% alert icon="📘" context="success" %}}
