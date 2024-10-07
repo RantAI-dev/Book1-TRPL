@@ -157,7 +157,64 @@
                     {{ end }}
                 {{ end }}
             </div><!--end col-->
-
+            <div class="row justify-content-center my-4">
+              <div class="col-md-8 col-12">
+                  <div class="card p-4 text-center support-card">
+                      <h4 class="mb-3" style="color: #c41e3a;">SUPPORT US ❤️</h4>
+                      <p class="card-text">
+                          Support our mission by purchasing the companion book at your preferred platform.
+                      </p>
+                      <div class="d-flex justify-content-center mb-3 flex-wrap">
+                          <a href="https://www.amazon.com/dp/B0DJCKCGVR" class="btn btn-lg btn-outline-support m-2 support-btn">
+                              <img src="../../images/kindle.png" alt="Amazon Logo" class="support-logo-image">
+                              <span class="support-btn-text">Buy on Amazon</span>
+                          </a>
+                          <a href="https://play.google.com/store/books/details?id=8qglEQAAQBAJ&pli=1" class="btn btn-lg btn-outline-support m-2 support-btn">
+                              <img src="../../images/GBooks.png" alt="Google Books Logo" class="support-logo-image">
+                              <span class="support-btn-text">Buy on Google Books</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <style>
+              .btn-outline-support {
+                  color: #c41e3a;
+                  border: 2px solid #c41e3a;
+                  background-color: transparent;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  padding: 25px; /* Increased padding for a more prominent button */
+                  width: 200px; /* Increased width for better visibility */
+                  text-align: center;
+                  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+              }
+              .btn-outline-support:hover {
+                  background-color: #c41e3a;
+                  color: white;
+                  border-color: #c41e3a;
+              }
+              .support-logo-image {
+                  max-width: 100%;
+                  height: auto;
+                  margin-bottom: 16px; /* Increased space between the logo and the button text */
+              }
+              .support-btn {
+                  width: 300px; /* Increased width for both buttons */
+              }
+              .support-btn-text {
+                  font-weight: bold;
+                  font-size: 1.1rem; /* Slightly larger text for better readability */
+              }
+              .support-card {
+                  transition: box-shadow 0.3s ease-in-out;
+              }
+              .support-card:hover {
+                  box-shadow: 0 0 20px #c41e3a; /* Glowing border effect when hovered */
+              }
+          </style>          
         </div><!--end row-->
     </div> <!--end container-->
 </section><!--end section-->
