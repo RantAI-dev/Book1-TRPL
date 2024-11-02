@@ -101,7 +101,7 @@ Your comprehensive guide to mastering Rust. This book takes you on a journey thr
 
 {{% alert icon="🚀" context="success" %}}
 <p style="text-align: justify;">
-RantAI started as pioneer in open book publishing for scientific computing, setting the standard for technological innovation. As a premier System Integrator (SI), we specialize in addressing complex scientific challenges through advanced Machine Learning, Deep Learning, and Agent-Based Modeling. Our proficiency in AI-driven coding and optimization allows us to deliver comprehensive, end-to-end scientific simulation and digital twin solutions. At RantAI, we are dedicated to pushing the boundaries of technology, delivering cutting-edge solutions to tackle the world's most critical scientific problems.</p>
+RantAI started as a pioneer in open book publishing for scientific computing, setting the standard for technological innovation. As a premier System Integrator (SI), we specialize in addressing complex scientific challenges through advanced Machine Learning, Deep Learning, Agent-Based Modeling, and AI Chip Development based on the RISC-V architecture. Our proficiency in AI-driven coding and optimization enables us to deliver comprehensive, end-to-end scientific simulation and digital twin solutions. At RantAI, we are dedicated to pushing the boundaries of technology, delivering cutting-edge solutions to tackle the world’s most critical scientific problems.Through our open publications, we connect with top talent, customers, and partners, using these works as a strategic arm to advance scientific computing and innovation.</p>
 {{% /alert %}}
 
 <center>
