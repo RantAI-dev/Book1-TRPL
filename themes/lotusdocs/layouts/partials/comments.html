@@ -1,0 +1,39 @@
+{{ $page := . }}
+{{ $site := .Site }}
+
+{{/*
+    Enable comments if:
+    1. Comments are globally enabled in site config (e.g., params.comentario.enable)
+    2. And comments are not specifically disabled in this page's front matter (e.g., comments: false)
+    3. And the necessary Comentario host URL is set in site config.
+*/}}
+
+{{ $comentarioEnabledSite := $site.Params.comentario.enable | default false }}
+{{ $comentarioHostURL := $site.Params.comentario.hostURL }}
+{{ $commentsDisabledPage := eq $page.Params.comments false }}
+
+{{ if (and $comentarioEnabledSite (not $commentsDisabledPage) $comentarioHostURL) }}
+    <div class="comments-area" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;">
+        <h4>Comments</h4>
+        <comentario-comments
+            data-host="{{ $comentarioHostURL }}"
+            data-page-id="{{ $page.Permalink }}" {{/* Using Permalink as a unique page ID */}}
+            data-auto-init="true" {{/* Ensure Comentario initializes itself */}}
+            {{ with $site.Params.comentario.cssOverride }}data-css-override="{{ . | absURL }}"{{ end }}
+            {{ with $site.Params.comentario.defaultName }}data-default-name="{{ . }}"{{ end }}
+            {{ with $site.Params.comentario.defaultEmail }}data-default-email="{{ . }}"{{ end }}
+            {{ with $site.Params.comentario.defaultLink }}data-default-link="{{ . }}"{{ end }}
+            {{ with $site.Params.comentario.theme }}data-theme="{{ . }}"{{ end }} {{/* e.g., light or dark */}}
+        ></comentario-comments>
+        <script defer src="{{ $comentarioHostURL }}/comentario.js"
+            data-comentario-url="{{ $comentarioHostURL }}"
+            data-auto-init="true"
+            {{ with $site.Params.comentario.cssOverride }}data-css-override="{{ . | absURL }}"{{ end }}
+        ></script>
+        <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+{{ else if (and (not $comentarioEnabledSite) (not $commentsDisabledPage) $comentarioHostURL) }}
+    {{ end }}
+
+<!-- <script defer src="https://comments.rantai.dev/comentario.js"></script>
+<comentario-comments></comentario-comments> -->
